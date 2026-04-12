@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Home"
+  },
+  {
+    "name": "Courses",
+    "children": [
+      {
+        "name": "Diploma Courses + Integrated AI",
+        "children": [
+          { "name": "Advanced Diploma in AI" },
+          { "name": "Integrated AI + ML" },
+          { "name": "AI Engineering Diploma" },
+          { "name": "Data Science Diploma" }
+        ]
+      },
+      { "name": "AI" },
+      { "name": "School of AI" },
+      { "name": ".NET" },
+      { "name": "Python" },
+      { "name": "Java" },
+      { "name": "Software Testing" },
+      {
+        "name": "Web Designing - Full Stack Development",
+        "children": [
+          { "name": "Frontend Development" },
+          { "name": "Backend Development" },
+          { "name": "MERN Stack" },
+          { "name": "MEAN Stack" },
+          { "name": "React + Node.js" }
+        ]
+      },
+      { "name": "Programming Languages" },
+      { "name": "Cloud Computing" },
+      { "name": "Salesforce" },
+      { "name": "CAD Training" },
+      { "name": "Mobile Application Development" },
+      { "name": "Network & Security" },
+      { "name": "Digital Marketing" },
+      { "name": "MIS - Advanced Excel - BI Tools" },
+      { "name": "ERP" },
+      { "name": "Industrial Training" },
+      { "name": "Others" }
+    ]
+  },
+  {
+    "name": "Placement"
+  },
+  {
+    "name": "Corporate Training"
+  },
+  {
+    "name": "Online Registration"
+  },
+  {
+    "name": "Certificate"
+  },
+  {
+    "name": "Career Guidance"
+  },
+  {
+    "name": "ContactUs"
+  },
+  {
+    "name": "Others",
+    "children": [
+      { "name": "About Us" },
+      { "name": "Faculty" },
+      { "name": "Infrastructure" },
+      { "name": "Testimonials" },
+      { "name": "Blog" }
+    ]
+  }
+]

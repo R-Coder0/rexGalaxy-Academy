@@ -1,0 +1,451 @@
+@import "tailwindcss";
+
+/* =========================================
+   THEME TOKENS (AI + ORANGE / BLACK)
+========================================= */
+
+:root {
+  /* Surfaces */
+  --bg: #050608;
+  --surface: #0b0f14;
+  --surface-2: #0f1623;
+  --surface-3: #121b2a;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --text: rgba(255, 255, 255, 0.92);
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --text-dim: rgba(255, 255, 255, 0.56);
+
+  /* Brand */
+  --brand: #ff6b00;
+  --brand-hover: #ff8c32;
+  --brand-soft: rgba(255, 107, 0, 0.14);
+
+  /* AI accents */
+  --ai-cyan: #22d3ee;
+  --ai-purple: #8b5cf6;
+  --ai-blue: #38bdf8;
+
+  /* Status */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 18px;
+
+  /* Shadows */
+  --shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.35);
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+
+  /* Glows (optional later) */
+  --glow-brand: 0 0 0 1px rgba(255, 107, 0, 0.35), 0 10px 30px rgba(255, 107, 0, 0.12);
+  --glow-cyan: 0 0 0 1px rgba(34, 211, 238, 0.3), 0 10px 30px rgba(34, 211, 238, 0.1);
+  --glow-purple: 0 0 0 1px rgba(139, 92, 246, 0.28), 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+/* =========================================
+   BASE RESET (SAFE)
+========================================= */
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body, ui-sans-serif, system-ui);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 107, 0, 0.28);
+  color: var(--text);
+}
+
+/* =========================================
+   TYPOGRAPHY (NO GLOBAL FONT SIZE)
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading, ui-sans-serif, system-ui);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+p,
+li {
+  color: var(--text-muted);
+}
+
+/* =========================================
+   OPTIONAL UTILITIES (NON-BREAKING)
+========================================= */
+
+.bg-surface { background: var(--surface); }
+.bg-card { background: var(--surface-2); }
+
+.text-muted { color: var(--text-muted); }
+.text-dim { color: var(--text-dim); }
+
+.border-soft { border: 1px solid var(--border); }
+.border-strong { border: 1px solid var(--border-strong); }
+
+.glow-brand { box-shadow: var(--glow-brand); }
+.glow-cyan { box-shadow: var(--glow-cyan); }
+.glow-purple { box-shadow: var(--glow-purple); }
+/* =========================================
+   UI KIT: BUTTONS / INPUTS (STEP 2)
+   (Safe: only applies where classes used)
+========================================= */
+
+/* Focus ring (accessible + brand) */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.22);
+  border-color: rgba(255, 107, 0, 0.55);
+}
+
+/* -------------------------
+   Buttons (Base)
+------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+
+  font-family: var(--font-body, ui-sans-serif, system-ui);
+  font-weight: 600;
+  line-height: 1;
+
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease,
+    box-shadow 160ms ease, color 160ms ease, opacity 160ms ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Sizes */
+.btn-sm { padding: 8px 12px; border-radius: var(--radius-sm); font-size: 14px; }
+.btn-md { padding: 10px 16px; font-size: 15px; }
+.btn-lg { padding: 12px 18px; border-radius: var(--radius-lg); font-size: 16px; }
+
+/* -------------------------
+   Button Variants
+------------------------- */
+
+/* Primary (Orange) */
+.btn-primary {
+  background: var(--brand);
+  color: #0b0f14;
+  box-shadow: 0 10px 28px rgba(255, 107, 0, 0.16);
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover);
+  box-shadow: 0 14px 34px rgba(255, 107, 0, 0.20);
+}
+
+/* Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 107, 0, 0.55);
+  box-shadow: var(--glow-brand);
+}
+
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* AI Gradient (optional CTA) */
+.btn-ai {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.18));
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.btn-ai:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Icon button */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--border-strong);
+}
+
+/* -------------------------
+   Inputs / Select / Textarea
+------------------------- */
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 11px 12px;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.input:hover,
+.select:hover,
+.textarea:hover {
+  border-color: var(--border-strong);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: rgba(255, 107, 0, 0.55);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Input with icon wrapper */
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.helper {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.error {
+  font-size: 12px;
+  color: rgba(239, 68, 68, 0.95);
+}
+
+/* -------------------------
+   Chips / Badges
+------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-brand {
+  border-color: rgba(255, 107, 0, 0.35);
+  background: rgba(255, 107, 0, 0.10);
+  color: rgba(255, 183, 123, 0.95);
+}
+
+.badge-ai {
+  border-color: rgba(34, 211, 238, 0.30);
+  background: rgba(34, 211, 238, 0.10);
+  color: rgba(165, 243, 252, 0.95);
+}
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4b5563;  
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 22s linear infinite;
+}
+
+/* =========================================
+   CUSTOM CURSOR (Optional)
+========================================= */
+
+/* Remove this block if not using custom cursor
+html, body {
+  cursor: none;
+}
+
+a,
+button,
+[role="button"],
+input,
+textarea,
+select {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+.custom-cursor {
+  transition: transform 80ms linear, opacity 200ms ease;
+  will-change: transform;
+} */
+
+/* =========================================
+   SWIPER FIX: Upcoming Batches (Scoped)
+========================================= */
+select option {
+  background-color: #0f172a; /* dark */
+  color: white;
+}
+.upcomingBatchesSwiper {
+  padding-bottom: 56px; /* ✅ dots ke liye dedicated space */
+}
+
+/* dots ko cards ke neeche lao */
+.upcomingBatchesSwiper .swiper-pagination {
+  bottom: 10px !important;
+  z-index: 5 !important;
+}
+
+/* arrows ko center me rakho but cards ke upar “cut” na kare */
+.upcomingBatchesSwiper .swiper-button-prev,
+.upcomingBatchesSwiper .swiper-button-next {
+  top: 55% !important;
+  z-index: 6 !important;
+}
+
+/* arrows ko thoda side bahar push so they don’t sit on cards */
+.upcomingBatchesSwiper .swiper-button-prev {
+  left: -4px !important;
+}
+
+.upcomingBatchesSwiper .swiper-button-next {
+  right: -4px !important;
+}
+
+/* arrow button background for visibility (optional but recommended) */
+.upcomingBatchesSwiper .swiper-button-prev,
+.upcomingBatchesSwiper .swiper-button-next {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(10px);
+}
+
+.upcomingBatchesSwiper .swiper-button-prev:hover,
+.upcomingBatchesSwiper .swiper-button-next:hover {
+  border-color: rgba(255, 107, 0, 0.5) !important;
+}
+
+/* arrow icon size */
+.upcomingBatchesSwiper .swiper-button-prev::after,
+.upcomingBatchesSwiper .swiper-button-next::after {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+}
+/* Hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}

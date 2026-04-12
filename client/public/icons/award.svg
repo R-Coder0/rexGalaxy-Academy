@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2200" height="2200" viewBox="0 0 2200 2200">
+<defs>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 966 1227 L 1690 1227 L 1690 2093 L 966 2093 Z M 966 1227 "/>
+</clipPath>
+<clipPath id="clip-1">
+<path clip-rule="nonzero" d="M 1192.539062 2092.449219 L 1385.359375 1838.160156 L 1689.949219 1933.390625 L 1464.238281 1227.609375 L 966.84375 1386.679688 Z M 1192.539062 2092.449219 "/>
+</clipPath>
+<clipPath id="clip-2">
+<path clip-rule="nonzero" d="M 1192.539062 2092.449219 L 1385.359375 1838.160156 L 1689.949219 1933.390625 L 1464.238281 1227.609375 L 966.84375 1386.679688 L 1192.539062 2092.449219 "/>
+</clipPath>
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="-0.621364" y1="0" x2="1.530504" y2="0" gradientTransform="matrix(-147.779, -462.106, -462.106, 147.779, 1395.57, 1870.09)">
+<stop offset="0" stop-color="rgb(75.550842%, 10.707092%, 19.2276%)" stop-opacity="1"/>
+<stop offset="0.25" stop-color="rgb(75.550842%, 10.707092%, 19.2276%)" stop-opacity="1"/>
+<stop offset="0.28125" stop-color="rgb(75.550842%, 10.707092%, 19.2276%)" stop-opacity="1"/>
+<stop offset="0.289062" stop-color="rgb(75.544739%, 10.707092%, 19.224548%)" stop-opacity="1"/>
+<stop offset="0.296875" stop-color="rgb(75.35553%, 10.68573%, 19.218445%)" stop-opacity="1"/>
+<stop offset="0.304688" stop-color="rgb(74.990845%, 10.650635%, 19.235229%)" stop-opacity="1"/>
+<stop offset="0.308594" stop-color="rgb(74.505615%, 10.609436%, 19.297791%)" stop-opacity="1"/>
+<stop offset="0.3125" stop-color="rgb(74.201965%, 10.583496%, 19.337463%)" stop-opacity="1"/>
+<stop offset="0.320312" stop-color="rgb(74.14093%, 10.557556%, 19.38324%)" stop-opacity="1"/>
+<stop offset="0.324219" stop-color="rgb(73.791504%, 10.505676%, 19.441223%)" stop-opacity="1"/>
+<stop offset="0.328125" stop-color="rgb(73.504639%, 10.47821%, 19.450378%)" stop-opacity="1"/>
+<stop offset="0.335938" stop-color="rgb(73.431396%, 10.490417%, 19.464111%)" stop-opacity="1"/>
+<stop offset="0.339844" stop-color="rgb(73.112488%, 10.588074%, 19.483948%)" stop-opacity="1"/>
+<stop offset="0.34375" stop-color="rgb(72.868347%, 10.673523%, 19.491577%)" stop-opacity="1"/>
+<stop offset="0.351562" stop-color="rgb(72.73407%, 10.671997%, 19.476318%)" stop-opacity="1"/>
+<stop offset="0.355469" stop-color="rgb(72.415161%, 10.644531%, 19.42749%)" stop-opacity="1"/>
+<stop offset="0.359375" stop-color="rgb(72.23053%, 10.617065%, 19.392395%)" stop-opacity="1"/>
+<stop offset="0.367188" stop-color="rgb(72.016907%, 10.601807%, 19.425964%)" stop-opacity="1"/>
+<stop offset="0.375" stop-color="rgb(71.568298%, 10.583496%, 19.432068%)" stop-opacity="1"/>
+<stop offset="0.378906" stop-color="rgb(71.173096%, 10.55603%, 19.360352%)" stop-opacity="1"/>
+<stop offset="0.382812" stop-color="rgb(71.008301%, 10.533142%, 19.314575%)" stop-opacity="1"/>
+<stop offset="0.390625" stop-color="rgb(70.857239%, 10.522461%, 19.337463%)" stop-opacity="1"/>
+<stop offset="0.394531" stop-color="rgb(70.469666%, 10.481262%, 19.335938%)" stop-opacity="1"/>
+<stop offset="0.398438" stop-color="rgb(70.236206%, 10.452271%, 19.313049%)" stop-opacity="1"/>
+<stop offset="0.40625" stop-color="rgb(70.155334%, 10.449219%, 19.300842%)" stop-opacity="1"/>
+<stop offset="0.414062" stop-color="rgb(69.885254%, 10.443115%, 19.267273%)" stop-opacity="1"/>
+<stop offset="0.421875" stop-color="rgb(69.567871%, 10.403442%, 19.270325%)" stop-opacity="1"/>
+<stop offset="0.425781" stop-color="rgb(69.258118%, 10.211182%, 19.256592%)" stop-opacity="1"/>
+<stop offset="0.429688" stop-color="rgb(69.07959%, 10.058594%, 19.218445%)" stop-opacity="1"/>
+<stop offset="0.4375" stop-color="rgb(68.90564%, 10.057068%, 19.197083%)" stop-opacity="1"/>
+<stop offset="0.441406" stop-color="rgb(68.682861%, 10.031128%, 19.230652%)" stop-opacity="1"/>
+<stop offset="0.445312" stop-color="rgb(68.632507%, 10.00824%, 19.284058%)" stop-opacity="1"/>
+<stop offset="0.453125" stop-color="rgb(68.377686%, 9.989929%, 19.317627%)" stop-opacity="1"/>
+<stop offset="0.457031" stop-color="rgb(68.029785%, 9.933472%, 19.416809%)" stop-opacity="1"/>
+<stop offset="0.460937" stop-color="rgb(67.933655%, 9.895325%, 19.47937%)" stop-opacity="1"/>
+<stop offset="0.464844" stop-color="rgb(67.76123%, 9.884644%, 19.580078%)" stop-opacity="1"/>
+<stop offset="0.46875" stop-color="rgb(67.58728%, 9.872437%, 19.680786%)" stop-opacity="1"/>
+<stop offset="0.472656" stop-color="rgb(67.410278%, 9.835815%, 19.647217%)" stop-opacity="1"/>
+<stop offset="0.476562" stop-color="rgb(67.233276%, 9.799194%, 19.613647%)" stop-opacity="1"/>
+<stop offset="0.484375" stop-color="rgb(67.155457%, 9.776306%, 19.625854%)" stop-opacity="1"/>
+<stop offset="0.488281" stop-color="rgb(66.809082%, 9.747314%, 19.606018%)" stop-opacity="1"/>
+<stop offset="0.492187" stop-color="rgb(66.540527%, 9.739685%, 19.573975%)" stop-opacity="1"/>
+<stop offset="0.5" stop-color="rgb(66.423035%, 9.706116%, 19.592285%)" stop-opacity="1"/>
+<stop offset="0.507812" stop-color="rgb(66.200256%, 9.655762%, 19.572449%)" stop-opacity="1"/>
+<stop offset="0.511719" stop-color="rgb(65.797424%, 9.62677%, 19.485474%)" stop-opacity="1"/>
+<stop offset="0.515625" stop-color="rgb(65.499878%, 9.614563%, 19.43512%)" stop-opacity="1"/>
+<stop offset="0.523438" stop-color="rgb(65.328979%, 9.605408%, 19.403076%)" stop-opacity="1"/>
+<stop offset="0.53125" stop-color="rgb(64.987183%, 9.585571%, 19.337463%)" stop-opacity="1"/>
+<stop offset="0.535156" stop-color="rgb(64.546204%, 9.568787%, 19.262695%)" stop-opacity="1"/>
+<stop offset="0.539062" stop-color="rgb(64.276123%, 9.562683%, 19.221497%)" stop-opacity="1"/>
+<stop offset="0.546875" stop-color="rgb(64.138794%, 9.552002%, 19.236755%)" stop-opacity="1"/>
+<stop offset="0.550781" stop-color="rgb(63.774109%, 9.513855%, 19.224548%)" stop-opacity="1"/>
+<stop offset="0.554688" stop-color="rgb(63.545227%, 9.484863%, 19.195557%)" stop-opacity="1"/>
+<stop offset="0.558594" stop-color="rgb(63.372803%, 9.449768%, 19.20929%)" stop-opacity="1"/>
+<stop offset="0.5625" stop-color="rgb(63.198853%, 9.416199%, 19.223022%)" stop-opacity="1"/>
+<stop offset="0.570312" stop-color="rgb(63.032532%, 9.416199%, 19.204712%)" stop-opacity="1"/>
+<stop offset="0.574219" stop-color="rgb(62.693787%, 9.373474%, 19.181824%)" stop-opacity="1"/>
+<stop offset="0.578125" stop-color="rgb(62.518311%, 9.329224%, 19.17572%)" stop-opacity="1"/>
+<stop offset="0.582031" stop-color="rgb(62.356567%, 9.339905%, 19.17572%)" stop-opacity="1"/>
+<stop offset="0.585938" stop-color="rgb(62.191772%, 9.34906%, 19.172668%)" stop-opacity="1"/>
+<stop offset="0.589844" stop-color="rgb(62.019348%, 9.309387%, 19.14978%)" stop-opacity="1"/>
+<stop offset="0.59375" stop-color="rgb(61.845398%, 9.269714%, 19.12384%)" stop-opacity="1"/>
+<stop offset="0.597656" stop-color="rgb(61.557007%, 9.239197%, 19.154358%)" stop-opacity="1"/>
+<stop offset="0.601562" stop-color="rgb(61.26709%, 9.208679%, 19.18335%)" stop-opacity="1"/>
+<stop offset="0.609375" stop-color="rgb(61.181641%, 9.202576%, 19.190979%)" stop-opacity="1"/>
+<stop offset="0.613281" stop-color="rgb(60.845947%, 9.159851%, 19.224548%)" stop-opacity="1"/>
+<stop offset="0.617188" stop-color="rgb(60.594177%, 9.12323%, 19.247437%)" stop-opacity="1"/>
+<stop offset="0.621094" stop-color="rgb(60.424805%, 9.089661%, 19.206238%)" stop-opacity="1"/>
+<stop offset="0.625" stop-color="rgb(60.25238%, 9.054565%, 19.163513%)" stop-opacity="1"/>
+<stop offset="0.628906" stop-color="rgb(60.090637%, 9.046936%, 19.236755%)" stop-opacity="1"/>
+<stop offset="0.632812" stop-color="rgb(59.928894%, 9.037781%, 19.308472%)" stop-opacity="1"/>
+<stop offset="0.636719" stop-color="rgb(59.757996%, 8.998108%, 19.27948%)" stop-opacity="1"/>
+<stop offset="0.640625" stop-color="rgb(59.585571%, 8.959961%, 19.250488%)" stop-opacity="1"/>
+<stop offset="0.644531" stop-color="rgb(59.414673%, 8.914185%, 19.248962%)" stop-opacity="1"/>
+<stop offset="0.648437" stop-color="rgb(59.243774%, 8.869934%, 19.245911%)" stop-opacity="1"/>
+<stop offset="0.652344" stop-color="rgb(58.988953%, 8.821106%, 19.291687%)" stop-opacity="1"/>
+<stop offset="0.65625" stop-color="rgb(58.735657%, 8.773804%, 19.335938%)" stop-opacity="1"/>
+<stop offset="0.660156" stop-color="rgb(58.183289%, 8.647156%, 19.348145%)" stop-opacity="1"/>
+<stop offset="0.664062" stop-color="rgb(57.629395%, 8.520508%, 19.354248%)" stop-opacity="1"/>
+<stop offset="0.667969" stop-color="rgb(56.906128%, 8.436584%, 19.311523%)" stop-opacity="1"/>
+<stop offset="0.671875" stop-color="rgb(56.184387%, 8.352661%, 19.265747%)" stop-opacity="1"/>
+<stop offset="0.675781" stop-color="rgb(55.575562%, 8.232117%, 19.293213%)" stop-opacity="1"/>
+<stop offset="0.679688" stop-color="rgb(54.968262%, 8.113098%, 19.313049%)" stop-opacity="1"/>
+<stop offset="0.683594" stop-color="rgb(54.292297%, 7.989502%, 19.267273%)" stop-opacity="1"/>
+<stop offset="0.6875" stop-color="rgb(53.617859%, 7.865906%, 19.215393%)" stop-opacity="1"/>
+<stop offset="0.691406" stop-color="rgb(52.967834%, 7.763672%, 19.090271%)" stop-opacity="1"/>
+<stop offset="0.695312" stop-color="rgb(52.31781%, 7.661438%, 18.962097%)" stop-opacity="1"/>
+<stop offset="0.699219" stop-color="rgb(51.617432%, 7.562256%, 18.968201%)" stop-opacity="1"/>
+<stop offset="0.703125" stop-color="rgb(50.920105%, 7.4646%, 18.966675%)" stop-opacity="1"/>
+<stop offset="0.707031" stop-color="rgb(50.213623%, 7.342529%, 18.916321%)" stop-opacity="1"/>
+<stop offset="0.710938" stop-color="rgb(49.508667%, 7.218933%, 18.858337%)" stop-opacity="1"/>
+<stop offset="0.714844" stop-color="rgb(48.820496%, 7.121277%, 18.838501%)" stop-opacity="1"/>
+<stop offset="0.71875" stop-color="rgb(48.136902%, 7.025146%, 18.814087%)" stop-opacity="1"/>
+<stop offset="0.722656" stop-color="rgb(47.451782%, 6.919861%, 18.768311%)" stop-opacity="1"/>
+<stop offset="0.726562" stop-color="rgb(46.769714%, 6.816101%, 18.714905%)" stop-opacity="1"/>
+<stop offset="0.730469" stop-color="rgb(46.194458%, 6.704712%, 18.678284%)" stop-opacity="1"/>
+<stop offset="0.734375" stop-color="rgb(45.619202%, 6.593323%, 18.635559%)" stop-opacity="1"/>
+<stop offset="0.738281" stop-color="rgb(45.022583%, 6.442261%, 18.547058%)" stop-opacity="1"/>
+<stop offset="0.742188" stop-color="rgb(44.425964%, 6.291199%, 18.450928%)" stop-opacity="1"/>
+<stop offset="0.746094" stop-color="rgb(43.856812%, 6.175232%, 18.426514%)" stop-opacity="1"/>
+<stop offset="0.75" stop-color="rgb(43.287659%, 6.062317%, 18.39447%)" stop-opacity="1"/>
+<stop offset="0.753906" stop-color="rgb(43.066406%, 6.005859%, 18.356323%)" stop-opacity="1"/>
+<stop offset="0.757812" stop-color="rgb(42.842102%, 5.949402%, 18.315125%)" stop-opacity="1"/>
+<stop offset="0.765625" stop-color="rgb(42.842102%, 5.949402%, 18.315125%)" stop-opacity="1"/>
+<stop offset="0.78125" stop-color="rgb(42.842102%, 5.949402%, 18.315125%)" stop-opacity="1"/>
+<stop offset="0.8125" stop-color="rgb(42.842102%, 5.949402%, 18.315125%)" stop-opacity="1"/>
+<stop offset="0.875" stop-color="rgb(42.842102%, 5.949402%, 18.315125%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(42.842102%, 5.949402%, 18.315125%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-3">
+<path clip-rule="nonzero" d="M 510 1227 L 1234 1227 L 1234 2093 L 510 2093 Z M 510 1227 "/>
+</clipPath>
+<clipPath id="clip-4">
+<path clip-rule="nonzero" d="M 1007.460938 2092.449219 L 814.644531 1838.160156 L 510.054688 1933.390625 L 735.757812 1227.609375 L 1233.160156 1386.679688 Z M 1007.460938 2092.449219 "/>
+</clipPath>
+<clipPath id="clip-5">
+<path clip-rule="nonzero" d="M 1007.460938 2092.449219 L 814.644531 1838.160156 L 510.054688 1933.390625 L 735.757812 1227.609375 L 1233.160156 1386.679688 L 1007.460938 2092.449219 "/>
+</clipPath>
+<linearGradient id="linear-pattern-1" gradientUnits="userSpaceOnUse" x1="-0.621363" y1="0" x2="1.530504" y2="0" gradientTransform="matrix(147.779, -462.106, 462.106, 147.779, 804.432, 1870.09)">
+<stop offset="0" stop-color="rgb(85.870361%, 11.904907%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.25" stop-color="rgb(85.870361%, 11.904907%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.28125" stop-color="rgb(85.870361%, 11.904907%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.289062" stop-color="rgb(85.862732%, 11.906433%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.296875" stop-color="rgb(85.720825%, 11.92627%, 21.047974%)" stop-opacity="1"/>
+<stop offset="0.304688" stop-color="rgb(85.481262%, 11.961365%, 21.072388%)" stop-opacity="1"/>
+<stop offset="0.308594" stop-color="rgb(85.179138%, 11.961365%, 21.047974%)" stop-opacity="1"/>
+<stop offset="0.3125" stop-color="rgb(84.9823%, 11.94458%, 21.011353%)" stop-opacity="1"/>
+<stop offset="0.320312" stop-color="rgb(84.857178%, 11.962891%, 21.02356%)" stop-opacity="1"/>
+<stop offset="0.328125" stop-color="rgb(84.617615%, 11.982727%, 21.115112%)" stop-opacity="1"/>
+<stop offset="0.332031" stop-color="rgb(84.440613%, 11.830139%, 21.217346%)" stop-opacity="1"/>
+<stop offset="0.335938" stop-color="rgb(84.382629%, 11.6745%, 21.240234%)" stop-opacity="1"/>
+<stop offset="0.34375" stop-color="rgb(84.191895%, 11.680603%, 21.229553%)" stop-opacity="1"/>
+<stop offset="0.351563" stop-color="rgb(83.807373%, 11.676025%, 21.282959%)" stop-opacity="1"/>
+<stop offset="0.359375" stop-color="rgb(83.598328%, 11.66687%, 21.356201%)" stop-opacity="1"/>
+<stop offset="0.367188" stop-color="rgb(83.493042%, 11.573792%, 21.424866%)" stop-opacity="1"/>
+<stop offset="0.375" stop-color="rgb(83.343506%, 11.419678%, 21.520996%)" stop-opacity="1"/>
+<stop offset="0.378906" stop-color="rgb(83.001709%, 11.349487%, 21.554565%)" stop-opacity="1"/>
+<stop offset="0.382812" stop-color="rgb(82.717896%, 11.343384%, 21.549988%)" stop-opacity="1"/>
+<stop offset="0.390625" stop-color="rgb(82.624817%, 11.34491%, 21.614075%)" stop-opacity="1"/>
+<stop offset="0.398437" stop-color="rgb(82.48291%, 11.352539%, 21.682739%)" stop-opacity="1"/>
+<stop offset="0.40625" stop-color="rgb(82.243347%, 11.373901%, 21.685791%)" stop-opacity="1"/>
+<stop offset="0.414062" stop-color="rgb(81.864929%, 11.387634%, 21.665955%)" stop-opacity="1"/>
+<stop offset="0.417969" stop-color="rgb(81.625366%, 11.376953%, 21.731567%)" stop-opacity="1"/>
+<stop offset="0.421875" stop-color="rgb(81.573486%, 11.366272%, 21.813965%)" stop-opacity="1"/>
+<stop offset="0.429688" stop-color="rgb(81.384277%, 11.376953%, 21.807861%)" stop-opacity="1"/>
+<stop offset="0.4375" stop-color="rgb(81.007385%, 11.390686%, 21.788025%)" stop-opacity="1"/>
+<stop offset="0.441406" stop-color="rgb(80.627441%, 11.360168%, 21.812439%)" stop-opacity="1"/>
+<stop offset="0.445312" stop-color="rgb(80.436707%, 11.326599%, 21.84906%)" stop-opacity="1"/>
+<stop offset="0.453125" stop-color="rgb(80.316162%, 11.335754%, 21.899414%)" stop-opacity="1"/>
+<stop offset="0.460938" stop-color="rgb(79.962158%, 11.335754%, 21.961975%)" stop-opacity="1"/>
+<stop offset="0.464844" stop-color="rgb(79.544067%, 11.328125%, 22.061157%)" stop-opacity="1"/>
+<stop offset="0.46875" stop-color="rgb(79.362488%, 11.331177%, 22.146606%)" stop-opacity="1"/>
+<stop offset="0.476563" stop-color="rgb(79.284668%, 11.308289%, 22.163391%)" stop-opacity="1"/>
+<stop offset="0.484375" stop-color="rgb(79.020691%, 11.286926%, 22.207642%)" stop-opacity="1"/>
+<stop offset="0.488281" stop-color="rgb(78.646851%, 11.268616%, 22.212219%)" stop-opacity="1"/>
+<stop offset="0.492187" stop-color="rgb(78.457642%, 11.248779%, 22.190857%)" stop-opacity="1"/>
+<stop offset="0.5" stop-color="rgb(78.355408%, 11.251831%, 22.25647%)" stop-opacity="1"/>
+<stop offset="0.507813" stop-color="rgb(77.987671%, 11.251831%, 22.291565%)" stop-opacity="1"/>
+<stop offset="0.515625" stop-color="rgb(77.667236%, 11.187744%, 22.268677%)" stop-opacity="1"/>
+<stop offset="0.523438" stop-color="rgb(77.42157%, 11.012268%, 22.303772%)" stop-opacity="1"/>
+<stop offset="0.527344" stop-color="rgb(77.183533%, 10.887146%, 22.409058%)" stop-opacity="1"/>
+<stop offset="0.53125" stop-color="rgb(77.133179%, 10.876465%, 22.485352%)" stop-opacity="1"/>
+<stop offset="0.539063" stop-color="rgb(76.947021%, 10.862732%, 22.445679%)" stop-opacity="1"/>
+<stop offset="0.546875" stop-color="rgb(76.681519%, 10.862732%, 22.413635%)" stop-opacity="1"/>
+<stop offset="0.550781" stop-color="rgb(76.455688%, 10.688782%, 22.447205%)" stop-opacity="1"/>
+<stop offset="0.554688" stop-color="rgb(76.312256%, 10.499573%, 22.471619%)" stop-opacity="1"/>
+<stop offset="0.5625" stop-color="rgb(76.312256%, 10.499573%, 22.471619%)" stop-opacity="1"/>
+<stop offset="0.570312" stop-color="rgb(76.091003%, 10.365295%, 22.50061%)" stop-opacity="1"/>
+<stop offset="0.578125" stop-color="rgb(75.813293%, 10.202026%, 22.535706%)" stop-opacity="1"/>
+<stop offset="0.585938" stop-color="rgb(75.619507%, 10.160828%, 22.561646%)" stop-opacity="1"/>
+<stop offset="0.59375" stop-color="rgb(75.349426%, 10.144043%, 22.599792%)" stop-opacity="1"/>
+<stop offset="0.597656" stop-color="rgb(75.053406%, 10.133362%, 22.709656%)" stop-opacity="1"/>
+<stop offset="0.601562" stop-color="rgb(74.887085%, 10.128784%, 22.799683%)" stop-opacity="1"/>
+<stop offset="0.609375" stop-color="rgb(74.780273%, 10.099792%, 22.817993%)" stop-opacity="1"/>
+<stop offset="0.617188" stop-color="rgb(74.424744%, 10.054016%, 22.871399%)" stop-opacity="1"/>
+<stop offset="0.621094" stop-color="rgb(74.11499%, 10.015869%, 22.964478%)" stop-opacity="1"/>
+<stop offset="0.625" stop-color="rgb(74.055481%, 9.991455%, 23.023987%)" stop-opacity="1"/>
+<stop offset="0.632812" stop-color="rgb(73.957825%, 9.965515%, 23.034668%)" stop-opacity="1"/>
+<stop offset="0.640625" stop-color="rgb(73.596191%, 9.934998%, 23.034668%)" stop-opacity="1"/>
+<stop offset="0.644531" stop-color="rgb(73.28186%, 9.906006%, 23.077393%)" stop-opacity="1"/>
+<stop offset="0.648438" stop-color="rgb(73.22998%, 9.881592%, 23.130798%)" stop-opacity="1"/>
+<stop offset="0.652344" stop-color="rgb(72.807312%, 9.840393%, 23.106384%)" stop-opacity="1"/>
+<stop offset="0.65625" stop-color="rgb(72.383118%, 9.799194%, 23.078918%)" stop-opacity="1"/>
+<stop offset="0.660156" stop-color="rgb(71.603394%, 9.7229%, 23.168945%)" stop-opacity="1"/>
+<stop offset="0.664062" stop-color="rgb(70.826721%, 9.646606%, 23.254395%)" stop-opacity="1"/>
+<stop offset="0.667969" stop-color="rgb(70.185852%, 9.570312%, 23.287964%)" stop-opacity="1"/>
+<stop offset="0.671875" stop-color="rgb(69.544983%, 9.495544%, 23.316956%)" stop-opacity="1"/>
+<stop offset="0.675781" stop-color="rgb(68.789673%, 9.394836%, 23.420715%)" stop-opacity="1"/>
+<stop offset="0.679688" stop-color="rgb(68.037415%, 9.295654%, 23.518372%)" stop-opacity="1"/>
+<stop offset="0.683594" stop-color="rgb(67.645264%, 9.094238%, 23.603821%)" stop-opacity="1"/>
+<stop offset="0.6875" stop-color="rgb(67.251587%, 8.894348%, 23.686218%)" stop-opacity="1"/>
+<stop offset="0.691406" stop-color="rgb(66.522217%, 8.798218%, 23.747253%)" stop-opacity="1"/>
+<stop offset="0.695312" stop-color="rgb(65.794373%, 8.703613%, 23.803711%)" stop-opacity="1"/>
+<stop offset="0.699219" stop-color="rgb(65.023804%, 8.639526%, 23.751831%)" stop-opacity="1"/>
+<stop offset="0.703125" stop-color="rgb(64.257812%, 8.573914%, 23.695374%)" stop-opacity="1"/>
+<stop offset="0.707031" stop-color="rgb(63.638306%, 8.474731%, 23.81134%)" stop-opacity="1"/>
+<stop offset="0.710937" stop-color="rgb(63.021851%, 8.375549%, 23.919678%)" stop-opacity="1"/>
+<stop offset="0.714844" stop-color="rgb(62.409973%, 8.311462%, 23.852539%)" stop-opacity="1"/>
+<stop offset="0.71875" stop-color="rgb(61.799622%, 8.247375%, 23.782349%)" stop-opacity="1"/>
+<stop offset="0.722656" stop-color="rgb(61.068726%, 8.157349%, 23.809814%)" stop-opacity="1"/>
+<stop offset="0.726562" stop-color="rgb(60.340881%, 8.068848%, 23.832703%)" stop-opacity="1"/>
+<stop offset="0.730469" stop-color="rgb(59.716797%, 7.949829%, 23.902893%)" stop-opacity="1"/>
+<stop offset="0.734375" stop-color="rgb(59.094238%, 7.830811%, 23.965454%)" stop-opacity="1"/>
+<stop offset="0.738281" stop-color="rgb(58.390808%, 7.728577%, 24.029541%)" stop-opacity="1"/>
+<stop offset="0.742187" stop-color="rgb(57.688904%, 7.627869%, 24.085999%)" stop-opacity="1"/>
+<stop offset="0.746094" stop-color="rgb(57.084656%, 7.498169%, 24.188232%)" stop-opacity="1"/>
+<stop offset="0.75" stop-color="rgb(56.483459%, 7.369995%, 24.281311%)" stop-opacity="1"/>
+<stop offset="0.753906" stop-color="rgb(56.336975%, 7.319641%, 24.328613%)" stop-opacity="1"/>
+<stop offset="0.757813" stop-color="rgb(56.190491%, 7.270813%, 24.37439%)" stop-opacity="1"/>
+<stop offset="0.765625" stop-color="rgb(56.190491%, 7.270813%, 24.37439%)" stop-opacity="1"/>
+<stop offset="0.78125" stop-color="rgb(56.190491%, 7.270813%, 24.37439%)" stop-opacity="1"/>
+<stop offset="0.8125" stop-color="rgb(56.190491%, 7.270813%, 24.37439%)" stop-opacity="1"/>
+<stop offset="0.875" stop-color="rgb(56.190491%, 7.270813%, 24.37439%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(56.190491%, 7.270813%, 24.37439%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-6">
+<path clip-rule="nonzero" d="M 425 107 L 1775 107 L 1775 1457 L 425 1457 Z M 425 107 "/>
+</clipPath>
+<clipPath id="clip-7">
+<path clip-rule="nonzero" d="M 1774.648438 782.191406 C 1774.648438 817.128906 1735.5 848.578125 1730.238281 882.039062 C 1724.851562 916.390625 1752.300781 958.359375 1741.800781 990.71875 C 1731.101562 1023.660156 1684.140625 1041.460938 1668.609375 1071.878906 C 1652.910156 1102.621094 1666 1151.070312 1645.839844 1178.769531 C 1625.578125 1206.601562 1575.421875 1209.050781 1551.140625 1233.328125 C 1526.859375 1257.621094 1524.410156 1307.769531 1496.578125 1328.03125 C 1468.878906 1348.191406 1420.429688 1335.109375 1389.691406 1350.800781 C 1359.269531 1366.328125 1341.460938 1413.289062 1308.53125 1423.988281 C 1276.171875 1434.5 1234.199219 1407.039062 1199.851562 1412.441406 C 1166.390625 1417.691406 1134.941406 1456.839844 1100 1456.839844 C 1065.058594 1456.839844 1033.609375 1417.691406 1000.148438 1412.441406 C 965.800781 1407.039062 923.832031 1434.5 891.472656 1423.988281 C 858.535156 1413.289062 840.730469 1366.328125 810.308594 1350.800781 C 779.570312 1335.109375 731.121094 1348.191406 703.421875 1328.03125 C 675.589844 1307.769531 673.144531 1257.621094 648.859375 1233.328125 C 624.574219 1209.050781 574.417969 1206.601562 554.164062 1178.769531 C 534.003906 1151.070312 547.085938 1102.621094 531.394531 1071.878906 C 515.863281 1041.460938 468.898438 1023.660156 458.203125 990.71875 C 447.695312 958.359375 475.152344 916.390625 469.757812 882.039062 C 464.5 848.578125 425.355469 817.128906 425.355469 782.191406 C 425.355469 747.261719 464.5 715.800781 469.757812 682.339844 C 475.152344 647.988281 447.695312 606.019531 458.203125 573.660156 C 468.898438 540.730469 515.863281 522.921875 531.394531 492.5 C 547.085938 461.761719 534.003906 413.320312 554.164062 385.609375 C 574.421875 357.78125 624.574219 355.339844 648.859375 331.050781 C 673.144531 306.769531 675.589844 256.609375 703.425781 236.359375 C 731.125 216.199219 779.570312 229.28125 810.308594 213.578125 C 840.730469 198.058594 858.535156 151.089844 891.472656 140.398438 C 923.832031 129.890625 965.800781 157.351562 1000.148438 151.949219 C 1033.609375 146.691406 1065.058594 107.550781 1100 107.550781 C 1134.941406 107.550781 1166.390625 146.691406 1199.851562 151.949219 C 1234.199219 157.351562 1276.171875 129.890625 1308.53125 140.398438 C 1341.460938 151.089844 1359.269531 198.058594 1389.691406 213.589844 C 1420.429688 229.28125 1468.878906 216.199219 1496.578125 236.359375 C 1524.410156 256.609375 1526.859375 306.769531 1551.140625 331.050781 C 1575.429688 355.339844 1625.578125 357.78125 1645.839844 385.621094 C 1666 413.320312 1652.910156 461.761719 1668.609375 492.5 C 1684.140625 522.921875 1731.101562 540.730469 1741.800781 573.660156 C 1752.300781 606.019531 1724.851562 647.988281 1730.238281 682.339844 C 1735.5 715.800781 1774.648438 747.261719 1774.648438 782.191406 Z M 1774.648438 782.191406 "/>
+</clipPath>
+<clipPath id="clip-8">
+<path clip-rule="nonzero" d="M 1774.648438 782.191406 C 1774.648438 817.128906 1735.5 848.578125 1730.238281 882.039062 C 1724.851562 916.390625 1752.300781 958.359375 1741.800781 990.71875 C 1731.101562 1023.660156 1684.140625 1041.460938 1668.609375 1071.878906 C 1652.910156 1102.621094 1666 1151.070312 1645.839844 1178.769531 C 1625.578125 1206.601562 1575.421875 1209.050781 1551.140625 1233.328125 C 1526.859375 1257.621094 1524.410156 1307.769531 1496.578125 1328.03125 C 1468.878906 1348.191406 1420.429688 1335.109375 1389.691406 1350.800781 C 1359.269531 1366.328125 1341.460938 1413.289062 1308.53125 1423.988281 C 1276.171875 1434.5 1234.199219 1407.039062 1199.851562 1412.441406 C 1166.390625 1417.691406 1134.941406 1456.839844 1100 1456.839844 C 1065.058594 1456.839844 1033.609375 1417.691406 1000.148438 1412.441406 C 965.800781 1407.039062 923.832031 1434.5 891.472656 1423.988281 C 858.535156 1413.289062 840.730469 1366.328125 810.308594 1350.800781 C 779.570312 1335.109375 731.121094 1348.191406 703.421875 1328.03125 C 675.589844 1307.769531 673.144531 1257.621094 648.859375 1233.328125 C 624.574219 1209.050781 574.417969 1206.601562 554.164062 1178.769531 C 534.003906 1151.070312 547.085938 1102.621094 531.394531 1071.878906 C 515.863281 1041.460938 468.898438 1023.660156 458.203125 990.71875 C 447.695312 958.359375 475.152344 916.390625 469.757812 882.039062 C 464.5 848.578125 425.355469 817.128906 425.355469 782.191406 C 425.355469 747.261719 464.5 715.800781 469.757812 682.339844 C 475.152344 647.988281 447.695312 606.019531 458.203125 573.660156 C 468.898438 540.730469 515.863281 522.921875 531.394531 492.5 C 547.085938 461.761719 534.003906 413.320312 554.164062 385.609375 C 574.421875 357.78125 624.574219 355.339844 648.859375 331.050781 C 673.144531 306.769531 675.589844 256.609375 703.425781 236.359375 C 731.125 216.199219 779.570312 229.28125 810.308594 213.578125 C 840.730469 198.058594 858.535156 151.089844 891.472656 140.398438 C 923.832031 129.890625 965.800781 157.351562 1000.148438 151.949219 C 1033.609375 146.691406 1065.058594 107.550781 1100 107.550781 C 1134.941406 107.550781 1166.390625 146.691406 1199.851562 151.949219 C 1234.199219 157.351562 1276.171875 129.890625 1308.53125 140.398438 C 1341.460938 151.089844 1359.269531 198.058594 1389.691406 213.589844 C 1420.429688 229.28125 1468.878906 216.199219 1496.578125 236.359375 C 1524.410156 256.609375 1526.859375 306.769531 1551.140625 331.050781 C 1575.429688 355.339844 1625.578125 357.78125 1645.839844 385.621094 C 1666 413.320312 1652.910156 461.761719 1668.609375 492.5 C 1684.140625 522.921875 1731.101562 540.730469 1741.800781 573.660156 C 1752.300781 606.019531 1724.851562 647.988281 1730.238281 682.339844 C 1735.5 715.800781 1774.648438 747.261719 1774.648438 782.191406 "/>
+</clipPath>
+<linearGradient id="linear-pattern-2" gradientUnits="userSpaceOnUse" x1="-0.214651" y1="0" x2="1.14513" y2="0" gradientTransform="matrix(940.031, 1039.54, -1039.54, 940.031, 662.662, 298.56)">
+<stop offset="0" stop-color="rgb(97.802734%, 68.910217%, 11.099243%)" stop-opacity="1"/>
+<stop offset="0.125" stop-color="rgb(97.802734%, 68.910217%, 11.099243%)" stop-opacity="1"/>
+<stop offset="0.15625" stop-color="rgb(97.802734%, 68.910217%, 11.099243%)" stop-opacity="1"/>
+<stop offset="0.164063" stop-color="rgb(97.795105%, 68.821716%, 11.108398%)" stop-opacity="1"/>
+<stop offset="0.171875" stop-color="rgb(97.775269%, 68.588257%, 11.102295%)" stop-opacity="1"/>
+<stop offset="0.175781" stop-color="rgb(97.744751%, 68.218994%, 11.003113%)" stop-opacity="1"/>
+<stop offset="0.179688" stop-color="rgb(97.72644%, 67.99469%, 10.922241%)" stop-opacity="1"/>
+<stop offset="0.1875" stop-color="rgb(97.715759%, 67.861938%, 10.916138%)" stop-opacity="1"/>
+<stop offset="0.195312" stop-color="rgb(97.694397%, 67.616272%, 10.922241%)" stop-opacity="1"/>
+<stop offset="0.203125" stop-color="rgb(97.676086%, 67.393494%, 10.948181%)" stop-opacity="1"/>
+<stop offset="0.207031" stop-color="rgb(97.650146%, 67.079163%, 11.068726%)" stop-opacity="1"/>
+<stop offset="0.210938" stop-color="rgb(97.633362%, 66.874695%, 11.177063%)" stop-opacity="1"/>
+<stop offset="0.214844" stop-color="rgb(97.616577%, 66.687012%, 11.270142%)" stop-opacity="1"/>
+<stop offset="0.21875" stop-color="rgb(97.601318%, 66.499329%, 11.360168%)" stop-opacity="1"/>
+<stop offset="0.226563" stop-color="rgb(97.592163%, 66.387939%, 11.372375%)" stop-opacity="1"/>
+<stop offset="0.230469" stop-color="rgb(97.566223%, 66.070557%, 11.407471%)" stop-opacity="1"/>
+<stop offset="0.234375" stop-color="rgb(97.549438%, 65.866089%, 11.428833%)" stop-opacity="1"/>
+<stop offset="0.238281" stop-color="rgb(97.529602%, 65.641785%, 11.418152%)" stop-opacity="1"/>
+<stop offset="0.242188" stop-color="rgb(97.511292%, 65.419006%, 11.407471%)" stop-opacity="1"/>
+<stop offset="0.246094" stop-color="rgb(97.492981%, 65.196228%, 11.328125%)" stop-opacity="1"/>
+<stop offset="0.25" stop-color="rgb(97.47467%, 64.97345%, 11.248779%)" stop-opacity="1"/>
+<stop offset="0.253906" stop-color="rgb(97.45636%, 64.749146%, 11.257935%)" stop-opacity="1"/>
+<stop offset="0.257813" stop-color="rgb(97.438049%, 64.526367%, 11.26709%)" stop-opacity="1"/>
+<stop offset="0.261719" stop-color="rgb(97.422791%, 64.341736%, 11.286926%)" stop-opacity="1"/>
+<stop offset="0.265625" stop-color="rgb(97.407532%, 64.155579%, 11.308289%)" stop-opacity="1"/>
+<stop offset="0.273438" stop-color="rgb(97.396851%, 64.044189%, 11.320496%)" stop-opacity="1"/>
+<stop offset="0.28125" stop-color="rgb(97.37854%, 63.819885%, 11.34491%)" stop-opacity="1"/>
+<stop offset="0.289062" stop-color="rgb(97.357178%, 63.557434%, 11.33728%)" stop-opacity="1"/>
+<stop offset="0.292969" stop-color="rgb(97.32666%, 63.183594%, 11.24115%)" stop-opacity="1"/>
+<stop offset="0.296875" stop-color="rgb(97.30835%, 62.962341%, 11.164856%)" stop-opacity="1"/>
+<stop offset="0.304688" stop-color="rgb(97.297668%, 62.835693%, 11.166382%)" stop-opacity="1"/>
+<stop offset="0.3125" stop-color="rgb(97.277832%, 62.59613%, 11.178589%)" stop-opacity="1"/>
+<stop offset="0.320312" stop-color="rgb(97.257996%, 62.373352%, 11.204529%)" stop-opacity="1"/>
+<stop offset="0.324219" stop-color="rgb(97.232056%, 62.051392%, 11.24115%)" stop-opacity="1"/>
+<stop offset="0.328125" stop-color="rgb(97.213745%, 61.842346%, 11.264038%)" stop-opacity="1"/>
+<stop offset="0.332031" stop-color="rgb(97.200012%, 61.662292%, 11.2854%)" stop-opacity="1"/>
+<stop offset="0.335938" stop-color="rgb(97.184753%, 61.480713%, 11.305237%)" stop-opacity="1"/>
+<stop offset="0.34375" stop-color="rgb(97.175598%, 61.369324%, 11.31897%)" stop-opacity="1"/>
+<stop offset="0.351562" stop-color="rgb(97.155762%, 61.14502%, 11.34491%)" stop-opacity="1"/>
+<stop offset="0.359375" stop-color="rgb(97.134399%, 60.877991%, 11.413574%)" stop-opacity="1"/>
+<stop offset="0.363281" stop-color="rgb(97.102356%, 60.496521%, 11.595154%)" stop-opacity="1"/>
+<stop offset="0.367188" stop-color="rgb(97.084045%, 60.270691%, 11.71875%)" stop-opacity="1"/>
+<stop offset="0.375" stop-color="rgb(97.073364%, 60.147095%, 11.743164%)" stop-opacity="1"/>
+<stop offset="0.382813" stop-color="rgb(97.050476%, 59.867859%, 11.784363%)" stop-opacity="1"/>
+<stop offset="0.386719" stop-color="rgb(97.018433%, 59.486389%, 11.827087%)" stop-opacity="1"/>
+<stop offset="0.390625" stop-color="rgb(97.000122%, 59.263611%, 11.851501%)" stop-opacity="1"/>
+<stop offset="0.398438" stop-color="rgb(96.989441%, 59.141541%, 11.865234%)" stop-opacity="1"/>
+<stop offset="0.40625" stop-color="rgb(96.966553%, 58.862305%, 11.856079%)" stop-opacity="1"/>
+<stop offset="0.410156" stop-color="rgb(96.934509%, 58.483887%, 11.759949%)" stop-opacity="1"/>
+<stop offset="0.414063" stop-color="rgb(96.916199%, 58.262634%, 11.688232%)" stop-opacity="1"/>
+<stop offset="0.421875" stop-color="rgb(96.907043%, 58.14209%, 11.694336%)" stop-opacity="1"/>
+<stop offset="0.429688" stop-color="rgb(96.887207%, 57.910156%, 11.712646%)" stop-opacity="1"/>
+<stop offset="0.4375" stop-color="rgb(96.868896%, 57.687378%, 11.738586%)" stop-opacity="1"/>
+<stop offset="0.441406" stop-color="rgb(96.841431%, 57.359314%, 11.775208%)" stop-opacity="1"/>
+<stop offset="0.445313" stop-color="rgb(96.82312%, 57.144165%, 11.801147%)" stop-opacity="1"/>
+<stop offset="0.449219" stop-color="rgb(96.809387%, 56.970215%, 11.820984%)" stop-opacity="1"/>
+<stop offset="0.453125" stop-color="rgb(96.794128%, 56.794739%, 11.84082%)" stop-opacity="1"/>
+<stop offset="0.460938" stop-color="rgb(96.784973%, 56.68335%, 11.853027%)" stop-opacity="1"/>
+<stop offset="0.46875" stop-color="rgb(96.766663%, 56.459045%, 11.878967%)" stop-opacity="1"/>
+<stop offset="0.476562" stop-color="rgb(96.743774%, 56.185913%, 11.953735%)" stop-opacity="1"/>
+<stop offset="0.480469" stop-color="rgb(96.710205%, 55.795288%, 12.133789%)" stop-opacity="1"/>
+<stop offset="0.484375" stop-color="rgb(96.691895%, 55.567932%, 12.254333%)" stop-opacity="1"/>
+<stop offset="0.492188" stop-color="rgb(96.682739%, 55.451965%, 12.271118%)" stop-opacity="1"/>
+<stop offset="0.5" stop-color="rgb(96.662903%, 55.221558%, 12.345886%)" stop-opacity="1"/>
+<stop offset="0.507812" stop-color="rgb(96.644592%, 54.992676%, 12.507629%)" stop-opacity="1"/>
+<stop offset="0.511719" stop-color="rgb(96.615601%, 54.656982%, 12.641907%)" stop-opacity="1"/>
+<stop offset="0.515625" stop-color="rgb(96.59729%, 54.437256%, 12.667847%)" stop-opacity="1"/>
+<stop offset="0.519531" stop-color="rgb(96.583557%, 54.269409%, 12.641907%)" stop-opacity="1"/>
+<stop offset="0.523438" stop-color="rgb(96.569824%, 54.098511%, 12.615967%)" stop-opacity="1"/>
+<stop offset="0.53125" stop-color="rgb(96.560669%, 53.990173%, 12.535095%)" stop-opacity="1"/>
+<stop offset="0.539062" stop-color="rgb(96.542358%, 53.770447%, 12.464905%)" stop-opacity="1"/>
+<stop offset="0.546875" stop-color="rgb(96.51947%, 53.495789%, 12.44812%)" stop-opacity="1"/>
+<stop offset="0.550781" stop-color="rgb(96.487427%, 53.111267%, 12.353516%)" stop-opacity="1"/>
+<stop offset="0.554688" stop-color="rgb(96.469116%, 52.891541%, 12.286377%)" stop-opacity="1"/>
+<stop offset="0.558594" stop-color="rgb(96.450806%, 52.668762%, 12.312317%)" stop-opacity="1"/>
+<stop offset="0.5625" stop-color="rgb(96.432495%, 52.444458%, 12.336731%)" stop-opacity="1"/>
+<stop offset="0.566406" stop-color="rgb(96.417236%, 52.279663%, 12.309265%)" stop-opacity="1"/>
+<stop offset="0.570313" stop-color="rgb(96.403503%, 52.111816%, 12.283325%)" stop-opacity="1"/>
+<stop offset="0.578125" stop-color="rgb(96.394348%, 52.005005%, 12.205505%)" stop-opacity="1"/>
+<stop offset="0.585938" stop-color="rgb(96.376038%, 51.780701%, 12.231445%)" stop-opacity="1"/>
+<stop offset="0.59375" stop-color="rgb(96.357727%, 51.551819%, 12.393188%)" stop-opacity="1"/>
+<stop offset="0.601563" stop-color="rgb(96.337891%, 51.324463%, 12.463379%)" stop-opacity="1"/>
+<stop offset="0.605469" stop-color="rgb(96.310425%, 50.98877%, 12.503052%)" stop-opacity="1"/>
+<stop offset="0.609375" stop-color="rgb(96.292114%, 50.765991%, 12.527466%)" stop-opacity="1"/>
+<stop offset="0.617188" stop-color="rgb(96.278381%, 50.598145%, 12.594604%)" stop-opacity="1"/>
+<stop offset="0.625" stop-color="rgb(96.253967%, 50.311279%, 12.759399%)" stop-opacity="1"/>
+<stop offset="0.628906" stop-color="rgb(96.226501%, 49.967957%, 12.886047%)" stop-opacity="1"/>
+<stop offset="0.632812" stop-color="rgb(96.206665%, 49.745178%, 12.910461%)" stop-opacity="1"/>
+<stop offset="0.640625" stop-color="rgb(96.194458%, 49.583435%, 12.88147%)" stop-opacity="1"/>
+<stop offset="0.648438" stop-color="rgb(96.17157%, 49.310303%, 12.779236%)" stop-opacity="1"/>
+<stop offset="0.652344" stop-color="rgb(96.142578%, 48.976135%, 12.731934%)" stop-opacity="1"/>
+<stop offset="0.65625" stop-color="rgb(96.124268%, 48.750305%, 12.757874%)" stop-opacity="1"/>
+<stop offset="0.664062" stop-color="rgb(96.110535%, 48.588562%, 12.776184%)" stop-opacity="1"/>
+<stop offset="0.671875" stop-color="rgb(96.087646%, 48.313904%, 12.806702%)" stop-opacity="1"/>
+<stop offset="0.679688" stop-color="rgb(96.069336%, 48.091125%, 12.832642%)" stop-opacity="1"/>
+<stop offset="0.6875" stop-color="rgb(96.051025%, 47.868347%, 12.858582%)" stop-opacity="1"/>
+<stop offset="0.695312" stop-color="rgb(96.032715%, 47.644043%, 12.889099%)" stop-opacity="1"/>
+<stop offset="0.703125" stop-color="rgb(96.012878%, 47.415161%, 13.006592%)" stop-opacity="1"/>
+<stop offset="0.707031" stop-color="rgb(95.988464%, 47.120667%, 13.165283%)" stop-opacity="1"/>
+<stop offset="0.710938" stop-color="rgb(95.974731%, 46.942139%, 13.221741%)" stop-opacity="1"/>
+<stop offset="0.714844" stop-color="rgb(95.956421%, 46.728516%, 13.252258%)" stop-opacity="1"/>
+<stop offset="0.71875" stop-color="rgb(95.93811%, 46.511841%, 13.282776%)" stop-opacity="1"/>
+<stop offset="0.726562" stop-color="rgb(95.928955%, 46.394348%, 13.381958%)" stop-opacity="1"/>
+<stop offset="0.734375" stop-color="rgb(95.909119%, 46.159363%, 13.578796%)" stop-opacity="1"/>
+<stop offset="0.742187" stop-color="rgb(95.889282%, 45.916748%, 13.775635%)" stop-opacity="1"/>
+<stop offset="0.746094" stop-color="rgb(95.860291%, 45.558167%, 13.98468%)" stop-opacity="1"/>
+<stop offset="0.75" stop-color="rgb(95.840454%, 45.329285%, 14.094543%)" stop-opacity="1"/>
+<stop offset="0.757813" stop-color="rgb(95.828247%, 45.169067%, 14.146423%)" stop-opacity="1"/>
+<stop offset="0.765625" stop-color="rgb(95.805359%, 44.897461%, 14.208984%)" stop-opacity="1"/>
+<stop offset="0.773438" stop-color="rgb(95.787048%, 44.673157%, 14.231873%)" stop-opacity="1"/>
+<stop offset="0.777344" stop-color="rgb(95.762634%, 44.381714%, 14.26239%)" stop-opacity="1"/>
+<stop offset="0.78125" stop-color="rgb(95.747375%, 44.20166%, 14.280701%)" stop-opacity="1"/>
+<stop offset="0.785156" stop-color="rgb(95.730591%, 43.991089%, 14.302063%)" stop-opacity="1"/>
+<stop offset="0.789062" stop-color="rgb(95.71228%, 43.777466%, 14.323425%)" stop-opacity="1"/>
+<stop offset="0.796875" stop-color="rgb(95.703125%, 43.666077%, 14.335632%)" stop-opacity="1"/>
+<stop offset="0.800781" stop-color="rgb(95.678711%, 43.373108%, 14.36615%)" stop-opacity="1"/>
+<stop offset="0.804688" stop-color="rgb(95.663452%, 43.191528%, 14.38446%)" stop-opacity="1"/>
+<stop offset="0.808594" stop-color="rgb(95.646667%, 42.982483%, 14.395142%)" stop-opacity="1"/>
+<stop offset="0.8125" stop-color="rgb(95.628357%, 42.773438%, 14.407349%)" stop-opacity="1"/>
+<stop offset="0.820312" stop-color="rgb(95.619202%, 42.666626%, 14.335632%)" stop-opacity="1"/>
+<stop offset="0.828125" stop-color="rgb(95.600891%, 42.451477%, 14.24408%)" stop-opacity="1"/>
+<stop offset="0.835938" stop-color="rgb(95.582581%, 42.230225%, 14.237976%)" stop-opacity="1"/>
+<stop offset="0.84375" stop-color="rgb(95.56427%, 42.00592%, 14.260864%)" stop-opacity="1"/>
+<stop offset="0.847656" stop-color="rgb(95.539856%, 41.711426%, 14.292908%)" stop-opacity="1"/>
+<stop offset="0.851562" stop-color="rgb(95.524597%, 41.526794%, 14.311218%)" stop-opacity="1"/>
+<stop offset="0.855469" stop-color="rgb(95.507812%, 41.319275%, 14.344788%)" stop-opacity="1"/>
+<stop offset="0.859375" stop-color="rgb(95.489502%, 41.110229%, 14.378357%)" stop-opacity="1"/>
+<stop offset="0.867188" stop-color="rgb(95.480347%, 40.991211%, 14.471436%)" stop-opacity="1"/>
+<stop offset="0.875" stop-color="rgb(95.46051%, 40.757751%, 14.605713%)" stop-opacity="1"/>
+<stop offset="0.882812" stop-color="rgb(95.426941%, 40.530396%, 14.672852%)" stop-opacity="1"/>
+<stop offset="0.890625" stop-color="rgb(95.283508%, 40.292358%, 14.811707%)" stop-opacity="1"/>
+<stop offset="0.90625" stop-color="rgb(95.126343%, 40.127563%, 14.961243%)" stop-opacity="1"/>
+<stop offset="0.9375" stop-color="rgb(95.08667%, 40.086365%, 14.99939%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(95.08667%, 40.086365%, 14.99939%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-9">
+<path clip-rule="nonzero" d="M 588 270 L 1612 270 L 1612 1294 L 588 1294 Z M 588 270 "/>
+</clipPath>
+<clipPath id="clip-10">
+<path clip-rule="nonzero" d="M 1611.511719 782.191406 C 1611.511719 1064.691406 1382.5 1293.710938 1100 1293.710938 C 817.5 1293.710938 588.484375 1064.691406 588.484375 782.191406 C 588.484375 499.691406 817.5 270.679688 1100 270.679688 C 1382.5 270.679688 1611.511719 499.691406 1611.511719 782.191406 Z M 1611.511719 782.191406 "/>
+</clipPath>
+<clipPath id="clip-11">
+<path clip-rule="nonzero" d="M 1611.511719 782.191406 C 1611.511719 1064.691406 1382.5 1293.710938 1100 1293.710938 C 817.5 1293.710938 588.484375 1064.691406 588.484375 782.191406 C 588.484375 499.691406 817.5 270.679688 1100 270.679688 C 1382.5 270.679688 1611.511719 499.691406 1611.511719 782.191406 "/>
+</clipPath>
+<linearGradient id="linear-pattern-3" gradientUnits="userSpaceOnUse" x1="-0.211081" y1="0" x2="1.141555" y2="0" gradientTransform="matrix(716.492, 792.337, -792.337, 716.492, 766.66, 413.57)">
+<stop offset="0" stop-color="rgb(85.870361%, 11.904907%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.125" stop-color="rgb(85.870361%, 11.904907%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.15625" stop-color="rgb(85.86731%, 11.904907%, 21.032715%)" stop-opacity="1"/>
+<stop offset="0.164062" stop-color="rgb(85.772705%, 11.91864%, 21.04187%)" stop-opacity="1"/>
+<stop offset="0.171875" stop-color="rgb(85.583496%, 11.940002%, 21.090698%)" stop-opacity="1"/>
+<stop offset="0.179688" stop-color="rgb(85.394287%, 11.947632%, 21.191406%)" stop-opacity="1"/>
+<stop offset="0.1875" stop-color="rgb(85.202026%, 11.920166%, 21.278381%)" stop-opacity="1"/>
+<stop offset="0.195312" stop-color="rgb(85.00824%, 11.878967%, 21.348572%)" stop-opacity="1"/>
+<stop offset="0.203125" stop-color="rgb(84.817505%, 11.868286%, 21.455383%)" stop-opacity="1"/>
+<stop offset="0.210937" stop-color="rgb(84.629822%, 11.883545%, 21.5271%)" stop-opacity="1"/>
+<stop offset="0.21875" stop-color="rgb(84.442139%, 11.904907%, 21.572876%)" stop-opacity="1"/>
+<stop offset="0.226562" stop-color="rgb(84.25293%, 11.911011%, 21.673584%)" stop-opacity="1"/>
+<stop offset="0.234375" stop-color="rgb(84.056091%, 11.776733%, 21.762085%)" stop-opacity="1"/>
+<stop offset="0.242187" stop-color="rgb(83.856201%, 11.579895%, 21.832275%)" stop-opacity="1"/>
+<stop offset="0.25" stop-color="rgb(83.66394%, 11.517334%, 21.937561%)" stop-opacity="1"/>
+<stop offset="0.257812" stop-color="rgb(83.570862%, 11.506653%, 22.052002%)" stop-opacity="1"/>
+<stop offset="0.265625" stop-color="rgb(83.522034%, 11.488342%, 22.161865%)" stop-opacity="1"/>
+<stop offset="0.273437" stop-color="rgb(83.380127%, 11.485291%, 22.280884%)" stop-opacity="1"/>
+<stop offset="0.28125" stop-color="rgb(83.184814%, 11.354065%, 22.367859%)" stop-opacity="1"/>
+<stop offset="0.289062" stop-color="rgb(82.984924%, 11.155701%, 22.431946%)" stop-opacity="1"/>
+<stop offset="0.296875" stop-color="rgb(82.794189%, 11.09314%, 22.535706%)" stop-opacity="1"/>
+<stop offset="0.300781" stop-color="rgb(82.606506%, 11.083984%, 22.709656%)" stop-opacity="1"/>
+<stop offset="0.304687" stop-color="rgb(82.511902%, 11.074829%, 22.822571%)" stop-opacity="1"/>
+<stop offset="0.308594" stop-color="rgb(82.463074%, 11.064148%, 22.906494%)" stop-opacity="1"/>
+<stop offset="0.3125" stop-color="rgb(82.415771%, 11.051941%, 22.988892%)" stop-opacity="1"/>
+<stop offset="0.320312" stop-color="rgb(82.414246%, 11.039734%, 23.040771%)" stop-opacity="1"/>
+<stop offset="0.328125" stop-color="rgb(82.226562%, 11.01532%, 23.123169%)" stop-opacity="1"/>
+<stop offset="0.335937" stop-color="rgb(81.898499%, 10.998535%, 23.197937%)" stop-opacity="1"/>
+<stop offset="0.34375" stop-color="rgb(81.663513%, 10.995483%, 23.304749%)" stop-opacity="1"/>
+<stop offset="0.347656" stop-color="rgb(81.567383%, 10.974121%, 23.468018%)" stop-opacity="1"/>
+<stop offset="0.351562" stop-color="rgb(81.564331%, 10.949707%, 23.571777%)" stop-opacity="1"/>
+<stop offset="0.359375" stop-color="rgb(81.472778%, 10.9375%, 23.612976%)" stop-opacity="1"/>
+<stop offset="0.367187" stop-color="rgb(81.193542%, 10.925293%, 23.631287%)" stop-opacity="1"/>
+<stop offset="0.375" stop-color="rgb(80.912781%, 10.928345%, 23.667908%)" stop-opacity="1"/>
+<stop offset="0.390625" stop-color="rgb(80.632019%, 10.910034%, 23.710632%)" stop-opacity="1"/>
+<stop offset="0.398437" stop-color="rgb(80.352783%, 10.891724%, 23.753357%)" stop-opacity="1"/>
+<stop offset="0.40625" stop-color="rgb(80.122375%, 10.896301%, 23.832703%)" stop-opacity="1"/>
+<stop offset="0.414062" stop-color="rgb(79.801941%, 10.897827%, 23.828125%)" stop-opacity="1"/>
+<stop offset="0.421875" stop-color="rgb(79.521179%, 10.899353%, 23.86322%)" stop-opacity="1"/>
+<stop offset="0.429687" stop-color="rgb(79.333496%, 10.891724%, 23.960876%)" stop-opacity="1"/>
+<stop offset="0.4375" stop-color="rgb(79.147339%, 10.853577%, 24.020386%)" stop-opacity="1"/>
+<stop offset="0.445312" stop-color="rgb(78.961182%, 10.830688%, 24.09668%)" stop-opacity="1"/>
+<stop offset="0.453125" stop-color="rgb(78.775024%, 10.821533%, 24.194336%)" stop-opacity="1"/>
+<stop offset="0.460937" stop-color="rgb(78.590393%, 10.783386%, 24.250793%)" stop-opacity="1"/>
+<stop offset="0.46875" stop-color="rgb(78.404236%, 10.760498%, 24.325562%)" stop-opacity="1"/>
+<stop offset="0.476562" stop-color="rgb(78.17688%, 10.752869%, 24.450684%)" stop-opacity="1"/>
+<stop offset="0.480469" stop-color="rgb(77.857971%, 10.720825%, 24.594116%)" stop-opacity="1"/>
+<stop offset="0.484375" stop-color="rgb(77.671814%, 10.697937%, 24.668884%)" stop-opacity="1"/>
+<stop offset="0.488281" stop-color="rgb(77.664185%, 10.675049%, 24.768066%)" stop-opacity="1"/>
+<stop offset="0.492187" stop-color="rgb(77.655029%, 10.652161%, 24.867249%)" stop-opacity="1"/>
+<stop offset="0.496094" stop-color="rgb(77.571106%, 10.63385%, 24.932861%)" stop-opacity="1"/>
+<stop offset="0.5" stop-color="rgb(77.484131%, 10.617065%, 24.996948%)" stop-opacity="1"/>
+<stop offset="0.507812" stop-color="rgb(77.302551%, 10.604858%, 25.022888%)" stop-opacity="1"/>
+<stop offset="0.515625" stop-color="rgb(77.110291%, 10.583496%, 25.09613%)" stop-opacity="1"/>
+<stop offset="0.523438" stop-color="rgb(77.058411%, 10.552979%, 25.178528%)" stop-opacity="1"/>
+<stop offset="0.53125" stop-color="rgb(76.924133%, 10.510254%, 25.227356%)" stop-opacity="1"/>
+<stop offset="0.539062" stop-color="rgb(76.737976%, 10.400391%, 25.244141%)" stop-opacity="1"/>
+<stop offset="0.546875" stop-color="rgb(76.551819%, 10.258484%, 25.253296%)" stop-opacity="1"/>
+<stop offset="0.554687" stop-color="rgb(76.367188%, 10.176086%, 25.276184%)" stop-opacity="1"/>
+<stop offset="0.558594" stop-color="rgb(76.184082%, 10.142517%, 25.392151%)" stop-opacity="1"/>
+<stop offset="0.5625" stop-color="rgb(76.092529%, 10.133362%, 25.494385%)" stop-opacity="1"/>
+<stop offset="0.566406" stop-color="rgb(75.999451%, 10.072327%, 25.55542%)" stop-opacity="1"/>
+<stop offset="0.570312" stop-color="rgb(75.906372%, 10.011292%, 25.616455%)" stop-opacity="1"/>
+<stop offset="0.578125" stop-color="rgb(75.811768%, 9.886169%, 25.622559%)" stop-opacity="1"/>
+<stop offset="0.582031" stop-color="rgb(75.71106%, 9.733582%, 25.720215%)" stop-opacity="1"/>
+<stop offset="0.585938" stop-color="rgb(75.70343%, 9.706116%, 25.813293%)" stop-opacity="1"/>
+<stop offset="0.589844" stop-color="rgb(75.622559%, 9.689331%, 25.87738%)" stop-opacity="1"/>
+<stop offset="0.59375" stop-color="rgb(75.540161%, 9.672546%, 25.939941%)" stop-opacity="1"/>
+<stop offset="0.601562" stop-color="rgb(75.360107%, 9.663391%, 25.961304%)" stop-opacity="1"/>
+<stop offset="0.605469" stop-color="rgb(75.079346%, 9.552002%, 26.072693%)" stop-opacity="1"/>
+<stop offset="0.609375" stop-color="rgb(74.980164%, 9.449768%, 26.164246%)" stop-opacity="1"/>
+<stop offset="0.613281" stop-color="rgb(74.888611%, 9.381104%, 26.222229%)" stop-opacity="1"/>
+<stop offset="0.617187" stop-color="rgb(74.795532%, 9.312439%, 26.280212%)" stop-opacity="1"/>
+<stop offset="0.625" stop-color="rgb(74.705505%, 9.288025%, 26.292419%)" stop-opacity="1"/>
+<stop offset="0.632812" stop-color="rgb(74.523926%, 9.265137%, 26.35498%)" stop-opacity="1"/>
+<stop offset="0.640625" stop-color="rgb(74.343872%, 9.255981%, 26.46637%)" stop-opacity="1"/>
+<stop offset="0.644531" stop-color="rgb(74.162292%, 9.207153%, 26.580811%)" stop-opacity="1"/>
+<stop offset="0.648437" stop-color="rgb(74.069214%, 9.172058%, 26.638794%)" stop-opacity="1"/>
+<stop offset="0.65625" stop-color="rgb(73.979187%, 9.147644%, 26.652527%)" stop-opacity="1"/>
+<stop offset="0.664062" stop-color="rgb(73.797607%, 9.068298%, 26.690674%)" stop-opacity="1"/>
+<stop offset="0.671875" stop-color="rgb(73.616028%, 8.920288%, 26.759338%)" stop-opacity="1"/>
+<stop offset="0.675781" stop-color="rgb(73.434448%, 8.879089%, 26.869202%)" stop-opacity="1"/>
+<stop offset="0.679687" stop-color="rgb(73.345947%, 8.930969%, 26.934814%)" stop-opacity="1"/>
+<stop offset="0.683594" stop-color="rgb(73.25592%, 8.956909%, 26.977539%)" stop-opacity="1"/>
+<stop offset="0.6875" stop-color="rgb(73.165894%, 8.982849%, 27.018738%)" stop-opacity="1"/>
+<stop offset="0.695312" stop-color="rgb(73.075867%, 8.959961%, 27.027893%)" stop-opacity="1"/>
+<stop offset="0.703125" stop-color="rgb(72.897339%, 8.938599%, 27.087402%)" stop-opacity="1"/>
+<stop offset="0.710938" stop-color="rgb(72.718811%, 8.934021%, 27.172852%)" stop-opacity="1"/>
+<stop offset="0.71875" stop-color="rgb(72.540283%, 8.901978%, 27.215576%)" stop-opacity="1"/>
+<stop offset="0.722656" stop-color="rgb(72.279358%, 8.859253%, 27.281189%)" stop-opacity="1"/>
+<stop offset="0.726562" stop-color="rgb(72.106934%, 8.840942%, 27.339172%)" stop-opacity="1"/>
+<stop offset="0.730469" stop-color="rgb(71.968079%, 8.81958%, 27.377319%)" stop-opacity="1"/>
+<stop offset="0.734375" stop-color="rgb(71.826172%, 8.799744%, 27.415466%)" stop-opacity="1"/>
+<stop offset="0.742187" stop-color="rgb(71.737671%, 8.77533%, 27.42157%)" stop-opacity="1"/>
+<stop offset="0.746094" stop-color="rgb(71.559143%, 8.744812%, 27.520752%)" stop-opacity="1"/>
+<stop offset="0.75" stop-color="rgb(71.469116%, 8.737183%, 27.613831%)" stop-opacity="1"/>
+<stop offset="0.753906" stop-color="rgb(71.380615%, 8.724976%, 27.674866%)" stop-opacity="1"/>
+<stop offset="0.757812" stop-color="rgb(71.290588%, 8.711243%, 27.735901%)" stop-opacity="1"/>
+<stop offset="0.765625" stop-color="rgb(71.202087%, 8.688354%, 27.742004%)" stop-opacity="1"/>
+<stop offset="0.769531" stop-color="rgb(70.944214%, 8.647156%, 27.801514%)" stop-opacity="1"/>
+<stop offset="0.773437" stop-color="rgb(70.773315%, 8.627319%, 27.856445%)" stop-opacity="1"/>
+<stop offset="0.777344" stop-color="rgb(70.632935%, 8.607483%, 27.893066%)" stop-opacity="1"/>
+<stop offset="0.78125" stop-color="rgb(70.492554%, 8.587646%, 27.928162%)" stop-opacity="1"/>
+<stop offset="0.789062" stop-color="rgb(70.405579%, 8.564758%, 27.934265%)" stop-opacity="1"/>
+<stop offset="0.792969" stop-color="rgb(70.147705%, 8.52356%, 27.990723%)" stop-opacity="1"/>
+<stop offset="0.796875" stop-color="rgb(69.979858%, 8.505249%, 28.044128%)" stop-opacity="1"/>
+<stop offset="0.800781" stop-color="rgb(69.876099%, 8.48999%, 28.096008%)" stop-opacity="1"/>
+<stop offset="0.804687" stop-color="rgb(69.770813%, 8.476257%, 28.147888%)" stop-opacity="1"/>
+<stop offset="0.8125" stop-color="rgb(69.770813%, 8.465576%, 28.193665%)" stop-opacity="1"/>
+<stop offset="0.820312" stop-color="rgb(69.612122%, 8.447266%, 28.253174%)" stop-opacity="1"/>
+<stop offset="0.828125" stop-color="rgb(69.314575%, 8.425903%, 28.274536%)" stop-opacity="1"/>
+<stop offset="0.835938" stop-color="rgb(69.087219%, 8.389282%, 28.285217%)" stop-opacity="1"/>
+<stop offset="0.839844" stop-color="rgb(68.833923%, 8.433533%, 28.35083%)" stop-opacity="1"/>
+<stop offset="0.84375" stop-color="rgb(68.669128%, 8.500671%, 28.414917%)" stop-opacity="1"/>
+<stop offset="0.847656" stop-color="rgb(68.565369%, 8.538818%, 28.492737%)" stop-opacity="1"/>
+<stop offset="0.851562" stop-color="rgb(68.461609%, 8.575439%, 28.572083%)" stop-opacity="1"/>
+<stop offset="0.855469" stop-color="rgb(68.458557%, 8.555603%, 28.662109%)" stop-opacity="1"/>
+<stop offset="0.859375" stop-color="rgb(68.457031%, 8.535767%, 28.752136%)" stop-opacity="1"/>
+<stop offset="0.867187" stop-color="rgb(68.301392%, 8.526611%, 28.768921%)" stop-opacity="1"/>
+<stop offset="0.875" stop-color="rgb(68.006897%, 8.500671%, 28.81012%)" stop-opacity="1"/>
+<stop offset="0.878906" stop-color="rgb(67.779541%, 8.450317%, 28.878784%)" stop-opacity="1"/>
+<stop offset="0.882812" stop-color="rgb(67.69104%, 8.418274%, 28.924561%)" stop-opacity="1"/>
+<stop offset="0.886719" stop-color="rgb(67.602539%, 8.384705%, 28.971863%)" stop-opacity="1"/>
+<stop offset="0.890625" stop-color="rgb(67.514038%, 8.352661%, 29.016113%)" stop-opacity="1"/>
+<stop offset="0.90625" stop-color="rgb(67.459106%, 8.332825%, 29.043579%)" stop-opacity="1"/>
+<stop offset="0.9375" stop-color="rgb(67.405701%, 8.312988%, 29.071045%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(67.405701%, 8.312988%, 29.071045%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-12">
+<path clip-rule="nonzero" d="M 704 386 L 1496 386 L 1496 1179 L 704 1179 Z M 704 386 "/>
+</clipPath>
+<clipPath id="clip-13">
+<path clip-rule="nonzero" d="M 1495.898438 782.191406 C 1495.898438 1000.839844 1318.648438 1178.089844 1100 1178.089844 C 881.351562 1178.089844 704.097656 1000.839844 704.097656 782.191406 C 704.097656 563.539062 881.351562 386.289062 1100 386.289062 C 1318.648438 386.289062 1495.898438 563.539062 1495.898438 782.191406 Z M 1495.898438 782.191406 "/>
+</clipPath>
+<clipPath id="clip-14">
+<path clip-rule="nonzero" d="M 1495.898438 782.191406 C 1495.898438 1000.839844 1318.648438 1178.089844 1100 1178.089844 C 881.351562 1178.089844 704.097656 1000.839844 704.097656 782.191406 C 704.097656 563.539062 881.351562 386.289062 1100 386.289062 C 1318.648438 386.289062 1495.898438 563.539062 1495.898438 782.191406 "/>
+</clipPath>
+<linearGradient id="linear-pattern-4" gradientUnits="userSpaceOnUse" x1="-0.211078" y1="0" x2="1.141556" y2="0" gradientTransform="matrix(554.55, 613.253, -613.253, 554.55, 842.002, 496.88)">
+<stop offset="0" stop-color="rgb(54.429626%, 8.892822%, 14.935303%)" stop-opacity="1"/>
+<stop offset="0.125" stop-color="rgb(54.429626%, 8.892822%, 14.935303%)" stop-opacity="1"/>
+<stop offset="0.15625" stop-color="rgb(54.429626%, 8.892822%, 14.935303%)" stop-opacity="1"/>
+<stop offset="0.164062" stop-color="rgb(54.428101%, 8.886719%, 14.964294%)" stop-opacity="1"/>
+<stop offset="0.171875" stop-color="rgb(54.426575%, 8.872986%, 15.029907%)" stop-opacity="1"/>
+<stop offset="0.179688" stop-color="rgb(54.425049%, 8.857727%, 15.101624%)" stop-opacity="1"/>
+<stop offset="0.1875" stop-color="rgb(54.423523%, 8.840942%, 15.17334%)" stop-opacity="1"/>
+<stop offset="0.195313" stop-color="rgb(54.396057%, 8.821106%, 15.237427%)" stop-opacity="1"/>
+<stop offset="0.203125" stop-color="rgb(54.284668%, 8.782959%, 15.270996%)" stop-opacity="1"/>
+<stop offset="0.207031" stop-color="rgb(54.18396%, 8.74176%, 15.339661%)" stop-opacity="1"/>
+<stop offset="0.210938" stop-color="rgb(54.167175%, 8.724976%, 15.39917%)" stop-opacity="1"/>
+<stop offset="0.214844" stop-color="rgb(54.165649%, 8.711243%, 15.460205%)" stop-opacity="1"/>
+<stop offset="0.21875" stop-color="rgb(54.164124%, 8.699036%, 15.519714%)" stop-opacity="1"/>
+<stop offset="0.226562" stop-color="rgb(54.164124%, 8.691406%, 15.556335%)" stop-opacity="1"/>
+<stop offset="0.230469" stop-color="rgb(54.092407%, 8.654785%, 15.632629%)" stop-opacity="1"/>
+<stop offset="0.234375" stop-color="rgb(54.022217%, 8.627319%, 15.673828%)" stop-opacity="1"/>
+<stop offset="0.238281" stop-color="rgb(53.965759%, 8.602905%, 15.715027%)" stop-opacity="1"/>
+<stop offset="0.242188" stop-color="rgb(53.907776%, 8.580017%, 15.7547%)" stop-opacity="1"/>
+<stop offset="0.25" stop-color="rgb(53.907776%, 8.572388%, 15.789795%)" stop-opacity="1"/>
+<stop offset="0.257812" stop-color="rgb(53.90625%, 8.557129%, 15.861511%)" stop-opacity="1"/>
+<stop offset="0.265625" stop-color="rgb(53.88031%, 8.54187%, 15.94696%)" stop-opacity="1"/>
+<stop offset="0.269531" stop-color="rgb(53.782654%, 8.529663%, 16.075134%)" stop-opacity="1"/>
+<stop offset="0.273438" stop-color="rgb(53.710938%, 8.525085%, 16.152954%)" stop-opacity="1"/>
+<stop offset="0.28125" stop-color="rgb(53.62854%, 8.505249%, 16.169739%)" stop-opacity="1"/>
+<stop offset="0.289062" stop-color="rgb(53.491211%, 8.465576%, 16.201782%)" stop-opacity="1"/>
+<stop offset="0.296875" stop-color="rgb(53.434753%, 8.439636%, 16.252136%)" stop-opacity="1"/>
+<stop offset="0.3125" stop-color="rgb(53.404236%, 8.422852%, 16.294861%)" stop-opacity="1"/>
+<stop offset="0.320312" stop-color="rgb(53.291321%, 8.389282%, 16.307068%)" stop-opacity="1"/>
+<stop offset="0.324219" stop-color="rgb(53.19519%, 8.349609%, 16.372681%)" stop-opacity="1"/>
+<stop offset="0.328125" stop-color="rgb(53.179932%, 8.332825%, 16.43219%)" stop-opacity="1"/>
+<stop offset="0.332031" stop-color="rgb(53.179932%, 8.320618%, 16.490173%)" stop-opacity="1"/>
+<stop offset="0.335938" stop-color="rgb(53.178406%, 8.308411%, 16.548157%)" stop-opacity="1"/>
+<stop offset="0.34375" stop-color="rgb(53.17688%, 8.300781%, 16.584778%)" stop-opacity="1"/>
+<stop offset="0.351562" stop-color="rgb(53.105164%, 8.27179%, 16.627502%)" stop-opacity="1"/>
+<stop offset="0.359375" stop-color="rgb(52.978516%, 8.232117%, 16.650391%)" stop-opacity="1"/>
+<stop offset="0.367188" stop-color="rgb(52.92511%, 8.207703%, 16.700745%)" stop-opacity="1"/>
+<stop offset="0.375" stop-color="rgb(52.923584%, 8.192444%, 16.770935%)" stop-opacity="1"/>
+<stop offset="0.382812" stop-color="rgb(52.922058%, 8.177185%, 16.841125%)" stop-opacity="1"/>
+<stop offset="0.390625" stop-color="rgb(52.919006%, 8.161926%, 16.911316%)" stop-opacity="1"/>
+<stop offset="0.398438" stop-color="rgb(52.786255%, 8.148193%, 16.928101%)" stop-opacity="1"/>
+<stop offset="0.40625" stop-color="rgb(52.557373%, 8.137512%, 16.906738%)" stop-opacity="1"/>
+<stop offset="0.414063" stop-color="rgb(52.459717%, 8.123779%, 16.937256%)" stop-opacity="1"/>
+<stop offset="0.421875" stop-color="rgb(52.458191%, 8.108521%, 17.007446%)" stop-opacity="1"/>
+<stop offset="0.429688" stop-color="rgb(52.426147%, 8.085632%, 17.077637%)" stop-opacity="1"/>
+<stop offset="0.433594" stop-color="rgb(52.308655%, 8.03833%, 17.150879%)" stop-opacity="1"/>
+<stop offset="0.4375" stop-color="rgb(52.224731%, 8.007812%, 17.185974%)" stop-opacity="1"/>
+<stop offset="0.445312" stop-color="rgb(52.21405%, 7.997131%, 17.221069%)" stop-opacity="1"/>
+<stop offset="0.453125" stop-color="rgb(52.203369%, 7.980347%, 17.29126%)" stop-opacity="1"/>
+<stop offset="0.460938" stop-color="rgb(52.201843%, 7.965088%, 17.359924%)" stop-opacity="1"/>
+<stop offset="0.464844" stop-color="rgb(52.125549%, 7.929993%, 17.430115%)" stop-opacity="1"/>
+<stop offset="0.46875" stop-color="rgb(52.050781%, 7.902527%, 17.46521%)" stop-opacity="1"/>
+<stop offset="0.472656" stop-color="rgb(51.972961%, 7.884216%, 17.501831%)" stop-opacity="1"/>
+<stop offset="0.476562" stop-color="rgb(51.893616%, 7.867432%, 17.539978%)" stop-opacity="1"/>
+<stop offset="0.484375" stop-color="rgb(51.823425%, 7.872009%, 17.579651%)" stop-opacity="1"/>
+<stop offset="0.492188" stop-color="rgb(51.745605%, 7.868958%, 17.655945%)" stop-opacity="1"/>
+<stop offset="0.5" stop-color="rgb(51.704407%, 7.846069%, 17.724609%)" stop-opacity="1"/>
+<stop offset="0.503906" stop-color="rgb(51.586914%, 7.798767%, 17.793274%)" stop-opacity="1"/>
+<stop offset="0.507812" stop-color="rgb(51.502991%, 7.769775%, 17.826843%)" stop-opacity="1"/>
+<stop offset="0.515625" stop-color="rgb(51.493835%, 7.759094%, 17.861938%)" stop-opacity="1"/>
+<stop offset="0.523438" stop-color="rgb(51.48468%, 7.74231%, 17.930603%)" stop-opacity="1"/>
+<stop offset="0.53125" stop-color="rgb(51.481628%, 7.728577%, 17.997742%)" stop-opacity="1"/>
+<stop offset="0.539062" stop-color="rgb(51.480103%, 7.713318%, 18.066406%)" stop-opacity="1"/>
+<stop offset="0.546875" stop-color="rgb(51.446533%, 7.695007%, 18.107605%)" stop-opacity="1"/>
+<stop offset="0.5625" stop-color="rgb(51.25885%, 7.672119%, 18.110657%)" stop-opacity="1"/>
+<stop offset="0.570312" stop-color="rgb(51.065063%, 7.655334%, 18.159485%)" stop-opacity="1"/>
+<stop offset="0.574219" stop-color="rgb(51.022339%, 7.637024%, 18.280029%)" stop-opacity="1"/>
+<stop offset="0.578125" stop-color="rgb(51.020813%, 7.621765%, 18.347168%)" stop-opacity="1"/>
+<stop offset="0.585938" stop-color="rgb(50.944519%, 7.600403%, 18.351746%)" stop-opacity="1"/>
+<stop offset="0.59375" stop-color="rgb(50.820923%, 7.562256%, 18.367004%)" stop-opacity="1"/>
+<stop offset="0.601562" stop-color="rgb(50.772095%, 7.539368%, 18.414307%)" stop-opacity="1"/>
+<stop offset="0.609375" stop-color="rgb(50.770569%, 7.524109%, 18.481445%)" stop-opacity="1"/>
+<stop offset="0.617188" stop-color="rgb(50.733948%, 7.504272%, 18.533325%)" stop-opacity="1"/>
+<stop offset="0.625" stop-color="rgb(50.616455%, 7.467651%, 18.548584%)" stop-opacity="1"/>
+<stop offset="0.628906" stop-color="rgb(50.526428%, 7.43103%, 18.608093%)" stop-opacity="1"/>
+<stop offset="0.632812" stop-color="rgb(50.518799%, 7.415771%, 18.670654%)" stop-opacity="1"/>
+<stop offset="0.636719" stop-color="rgb(50.517273%, 7.40509%, 18.722534%)" stop-opacity="1"/>
+<stop offset="0.640625" stop-color="rgb(50.517273%, 7.392883%, 18.77594%)" stop-opacity="1"/>
+<stop offset="0.648438" stop-color="rgb(50.515747%, 7.38678%, 18.809509%)" stop-opacity="1"/>
+<stop offset="0.652344" stop-color="rgb(50.450134%, 7.376099%, 18.913269%)" stop-opacity="1"/>
+<stop offset="0.65625" stop-color="rgb(50.384521%, 7.371521%, 18.983459%)" stop-opacity="1"/>
+<stop offset="0.660156" stop-color="rgb(50.308228%, 7.36084%, 19.023132%)" stop-opacity="1"/>
+<stop offset="0.664062" stop-color="rgb(50.233459%, 7.348633%, 19.061279%)" stop-opacity="1"/>
+<stop offset="0.671875" stop-color="rgb(50.151062%, 7.327271%, 19.056702%)" stop-opacity="1"/>
+<stop offset="0.679688" stop-color="rgb(50.064087%, 7.298279%, 19.082642%)" stop-opacity="1"/>
+<stop offset="0.6875" stop-color="rgb(50.057983%, 7.28302%, 19.148254%)" stop-opacity="1"/>
+<stop offset="0.695312" stop-color="rgb(50.056458%, 7.267761%, 19.215393%)" stop-opacity="1"/>
+<stop offset="0.699219" stop-color="rgb(49.977112%, 7.234192%, 19.276428%)" stop-opacity="1"/>
+<stop offset="0.703125" stop-color="rgb(49.897766%, 7.2052%, 19.30542%)" stop-opacity="1"/>
+<stop offset="0.707031" stop-color="rgb(49.85199%, 7.18689%, 19.334412%)" stop-opacity="1"/>
+<stop offset="0.710938" stop-color="rgb(49.806213%, 7.168579%, 19.364929%)" stop-opacity="1"/>
+<stop offset="0.71875" stop-color="rgb(49.806213%, 7.16095%, 19.398499%)" stop-opacity="1"/>
+<stop offset="0.726562" stop-color="rgb(49.804688%, 7.147217%, 19.464111%)" stop-opacity="1"/>
+<stop offset="0.734375" stop-color="rgb(49.765015%, 7.122803%, 19.528198%)" stop-opacity="1"/>
+<stop offset="0.738281" stop-color="rgb(49.64447%, 7.077026%, 19.584656%)" stop-opacity="1"/>
+<stop offset="0.742188" stop-color="rgb(49.560547%, 7.048035%, 19.612122%)" stop-opacity="1"/>
+<stop offset="0.75" stop-color="rgb(49.493408%, 7.051086%, 19.648743%)" stop-opacity="1"/>
+<stop offset="0.757812" stop-color="rgb(49.386597%, 7.054138%, 19.723511%)" stop-opacity="1"/>
+<stop offset="0.765625" stop-color="rgb(49.34845%, 7.044983%, 19.792175%)" stop-opacity="1"/>
+<stop offset="0.773438" stop-color="rgb(49.346924%, 7.03125%, 19.857788%)" stop-opacity="1"/>
+<stop offset="0.78125" stop-color="rgb(49.307251%, 7.008362%, 19.920349%)" stop-opacity="1"/>
+<stop offset="0.785156" stop-color="rgb(49.185181%, 6.962585%, 19.975281%)" stop-opacity="1"/>
+<stop offset="0.789062" stop-color="rgb(49.102783%, 6.933594%, 19.999695%)" stop-opacity="1"/>
+<stop offset="0.796875" stop-color="rgb(49.101257%, 6.925964%, 20.033264%)" stop-opacity="1"/>
+<stop offset="0.804687" stop-color="rgb(49.09668%, 6.912231%, 20.098877%)" stop-opacity="1"/>
+<stop offset="0.8125" stop-color="rgb(49.095154%, 6.898499%, 20.162964%)" stop-opacity="1"/>
+<stop offset="0.820312" stop-color="rgb(49.014282%, 6.871033%, 20.188904%)" stop-opacity="1"/>
+<stop offset="0.828125" stop-color="rgb(48.892212%, 6.83136%, 20.20874%)" stop-opacity="1"/>
+<stop offset="0.832031" stop-color="rgb(48.847961%, 6.800842%, 20.300293%)" stop-opacity="1"/>
+<stop offset="0.835938" stop-color="rgb(48.846436%, 6.787109%, 20.365906%)" stop-opacity="1"/>
+<stop offset="0.84375" stop-color="rgb(48.84491%, 6.77948%, 20.397949%)" stop-opacity="1"/>
+<stop offset="0.851562" stop-color="rgb(48.843384%, 6.765747%, 20.463562%)" stop-opacity="1"/>
+<stop offset="0.859375" stop-color="rgb(48.841858%, 6.752014%, 20.529175%)" stop-opacity="1"/>
+<stop offset="0.863281" stop-color="rgb(48.760986%, 6.716919%, 20.585632%)" stop-opacity="1"/>
+<stop offset="0.867188" stop-color="rgb(48.678589%, 6.689453%, 20.606995%)" stop-opacity="1"/>
+<stop offset="0.871094" stop-color="rgb(48.603821%, 6.678772%, 20.637512%)" stop-opacity="1"/>
+<stop offset="0.875" stop-color="rgb(48.529053%, 6.666565%, 20.66803%)" stop-opacity="1"/>
+<stop offset="0.882812" stop-color="rgb(48.460388%, 6.671143%, 20.704651%)" stop-opacity="1"/>
+<stop offset="0.890625" stop-color="rgb(48.391724%, 6.669617%, 20.774841%)" stop-opacity="1"/>
+<stop offset="0.90625" stop-color="rgb(48.391724%, 6.658936%, 20.822144%)" stop-opacity="1"/>
+<stop offset="0.9375" stop-color="rgb(48.390198%, 6.655884%, 20.838928%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(48.390198%, 6.655884%, 20.838928%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-15">
+<path clip-rule="nonzero" d="M 861 542 L 1339 542 L 1339 1002 L 861 1002 Z M 861 542 "/>
+</clipPath>
+<clipPath id="clip-16">
+<path clip-rule="nonzero" d="M 1147.28125 571.460938 L 1180.460938 638.011719 C 1188.160156 653.441406 1202.890625 664.140625 1219.941406 666.691406 L 1293.488281 677.679688 C 1336.609375 684.121094 1353.808594 737.070312 1322.710938 767.621094 L 1269.671875 819.738281 C 1257.378906 831.828125 1251.75 849.148438 1254.589844 866.148438 L 1266.871094 939.5 C 1274.070312 982.488281 1229.03125 1015.21875 1190.359375 995.078125 L 1124.398438 960.738281 C 1109.109375 952.78125 1090.890625 952.78125 1075.601562 960.738281 L 1009.640625 995.078125 C 970.972656 1015.21875 925.933594 982.488281 933.132812 939.5 L 945.40625 866.148438 C 948.253906 849.148438 942.625 831.828125 930.328125 819.738281 L 877.285156 767.621094 C 846.1875 737.070312 863.390625 684.121094 906.507812 677.679688 L 980.058594 666.691406 C 997.109375 664.140625 1011.839844 653.441406 1019.539062 638.011719 L 1052.71875 571.460938 C 1072.171875 532.441406 1127.828125 532.441406 1147.28125 571.460938 Z M 1147.28125 571.460938 "/>
+</clipPath>
+<clipPath id="clip-17">
+<path clip-rule="nonzero" d="M 1147.28125 571.460938 L 1180.460938 638.011719 C 1188.160156 653.441406 1202.890625 664.140625 1219.941406 666.691406 L 1293.488281 677.679688 C 1336.609375 684.121094 1353.808594 737.070312 1322.710938 767.621094 L 1269.671875 819.738281 C 1257.378906 831.828125 1251.75 849.148438 1254.589844 866.148438 L 1266.871094 939.5 C 1274.070312 982.488281 1229.03125 1015.21875 1190.359375 995.078125 L 1124.398438 960.738281 C 1109.109375 952.78125 1090.890625 952.78125 1075.601562 960.738281 L 1009.640625 995.078125 C 970.972656 1015.21875 925.933594 982.488281 933.132812 939.5 L 945.40625 866.148438 C 948.253906 849.148438 942.625 831.828125 930.328125 819.738281 L 877.285156 767.621094 C 846.1875 737.070312 863.390625 684.121094 906.507812 677.679688 L 980.058594 666.691406 C 997.109375 664.140625 1011.839844 653.441406 1019.539062 638.011719 L 1052.71875 571.460938 C 1072.171875 532.441406 1127.828125 532.441406 1147.28125 571.460938 "/>
+</clipPath>
+<linearGradient id="linear-pattern-5" gradientUnits="userSpaceOnUse" x1="-0.297788" y1="0" x2="1.128014" y2="0" gradientTransform="matrix(328.609, 363.394, -363.394, 328.609, 950.663, 634.67)">
+<stop offset="0" stop-color="rgb(97.802734%, 68.910217%, 11.099243%)" stop-opacity="1"/>
+<stop offset="0.125" stop-color="rgb(97.802734%, 68.910217%, 11.099243%)" stop-opacity="1"/>
+<stop offset="0.1875" stop-color="rgb(97.802734%, 68.910217%, 11.099243%)" stop-opacity="1"/>
+<stop offset="0.21875" stop-color="rgb(97.790527%, 68.762207%, 11.114502%)" stop-opacity="1"/>
+<stop offset="0.222656" stop-color="rgb(97.76001%, 68.397522%, 11.061096%)" stop-opacity="1"/>
+<stop offset="0.226562" stop-color="rgb(97.741699%, 68.182373%, 10.98938%)" stop-opacity="1"/>
+<stop offset="0.230469" stop-color="rgb(97.72644%, 67.996216%, 10.946655%)" stop-opacity="1"/>
+<stop offset="0.234375" stop-color="rgb(97.711182%, 67.810059%, 10.900879%)" stop-opacity="1"/>
+<stop offset="0.242188" stop-color="rgb(97.702026%, 67.694092%, 10.914612%)" stop-opacity="1"/>
+<stop offset="0.25" stop-color="rgb(97.68219%, 67.459106%, 10.940552%)" stop-opacity="1"/>
+<stop offset="0.253906" stop-color="rgb(97.65625%, 67.158508%, 11.036682%)" stop-opacity="1"/>
+<stop offset="0.257812" stop-color="rgb(97.640991%, 66.973877%, 11.11908%)" stop-opacity="1"/>
+<stop offset="0.261719" stop-color="rgb(97.622681%, 66.757202%, 11.238098%)" stop-opacity="1"/>
+<stop offset="0.265625" stop-color="rgb(97.60437%, 66.537476%, 11.357117%)" stop-opacity="1"/>
+<stop offset="0.273438" stop-color="rgb(97.595215%, 66.421509%, 11.369324%)" stop-opacity="1"/>
+<stop offset="0.277344" stop-color="rgb(97.567749%, 66.1026%, 11.402893%)" stop-opacity="1"/>
+<stop offset="0.28125" stop-color="rgb(97.550964%, 65.901184%, 11.425781%)" stop-opacity="1"/>
+<stop offset="0.285156" stop-color="rgb(97.532654%, 65.666199%, 11.419678%)" stop-opacity="1"/>
+<stop offset="0.289062" stop-color="rgb(97.512817%, 65.431213%, 11.412048%)" stop-opacity="1"/>
+<stop offset="0.292969" stop-color="rgb(97.492981%, 65.197754%, 11.329651%)" stop-opacity="1"/>
+<stop offset="0.296875" stop-color="rgb(97.47467%, 64.964294%, 11.247253%)" stop-opacity="1"/>
+<stop offset="0.300781" stop-color="rgb(97.454834%, 64.729309%, 11.257935%)" stop-opacity="1"/>
+<stop offset="0.304688" stop-color="rgb(97.434998%, 64.49585%, 11.270142%)" stop-opacity="1"/>
+<stop offset="0.308594" stop-color="rgb(97.419739%, 64.31427%, 11.289978%)" stop-opacity="1"/>
+<stop offset="0.3125" stop-color="rgb(97.40448%, 64.131165%, 11.309814%)" stop-opacity="1"/>
+<stop offset="0.320312" stop-color="rgb(97.395325%, 64.013672%, 11.323547%)" stop-opacity="1"/>
+<stop offset="0.328125" stop-color="rgb(97.375488%, 63.778687%, 11.349487%)" stop-opacity="1"/>
+<stop offset="0.332031" stop-color="rgb(97.351074%, 63.476562%, 11.320496%)" stop-opacity="1"/>
+<stop offset="0.335938" stop-color="rgb(97.33429%, 63.290405%, 11.277771%)" stop-opacity="1"/>
+<stop offset="0.339844" stop-color="rgb(97.317505%, 63.076782%, 11.212158%)" stop-opacity="1"/>
+<stop offset="0.34375" stop-color="rgb(97.299194%, 62.863159%, 11.148071%)" stop-opacity="1"/>
+<stop offset="0.351562" stop-color="rgb(97.290039%, 62.745667%, 11.161804%)" stop-opacity="1"/>
+<stop offset="0.359375" stop-color="rgb(97.270203%, 62.512207%, 11.187744%)" stop-opacity="1"/>
+<stop offset="0.367188" stop-color="rgb(97.247314%, 62.240601%, 11.219788%)" stop-opacity="1"/>
+<stop offset="0.371094" stop-color="rgb(97.215271%, 61.851501%, 11.264038%)" stop-opacity="1"/>
+<stop offset="0.375" stop-color="rgb(97.195435%, 61.616516%, 11.289978%)" stop-opacity="1"/>
+<stop offset="0.382812" stop-color="rgb(97.184753%, 61.486816%, 11.305237%)" stop-opacity="1"/>
+<stop offset="0.390625" stop-color="rgb(97.164917%, 61.239624%, 11.332703%)" stop-opacity="1"/>
+<stop offset="0.398438" stop-color="rgb(97.145081%, 61.001587%, 11.364746%)" stop-opacity="1"/>
+<stop offset="0.402344" stop-color="rgb(97.114563%, 60.643005%, 11.514282%)" stop-opacity="1"/>
+<stop offset="0.40625" stop-color="rgb(97.094727%, 60.406494%, 11.643982%)" stop-opacity="1"/>
+<stop offset="0.414062" stop-color="rgb(97.080994%, 60.244751%, 11.701965%)" stop-opacity="1"/>
+<stop offset="0.421875" stop-color="rgb(97.05658%, 59.941101%, 11.776733%)" stop-opacity="1"/>
+<stop offset="0.425781" stop-color="rgb(97.024536%, 59.567261%, 11.817932%)" stop-opacity="1"/>
+<stop offset="0.429688" stop-color="rgb(97.0047%, 59.332275%, 11.843872%)" stop-opacity="1"/>
+<stop offset="0.4375" stop-color="rgb(96.994019%, 59.187317%, 11.860657%)" stop-opacity="1"/>
+<stop offset="0.445312" stop-color="rgb(96.968079%, 58.886719%, 11.859131%)" stop-opacity="1"/>
+<stop offset="0.449219" stop-color="rgb(96.936035%, 58.499146%, 11.764526%)" stop-opacity="1"/>
+<stop offset="0.453125" stop-color="rgb(96.916199%, 58.267212%, 11.689758%)" stop-opacity="1"/>
+<stop offset="0.460938" stop-color="rgb(96.905518%, 58.140564%, 11.695862%)" stop-opacity="1"/>
+<stop offset="0.46875" stop-color="rgb(96.885681%, 57.896423%, 11.714172%)" stop-opacity="1"/>
+<stop offset="0.476562" stop-color="rgb(96.865845%, 57.653809%, 11.741638%)" stop-opacity="1"/>
+<stop offset="0.480469" stop-color="rgb(96.835327%, 57.295227%, 11.782837%)" stop-opacity="1"/>
+<stop offset="0.484375" stop-color="rgb(96.815491%, 57.060242%, 11.810303%)" stop-opacity="1"/>
+<stop offset="0.492188" stop-color="rgb(96.803284%, 56.90155%, 11.828613%)" stop-opacity="1"/>
+<stop offset="0.5" stop-color="rgb(96.780396%, 56.625366%, 11.859131%)" stop-opacity="1"/>
+<stop offset="0.507812" stop-color="rgb(96.760559%, 56.391907%, 11.886597%)" stop-opacity="1"/>
+<stop offset="0.511719" stop-color="rgb(96.733093%, 56.062317%, 12.002563%)" stop-opacity="1"/>
+<stop offset="0.515625" stop-color="rgb(96.714783%, 55.848694%, 12.104797%)" stop-opacity="1"/>
+<stop offset="0.519531" stop-color="rgb(96.699524%, 55.656433%, 12.190247%)" stop-opacity="1"/>
+<stop offset="0.523438" stop-color="rgb(96.682739%, 55.462646%, 12.27417%)" stop-opacity="1"/>
+<stop offset="0.53125" stop-color="rgb(96.673584%, 55.345154%, 12.287903%)" stop-opacity="1"/>
+<stop offset="0.539063" stop-color="rgb(96.653748%, 55.108643%, 12.406921%)" stop-opacity="1"/>
+<stop offset="0.542969" stop-color="rgb(96.629333%, 54.808044%, 12.579346%)" stop-opacity="1"/>
+<stop offset="0.546875" stop-color="rgb(96.614075%, 54.627991%, 12.64801%)" stop-opacity="1"/>
+<stop offset="0.550781" stop-color="rgb(96.595764%, 54.405212%, 12.663269%)" stop-opacity="1"/>
+<stop offset="0.554688" stop-color="rgb(96.575928%, 54.180908%, 12.677002%)" stop-opacity="1"/>
+<stop offset="0.5625" stop-color="rgb(96.566772%, 54.066467%, 12.593079%)" stop-opacity="1"/>
+<stop offset="0.570313" stop-color="rgb(96.548462%, 53.837585%, 12.487793%)" stop-opacity="1"/>
+<stop offset="0.578125" stop-color="rgb(96.525574%, 53.578186%, 12.460327%)" stop-opacity="1"/>
+<stop offset="0.582031" stop-color="rgb(96.495056%, 53.20282%, 12.382507%)" stop-opacity="1"/>
+<stop offset="0.585938" stop-color="rgb(96.47522%, 52.972412%, 12.312317%)" stop-opacity="1"/>
+<stop offset="0.589844" stop-color="rgb(96.456909%, 52.738953%, 12.321472%)" stop-opacity="1"/>
+<stop offset="0.59375" stop-color="rgb(96.437073%, 52.503967%, 12.329102%)" stop-opacity="1"/>
+<stop offset="0.597656" stop-color="rgb(96.421814%, 52.31781%, 12.313843%)" stop-opacity="1"/>
+<stop offset="0.601563" stop-color="rgb(96.405029%, 52.131653%, 12.297058%)" stop-opacity="1"/>
+<stop offset="0.609375" stop-color="rgb(96.395874%, 52.018738%, 12.214661%)" stop-opacity="1"/>
+<stop offset="0.617188" stop-color="rgb(96.376038%, 51.785278%, 12.234497%)" stop-opacity="1"/>
+<stop offset="0.625" stop-color="rgb(96.356201%, 51.545715%, 12.39624%)" stop-opacity="1"/>
+<stop offset="0.632813" stop-color="rgb(96.336365%, 51.295471%, 12.467957%)" stop-opacity="1"/>
+<stop offset="0.636719" stop-color="rgb(96.305847%, 50.930786%, 12.509155%)" stop-opacity="1"/>
+<stop offset="0.640625" stop-color="rgb(96.286011%, 50.695801%, 12.536621%)" stop-opacity="1"/>
+<stop offset="0.648438" stop-color="rgb(96.273804%, 50.538635%, 12.619019%)" stop-opacity="1"/>
+<stop offset="0.65625" stop-color="rgb(96.247864%, 50.230408%, 12.788391%)" stop-opacity="1"/>
+<stop offset="0.660156" stop-color="rgb(96.21582%, 49.845886%, 12.89978%)" stop-opacity="1"/>
+<stop offset="0.664062" stop-color="rgb(96.195984%, 49.609375%, 12.92572%)" stop-opacity="1"/>
+<stop offset="0.671875" stop-color="rgb(96.185303%, 49.478149%, 12.861633%)" stop-opacity="1"/>
+<stop offset="0.679688" stop-color="rgb(96.160889%, 49.185181%, 12.762451%)" stop-opacity="1"/>
+<stop offset="0.683594" stop-color="rgb(96.127319%, 48.786926%, 12.753296%)" stop-opacity="1"/>
+<stop offset="0.6875" stop-color="rgb(96.107483%, 48.551941%, 12.780762%)" stop-opacity="1"/>
+<stop offset="0.695312" stop-color="rgb(96.098328%, 48.434448%, 12.794495%)" stop-opacity="1"/>
+<stop offset="0.703125" stop-color="rgb(96.078491%, 48.199463%, 12.820435%)" stop-opacity="1"/>
+<stop offset="0.710938" stop-color="rgb(96.058655%, 47.964478%, 12.8479%)" stop-opacity="1"/>
+<stop offset="0.71875" stop-color="rgb(96.038818%, 47.729492%, 12.87384%)" stop-opacity="1"/>
+<stop offset="0.726562" stop-color="rgb(96.018982%, 47.492981%, 12.966919%)" stop-opacity="1"/>
+<stop offset="0.734375" stop-color="rgb(95.996094%, 47.216797%, 13.127136%)" stop-opacity="1"/>
+<stop offset="0.738281" stop-color="rgb(95.96405%, 46.827698%, 13.235474%)" stop-opacity="1"/>
+<stop offset="0.742188" stop-color="rgb(95.944214%, 46.591187%, 13.261414%)" stop-opacity="1"/>
+<stop offset="0.75" stop-color="rgb(95.933533%, 46.453857%, 13.354492%)" stop-opacity="1"/>
+<stop offset="0.757812" stop-color="rgb(95.91217%, 46.194458%, 13.551331%)" stop-opacity="1"/>
+<stop offset="0.765625" stop-color="rgb(95.892334%, 45.94574%, 13.75885%)" stop-opacity="1"/>
+<stop offset="0.769531" stop-color="rgb(95.861816%, 45.579529%, 13.975525%)" stop-opacity="1"/>
+<stop offset="0.773438" stop-color="rgb(95.84198%, 45.33844%, 14.089966%)" stop-opacity="1"/>
+<stop offset="0.78125" stop-color="rgb(95.828247%, 45.170593%, 14.143372%)" stop-opacity="1"/>
+<stop offset="0.789062" stop-color="rgb(95.803833%, 44.885254%, 14.21051%)" stop-opacity="1"/>
+<stop offset="0.796875" stop-color="rgb(95.785522%, 44.650269%, 14.233398%)" stop-opacity="1"/>
+<stop offset="0.800781" stop-color="rgb(95.758057%, 44.328308%, 14.266968%)" stop-opacity="1"/>
+<stop offset="0.804688" stop-color="rgb(95.741272%, 44.12384%, 14.28833%)" stop-opacity="1"/>
+<stop offset="0.808594" stop-color="rgb(95.724487%, 43.927002%, 14.308167%)" stop-opacity="1"/>
+<stop offset="0.8125" stop-color="rgb(95.707703%, 43.728638%, 14.329529%)" stop-opacity="1"/>
+<stop offset="0.820312" stop-color="rgb(95.698547%, 43.611145%, 14.34021%)" stop-opacity="1"/>
+<stop offset="0.824219" stop-color="rgb(95.669556%, 43.270874%, 14.375305%)" stop-opacity="1"/>
+<stop offset="0.828125" stop-color="rgb(95.651245%, 43.048096%, 14.398193%)" stop-opacity="1"/>
+<stop offset="0.832031" stop-color="rgb(95.637512%, 42.87262%, 14.376831%)" stop-opacity="1"/>
+<stop offset="0.835938" stop-color="rgb(95.622253%, 42.695618%, 14.353943%)" stop-opacity="1"/>
+<stop offset="0.84375" stop-color="rgb(95.613098%, 42.584229%, 14.282227%)" stop-opacity="1"/>
+<stop offset="0.851562" stop-color="rgb(95.593262%, 42.355347%, 14.224243%)" stop-opacity="1"/>
+<stop offset="0.859375" stop-color="rgb(95.573425%, 42.120361%, 14.248657%)" stop-opacity="1"/>
+<stop offset="0.867188" stop-color="rgb(95.552063%, 41.864014%, 14.276123%)" stop-opacity="1"/>
+<stop offset="0.871094" stop-color="rgb(95.521545%, 41.490173%, 14.315796%)" stop-opacity="1"/>
+<stop offset="0.875" stop-color="rgb(95.501709%, 41.253662%, 14.34021%)" stop-opacity="1"/>
+<stop offset="0.882812" stop-color="rgb(95.489502%, 41.104126%, 14.421082%)" stop-opacity="1"/>
+<stop offset="0.890625" stop-color="rgb(95.466614%, 40.830994%, 14.570618%)" stop-opacity="1"/>
+<stop offset="0.898438" stop-color="rgb(95.446777%, 40.591431%, 14.651489%)" stop-opacity="1"/>
+<stop offset="0.90625" stop-color="rgb(95.324707%, 40.345764%, 14.772034%)" stop-opacity="1"/>
+<stop offset="0.9375" stop-color="rgb(95.149231%, 40.151978%, 14.93988%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(95.08667%, 40.086365%, 14.99939%)" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<rect x="-220" y="-220" width="2640" height="2640" fill="rgb(100%, 100%, 100%)" fill-opacity="1"/>
+<g clip-path="url(#clip-0)">
+<g clip-path="url(#clip-1)">
+<g clip-path="url(#clip-2)">
+<path fill-rule="nonzero" fill="url(#linear-pattern-0)" d="M 1940.859375 2012.210938 L 1033.933594 2302.242188 L 715.929688 1307.851562 L 1622.859375 1017.820312 Z M 1940.859375 2012.210938 "/>
+</g>
+</g>
+</g>
+<g clip-path="url(#clip-3)">
+<g clip-path="url(#clip-4)">
+<g clip-path="url(#clip-5)">
+<path fill-rule="nonzero" fill="url(#linear-pattern-1)" d="M 259.144531 2012.210938 L 1166.070312 2302.242188 L 1484.070312 1307.851562 L 577.144531 1017.820312 Z M 259.144531 2012.210938 "/>
+</g>
+</g>
+</g>
+<g clip-path="url(#clip-6)">
+<g clip-path="url(#clip-7)">
+<g clip-path="url(#clip-8)">
+<path fill-rule="nonzero" fill="url(#linear-pattern-2)" d="M 1167.65625 -563.695312 L -245.890625 714.539062 L 1032.347656 2128.085938 L 2445.894531 849.851562 Z M 1167.65625 -563.695312 "/>
+</g>
+</g>
+</g>
+<g clip-path="url(#clip-9)">
+<g clip-path="url(#clip-10)">
+<g clip-path="url(#clip-11)">
+<path fill-rule="nonzero" fill="url(#linear-pattern-3)" d="M 1151.292969 -238.253906 L 79.550781 730.898438 L 1048.703125 1802.644531 L 2120.445312 833.492188 Z M 1151.292969 -238.253906 "/>
+</g>
+</g>
+</g>
+<g clip-path="url(#clip-12)">
+<g clip-path="url(#clip-13)">
+<g clip-path="url(#clip-14)">
+<path fill-rule="nonzero" fill="url(#linear-pattern-4)" d="M 1139.703125 -7.613281 L 310.195312 742.488281 L 1060.296875 1571.996094 L 1889.804688 821.890625 Z M 1139.703125 -7.613281 "/>
+</g>
+</g>
+</g>
+<g clip-path="url(#clip-15)">
+<g clip-path="url(#clip-16)">
+<g clip-path="url(#clip-17)">
+<path fill-rule="nonzero" fill="url(#linear-pattern-5)" d="M 1125.453125 279.910156 L 606.015625 749.625 L 1074.546875 1267.75 L 1593.984375 798.035156 Z M 1125.453125 279.910156 "/>
+</g>
+</g>
+</g>
+</svg>
