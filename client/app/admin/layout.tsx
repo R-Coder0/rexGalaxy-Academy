@@ -9,6 +9,9 @@ import {
   MessageSquare,
   Star,
   LogOut,
+  UserPlus,
+  ScrollText,
+  FileBadge2,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -17,6 +20,11 @@ const NAV = [
   { name: "Jobs", href: "/admin/jobs", icon: Briefcase },
   { name: "Applications", href: "/admin/application", icon: FileText },
   { name: "Enquiries", href: "/admin/enquiries", icon: MessageSquare },
+  { name: "Registrations", href: "/admin/registration", icon: UserPlus },
+  { name: "Offer Letters", href: "/admin/offer-letter", icon: ScrollText },
+  { name: "Experience Letters", href: "/admin/experience-letter", icon: FileBadge2 },
+  { name: "Course Details", href: "/admin/course-details", icon: FileText },
+  { name: "Course Menu", href: "/admin/course-menu", icon: MessageSquare },
   { name: "Feedback", href: "/admin/feedback", icon: Star },
 ];
 
@@ -58,7 +66,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           {/* ── Sidebar ── */}
           <aside
-            className="rounded-2xl"
+            className="rounded-2xl lg:sticky lg:top-6 lg:h-[calc(100vh-3rem)] lg:overflow-y-auto"
             style={{
               background: "var(--surface)",
               border: "1px solid var(--border-strong)",

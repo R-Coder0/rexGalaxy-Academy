@@ -15,7 +15,9 @@ import { getAdminDashboard } from "../controllers/dashboard.controller";
 
 const router = Router();
 
-router.get("/me", requireAdmin, (req, res) => {
+router.use(requireAdmin);
+
+router.get("/me", (req, res) => {
   return res.json({ success: true, admin: (req as any).admin });
 });
 

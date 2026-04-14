@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+import "@/app/globals.css";
 import { Sora, Inter } from "next/font/google";
 import RexGalaxyNavbar from "../../components/navbar";
 import CustomCursor from "../../components/customCursor";

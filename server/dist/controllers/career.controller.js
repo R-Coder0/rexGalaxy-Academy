@@ -1,0 +1,141 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteApplicationAdmin = exports.listApplicationsAdmin = exports.createApplication = void 0;
+const Application_model_1 = require("../models/Application.model");
+const mongoose_1 = __importDefault(require("mongoose"));
+const path_1 = __importDefault(require("path"));
+const fs_1 = require("fs");
+const toPublicUrl = (filePath) => {
+    const normalized = filePath.replace(/\\/g, "/");
+    return normalized.startsWith("/") ? normalized : `/${normalized}`;
+};
+// converts "/uploads/abc.pdf" -> absolute filesystem path
+const toAbsolutePathFromPublicUrl = (publicUrl) => {
+    const clean = publicUrl.replace(/\\/g, "/").replace(/^\//, ""); // remove leading slash
+    return path_1.default.join(process.cwd(), clean);
+};
+const createApplication = async (req, res) => {
+    try {
+        const { jobId, jobTitle, fullName, phone, email, experience, location, noticePeriod, message, } = req.body;
+        const file = req.file;
+        if (!jobTitle?.trim())
+            return res.status(400).json({ message: "jobTitle is required" });
+        if (!fullName?.trim())
+            return res.status(400).json({ message: "fullName is required" });
+        if (!phone?.trim())
+            return res.status(400).json({ message: "phone is required" });
+        if (!email?.trim())
+            return res.status(400).json({ message: "email is required" });
+        if (!file)
+            return res.status(400).json({ message: "resume file is required" });
+        const allowed = [
+            "application/pdf",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        ];
+        if (!allowed.includes(file.mimetype)) {
+            return res
+                .status(400)
+                .json({ message: "Invalid resume type. Allowed: PDF/DOC/DOCX" });
+        }
+        const doc = await Application_model_1.Application.create({
+            jobId: jobId || undefined,
+            jobTitle: jobTitle.trim(),
+            fullName: fullName.trim(),
+            phone: phone.trim(),
+            email: email.trim().toLowerCase(),
+            experience: experience?.trim() || undefined,
+            location: location?.trim() || undefined,
+            noticePeriod: noticePeriod?.trim() || undefined,
+            message: message?.trim() || undefined,
+            resumeUrl: toPublicUrl(file.path),
+            resumeName: file.originalname,
+            resumeMime: file.mimetype,
+            resumeSize: file.size,
+        });
+        return res.status(201).json({
+            message: "Application submitted",
+            data: {
+                id: doc._id,
+                createdAt: doc.createdAt,
+            },
+        });
+    }
+    catch (e) {
+        return res.status(500).json({ message: "Failed to submit application" });
+    }
+};
+exports.createApplication = createApplication;
+const listApplicationsAdmin = async (req, res) => {
+    try {
+        const { from, to, q, jobId, page = "1", limit = "20" } = req.query;
+        const filter = {};
+        if (from || to) {
+            filter.createdAt = {};
+            if (from)
+                filter.createdAt.$gte = new Date(from);
+            if (to) {
+                const end = new Date(to);
+                end.setHours(23, 59, 59, 999);
+                filter.createdAt.$lte = end;
+            }
+        }
+        if (jobId)
+            filter.jobId = jobId;
+        if (q?.trim()) {
+            const rx = new RegExp(q.trim(), "i");
+            filter.$or = [{ fullName: rx }, { email: rx }, { phone: rx }, { jobTitle: rx }];
+        }
+        const p = Math.max(parseInt(page, 10) || 1, 1);
+        const l = Math.min(Math.max(parseInt(limit, 10) || 20, 1), 200);
+        const [items, total] = await Promise.all([
+            Application_model_1.Application.find(filter).sort({ createdAt: -1 }).skip((p - 1) * l).limit(l),
+            Application_model_1.Application.countDocuments(filter),
+        ]);
+        res.json({
+            message: "Applications fetched",
+            data: items,
+            meta: { page: p, limit: l, total },
+        });
+    }
+    catch (e) {
+        res.status(500).json({ message: "Failed to fetch applications" });
+    }
+};
+exports.listApplicationsAdmin = listApplicationsAdmin;
+// ✅ DELETE controller
+// Route: DELETE /api/careers/admin/:id
+const deleteApplicationAdmin = async (req, res) => {
+    try {
+        const { id } = req.params;
+        if (!mongoose_1.default.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ message: "Invalid application id" });
+        }
+        // find doc first to get resumeUrl for file cleanup
+        const doc = await Application_model_1.Application.findById(id);
+        if (!doc) {
+            return res.status(404).json({ message: "Application not found" });
+        }
+        const resumeUrl = doc.resumeUrl;
+        const fileAbsPath = resumeUrl ? toAbsolutePathFromPublicUrl(resumeUrl) : null;
+        // delete DB record
+        await doc.deleteOne();
+        // best-effort file delete (ignore errors like file missing)
+        if (fileAbsPath) {
+            try {
+                await fs_1.promises.unlink(fileAbsPath);
+            }
+            catch {
+                // ignore
+            }
+        }
+        return res.status(200).json({ message: "Application deleted" });
+    }
+    catch (e) {
+        return res.status(500).json({ message: "Failed to delete application" });
+    }
+};
+exports.deleteApplicationAdmin = deleteApplicationAdmin;

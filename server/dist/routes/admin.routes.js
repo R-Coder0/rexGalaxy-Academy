@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const admin_controller_1 = require("../controllers/admin.controller");
+const job_controller_1 = require("../controllers/job.controller");
+const feedback_controller_1 = require("../controllers/feedback.controller");
+const enquiry_controller_1 = require("../controllers/enquiry.controller");
+const dashboard_controller_1 = require("../controllers/dashboard.controller");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.requireAdmin);
+router.get("/me", (req, res) => {
+    return res.json({ success: true, admin: req.admin });
+});
+router.get("/jobs/", job_controller_1.adminListJobs);
+router.post("/jobs/", job_controller_1.createJob);
+router.patch("/jobs/:id", job_controller_1.updateJob);
+router.patch("/jobs/:id/toggle", job_controller_1.toggleJob);
+router.delete("/jobs/:id", job_controller_1.deleteJob);
+router.delete("/enquiries/:id", enquiry_controller_1.deleteEnquiry);
+router.delete("/feedback/:id", feedback_controller_1.deleteFeedback);
+router.get("/applications", admin_controller_1.adminGetApplications);
+router.get("/enquiries", enquiry_controller_1.listEnquiries);
+router.get("/feedback", feedback_controller_1.listFeedback);
+router.get("/dashboard", dashboard_controller_1.getAdminDashboard);
+exports.default = router;

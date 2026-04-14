@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const experienceLetter_controller_1 = require("../controllers/experienceLetter.controller");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const router = (0, express_1.Router)();
+router.get("/", auth_middleware_1.requireAdmin, experienceLetter_controller_1.listExperienceLetters);
+router.post("/", auth_middleware_1.requireAdmin, experienceLetter_controller_1.createExperienceLetter);
+router.delete("/:id", auth_middleware_1.requireAdmin, experienceLetter_controller_1.deleteExperienceLetter);
+exports.default = router;

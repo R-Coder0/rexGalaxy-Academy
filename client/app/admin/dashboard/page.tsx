@@ -1,19 +1,26 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Briefcase, FileText, MessageSquare, Star } from "lucide-react";
+import {
+  ArrowRight,
+  Briefcase,
+  FileText,
+  MessageSquare,
+  Star,
+  UserPlus,
+} from "lucide-react";
 
 type Stats = {
   activeJobs: number;
   applications: number;
   enquiries: number;
   feedback: number;
+  registrations: number;
 };
 
 type ActivityItem = {
-  type: "job" | "application" | "enquiry" | "feedback";
+  type: "job" | "application" | "enquiry" | "feedback" | "registration";
   title: string;
   meta: string;
   createdAt: string;
@@ -27,19 +34,20 @@ type DashboardResponse = {
   };
 };
 
+const defaultStats: Stats = {
+  activeJobs: 0,
+  applications: 0,
+  enquiries: 0,
+  feedback: 0,
+  registrations: 0,
+};
+
 export default function AdminDashboardPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
-
-  const [stats, setStats] = useState<Stats>({
-    activeJobs: 0,
-    applications: 0,
-    enquiries: 0,
-    feedback: 0,
-  });
-
+  const [stats, setStats] = useState<Stats>(defaultStats);
   const [latest, setLatest] = useState<ActivityItem[]>([]);
 
   const fmtDate = (iso: string) => {
@@ -84,8 +92,8 @@ export default function AdminDashboardPage() {
         return;
       }
 
-      setStats(json?.data?.stats ?? stats);
-      setLatest(Array.isArray(json?.data?.latest) ? json!.data.latest : []);
+      setStats(json?.data?.stats ?? defaultStats);
+      setLatest(Array.isArray(json?.data?.latest) ? json.data.latest : []);
     } catch {
       setErr("Server not reachable.");
     } finally {
@@ -95,12 +103,10 @@ export default function AdminDashboardPage() {
 
   useEffect(() => {
     fetchDashboard();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      {/* Header */}
       <div
         className="rounded-2xl p-6"
         style={{
@@ -111,7 +117,10 @@ export default function AdminDashboardPage() {
       >
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <span className="badge badge-brand" style={{ fontSize: "11px", letterSpacing: "0.18em" }}>
+            <span
+              className="badge badge-brand"
+              style={{ fontSize: "11px", letterSpacing: "0.18em" }}
+            >
               Overview
             </span>
             <h2
@@ -121,29 +130,27 @@ export default function AdminDashboardPage() {
               Dashboard
             </h2>
             <p className="mt-1 text-sm" style={{ color: "var(--text-dim)" }}>
-              Quick access to job management and latest submissions.
+              Quick access to jobs, enquiries, registrations and recent activity.
             </p>
 
-            {loading && (
+            {loading ? (
               <p className="mt-2 text-sm" style={{ color: "var(--text-dim)" }}>
                 Loading dashboard...
               </p>
-            )}
-            {err && (
+            ) : null}
+
+            {err ? (
               <p
                 className="mt-2 text-sm font-semibold"
                 style={{ color: "rgba(239,68,68,0.90)" }}
               >
                 {err}
               </p>
-            )}
+            ) : null}
           </div>
 
           <div className="flex gap-2">
-            <Link
-              href="/admin/jobs"
-              className="btn btn-primary btn-md"
-            >
+            <Link href="/admin/jobs" className="btn btn-primary btn-md">
               Manage Jobs
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -151,23 +158,67 @@ export default function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* KPI cards */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard title="Active Jobs"    value={loading ? "—" : String(stats.activeJobs)}   hint="Currently live roles" />
-        <KpiCard title="Applications"   value={loading ? "—" : String(stats.applications)} hint="Total job applications" />
-        <KpiCard title="Enquiries"      value={loading ? "—" : String(stats.enquiries)}    hint="Website enquiries" />
-        <KpiCard title="Feedback"       value={loading ? "—" : String(stats.feedback)}     hint="Customer feedback" />
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+        <KpiCard
+          title="Active Jobs"
+          value={loading ? "—" : String(stats.activeJobs)}
+          hint="Currently live roles"
+        />
+        <KpiCard
+          title="Applications"
+          value={loading ? "—" : String(stats.applications)}
+          hint="Total job applications"
+        />
+        <KpiCard
+          title="Enquiries"
+          value={loading ? "—" : String(stats.enquiries)}
+          hint="Website enquiries"
+        />
+        <KpiCard
+          title="Feedback"
+          value={loading ? "—" : String(stats.feedback)}
+          hint="Customer feedback"
+        />
+        <KpiCard
+          title="Registrations"
+          value={loading ? "—" : String(stats.registrations)}
+          hint="Online registrations"
+        />
       </div>
 
-      {/* Quick links */}
-      <div className="grid gap-4 lg:grid-cols-2">
-        <QuickCard title="Jobs"         desc="Create, update, enable/disable job postings."         href="/admin/jobs"         icon={<Briefcase  className="h-5 w-5" style={{ color: "var(--brand)" }} />} />
-        <QuickCard title="Applications" desc="View job applicants and download attachments."         href="/admin/application"  icon={<FileText   className="h-5 w-5" style={{ color: "var(--ai-cyan)" }} />} />
-        <QuickCard title="Enquiries"    desc="Track website enquiry form submissions."               href="/admin/enquiries"    icon={<MessageSquare className="h-5 w-5" style={{ color: "var(--ai-purple)" }} />} />
-        <QuickCard title="Feedback"     desc="See feedback messages and ratings."                   href="/admin/feedback"     icon={<Star       className="h-5 w-5" style={{ color: "var(--brand)" }} />} />
+      <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+        <QuickCard
+          title="Jobs"
+          desc="Create, update, enable or disable job postings."
+          href="/admin/jobs"
+          icon={<Briefcase className="h-5 w-5" style={{ color: "var(--brand)" }} />}
+        />
+        <QuickCard
+          title="Applications"
+          desc="View job applicants and download attachments."
+          href="/admin/application"
+          icon={<FileText className="h-5 w-5" style={{ color: "var(--ai-cyan)" }} />}
+        />
+        <QuickCard
+          title="Enquiries"
+          desc="Track website enquiry form submissions."
+          href="/admin/enquiries"
+          icon={<MessageSquare className="h-5 w-5" style={{ color: "var(--ai-purple)" }} />}
+        />
+        <QuickCard
+          title="Feedback"
+          desc="See feedback messages and ratings."
+          href="/admin/feedback"
+          icon={<Star className="h-5 w-5" style={{ color: "var(--brand)" }} />}
+        />
+        <QuickCard
+          title="Registrations"
+          desc="Manage online registration requests and update their status."
+          href="/admin/registration"
+          icon={<UserPlus className="h-5 w-5" style={{ color: "var(--brand)" }} />}
+        />
       </div>
 
-      {/* Latest Activity */}
       <div
         className="rounded-2xl p-6"
         style={{
@@ -197,13 +248,16 @@ export default function AdminDashboardPage() {
           {loading ? (
             <ActivityRow title="Loading..." meta="Fetching latest submissions from API." />
           ) : latest.length === 0 ? (
-            <ActivityRow title="No recent activity" meta="Once submissions arrive, they will appear here." />
+            <ActivityRow
+              title="No recent activity"
+              meta="Once submissions arrive, they will appear here."
+            />
           ) : (
-            latest.slice(0, 6).map((a, idx) => (
+            latest.map((item, idx) => (
               <ActivityRow
                 key={idx}
-                title={a.title}
-                meta={`${a.meta} • ${fmtDate(a.createdAt)}`}
+                title={item.title}
+                meta={`${item.meta} • ${fmtDate(item.createdAt)}`}
               />
             ))
           )}
@@ -212,8 +266,6 @@ export default function AdminDashboardPage() {
     </>
   );
 }
-
-/* ── Sub-components ── */
 
 function KpiCard({ title, value, hint }: { title: string; value: string; hint: string }) {
   return (
@@ -276,10 +328,12 @@ function QuickCard({
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-3">
-          {/* Icon pill */}
           <div
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-            style={{ background: "var(--brand-soft)", border: "1px solid rgba(255,107,0,0.18)" }}
+            style={{
+              background: "var(--brand-soft)",
+              border: "1px solid rgba(255,107,0,0.18)",
+            }}
           >
             {icon}
           </div>

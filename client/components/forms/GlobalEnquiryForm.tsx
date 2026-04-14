@@ -33,7 +33,7 @@ type GlobalEnquiryFormProps = {
   }) => void;
 };
 
-type FormData = {
+type EnquiryFormState = {
   fullName: string;
   email: string;
   phone: string;
@@ -41,18 +41,7 @@ type FormData = {
   message: string;
 };
 
-type FormErrors = Partial<Record<keyof FormData, string>>;
-
-type DummyEnquiry = {
-  id: string;
-  fullName: string;
-  email: string;
-  phone: string;
-  course: string;
-  message: string;
-  source: string;
-  createdAt: string;
-};
+type FormErrors = Partial<Record<keyof EnquiryFormState, string>>;
 
 const defaultCourses = [
   "Microsoft Azure Cloud",
@@ -68,15 +57,13 @@ const defaultCourses = [
   "Python Data Analyst",
 ];
 
-const getInitialForm = (course = ""): FormData => ({
+const getInitialForm = (course = ""): EnquiryFormState => ({
   fullName: "",
   email: "",
   phone: "",
   course,
   message: "",
 });
-
-const STORAGE_KEY = "dummy_enquiries";
 
 export default function GlobalEnquiryForm({
   title = "Enquire Now",
@@ -91,15 +78,20 @@ export default function GlobalEnquiryForm({
   onClose,
   onSuccess,
 }: GlobalEnquiryFormProps) {
-  const [form, setForm] = useState<FormData>(getInitialForm(initialCourse));
+  const [form, setForm] = useState<EnquiryFormState>(getInitialForm(initialCourse));
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const API_BASE_URL =
+    process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") || "";
 
   useEffect(() => {
     setForm(getInitialForm(initialCourse));
     setErrors({});
     setIsSuccess(false);
+    setSubmitError("");
   }, [initialCourse, isOpen]);
 
   const hasCourseOptions = useMemo(
@@ -144,45 +136,31 @@ export default function GlobalEnquiryForm({
       [name]: value,
     }));
 
-    if (errors[name as keyof FormData]) {
+    if (errors[name as keyof EnquiryFormState]) {
       setErrors((prev) => ({
         ...prev,
         [name]: "",
       }));
     }
-  };
 
-  const saveDummyEnquiry = (
-    payload: Omit<DummyEnquiry, "id" | "createdAt">
-  ) => {
-    try {
-      const existing = localStorage.getItem(STORAGE_KEY);
-      const parsed: DummyEnquiry[] = existing ? JSON.parse(existing) : [];
-
-      const newEntry: DummyEnquiry = {
-        id: Date.now().toString(),
-        createdAt: new Date().toISOString(),
-        ...payload,
-      };
-
-      const updated = [newEntry, ...parsed];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-
-      console.log("Dummy enquiry saved:", newEntry);
-      console.log("All dummy enquiries:", updated);
-
-      return newEntry;
-    } catch (error) {
-      console.error("Failed to save dummy enquiry:", error);
-      return null;
+    if (submitError) {
+      setSubmitError("");
     }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSuccess(false);
+    setSubmitError("");
 
     if (!validate()) return;
+
+    if (!API_BASE_URL) {
+      setSubmitError(
+        "API base URL is missing. Please set NEXT_PUBLIC_API_BASE_URL."
+      );
+      return;
+    }
 
     const payload = {
       ...form,
@@ -191,13 +169,29 @@ export default function GlobalEnquiryForm({
 
     try {
       setIsSubmitting(true);
+      const formPayload = new FormData();
+      formPayload.append("fullName", form.fullName.trim());
+      formPayload.append("phone", form.phone.trim());
+      formPayload.append("email", form.email.trim());
+      formPayload.append("company", form.course.trim() || source.trim());
+      formPayload.append(
+        "message",
+        `${form.message.trim()}${
+          form.course ? `\n\nInterested Course: ${form.course.trim()}` : ""
+        }`
+      );
 
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      const response = await fetch(`${API_BASE_URL}/enquiry`, {
+        method: "POST",
+        body: formPayload,
+      });
 
-      const saved = saveDummyEnquiry(payload);
+      const result = await response.json();
 
-      if (!saved) {
-        throw new Error("Failed to save dummy enquiry");
+      if (!response.ok || !result?.success) {
+        throw new Error(
+          result?.message || "Failed to submit enquiry. Please try again."
+        );
       }
 
       setIsSuccess(true);
@@ -206,8 +200,11 @@ export default function GlobalEnquiryForm({
 
       onSuccess?.(payload);
     } catch (error) {
-      console.error("Dummy enquiry save failed:", error);
-      alert("Something went wrong. Please try again.");
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -378,7 +375,14 @@ export default function GlobalEnquiryForm({
 
             {isSuccess ? (
               <div className="mt-4 rounded-[var(--radius)] border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
-                Dummy enquiry saved successfully.
+                Enquiry submitted successfully. Our team will contact you
+                shortly.
+              </div>
+            ) : null}
+
+            {submitError ? (
+              <div className="mt-4 rounded-[var(--radius)] border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                {submitError}
               </div>
             ) : null}
           </form>

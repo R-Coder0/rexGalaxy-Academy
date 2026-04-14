@@ -114,13 +114,18 @@ export default function AdminApplicationsPage() {
     setLoading(true); setErr(null);
     try {
       if (!API) { setErr("NEXT_PUBLIC_API_BASE_URL missing."); setLoading(false); return; }
+      const token = localStorage.getItem("admin_token");
+      if (!token) { setErr("Not logged in."); setLoading(false); return; }
       const params = new URLSearchParams();
       params.set("page", String(p)); params.set("limit", String(limit));
       if (q.trim()) params.set("q", q.trim());
       if (from) params.set("from", from);
       if (to) params.set("to", to);
       if (jobId.trim()) params.set("jobId", jobId.trim());
-      const res = await fetch(`${API}/careers/admin?${params.toString()}`, { cache: "no-store" });
+      const res = await fetch(`${API}/careers/admin?${params.toString()}`, {
+        cache: "no-store",
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const data: ApiListResponse | null = await res.json().catch(() => null);
       if (!res.ok) { setErr((data as any)?.message || "Failed to load applications."); setLoading(false); return; }
       setItems(Array.isArray(data?.data) ? data!.data : []);
@@ -135,13 +140,18 @@ export default function AdminApplicationsPage() {
 
   const exportCSV = async () => {
     if (!API) return alert("NEXT_PUBLIC_API_BASE_URL missing.");
+    const token = localStorage.getItem("admin_token");
+    if (!token) return alert("Not logged in.");
     const params = new URLSearchParams();
     params.set("page", "1"); params.set("limit", "200");
     if (q.trim()) params.set("q", q.trim());
     if (from) params.set("from", from);
     if (to) params.set("to", to);
     if (jobId.trim()) params.set("jobId", jobId.trim());
-    const res = await fetch(`${API}/applications/admin?${params.toString()}`, { cache: "no-store" });
+    const res = await fetch(`${API}/careers/admin?${params.toString()}`, {
+      cache: "no-store",
+      headers: { Authorization: `Bearer ${token}` },
+    });
     const data: ApiListResponse | null = await res.json().catch(() => null);
     if (!res.ok) return alert((data as any)?.message || "Export failed.");
     const rows = (data?.data || []).map((a) => ({
@@ -159,7 +169,13 @@ export default function AdminApplicationsPage() {
     if (!window.confirm("Delete this application? This action cannot be undone.")) return;
     setDeletingId(id); setErr(null);
     try {
-      const res = await fetch(`${API}/careers/admin/${id}`, { method: "DELETE", cache: "no-store" });
+      const token = localStorage.getItem("admin_token");
+      if (!token) { setErr("Not logged in."); return; }
+      const res = await fetch(`${API}/careers/admin/${id}`, {
+        method: "DELETE",
+        cache: "no-store",
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const data = await res.json().catch(() => null);
       if (!res.ok) { setErr((data as any)?.message || "Failed to delete application."); return; }
       setItems((prev) => prev.filter((x) => x._id !== id));
