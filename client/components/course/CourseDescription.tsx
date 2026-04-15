@@ -2,7 +2,17 @@
 
 import { useState } from "react";
 
-export default function CourseDescription({ course }: any) {
+type LegacyCourseDescriptionData = {
+  title: string;
+  fullDescription: string;
+  objectives: string[];
+};
+
+export default function CourseDescription({
+  course,
+}: {
+  course: LegacyCourseDescriptionData;
+}) {
   const [expanded, setExpanded] = useState(false);
 
   const descriptionToShow = expanded

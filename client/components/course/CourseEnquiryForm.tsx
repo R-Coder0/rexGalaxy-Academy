@@ -109,69 +109,86 @@ export default function CourseEnquiryForm({
   };
 
   return (
-    <aside
-      className="rounded-[26px] border border-white/10 p-5"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03))",
-      }}
-    >
-      <h3 className="text-xl font-semibold text-white">Get Quick Call</h3>
-      <p className="mt-2 text-sm leading-6 text-white/60">
-        Fill your details and our counsellor will contact you shortly.
+    <aside className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-6 shadow-[var(--shadow-sm)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+        Quick Support
+      </p>
+      <h3 className="mt-2 text-2xl font-semibold text-white">Get Quick Call</h3>
+      <p className="mt-3 text-sm leading-7 text-white/60">
+        Fill your details and our counsellor will contact you shortly with batch,
+        curriculum, and admission guidance.
       </p>
 
-      <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
-        <input
-          name="fullName"
-          value={form.fullName}
-          onChange={handleChange}
-          placeholder="Full Name"
-          className="w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
-        />
+      <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+        <div className="field">
+          <label className="label">Full Name</label>
+          <input
+            name="fullName"
+            value={form.fullName}
+            onChange={handleChange}
+            placeholder="Enter full name"
+            className="input rounded-none"
+          />
+        </div>
 
-        <input
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Email Address"
-          className="w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
-        />
+        <div className="field">
+          <label className="label">Email Address</label>
+          <input
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="Enter email address"
+            className="input rounded-none"
+          />
+        </div>
 
-        <input
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-          placeholder="Phone Number"
-          className="w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
-        />
+        <div className="field">
+          <label className="label">Phone Number</label>
+          <input
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Enter phone number"
+            className="input rounded-none"
+          />
+        </div>
 
-        <input
-          value={courseName}
-          disabled
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75 outline-none"
-        />
+        <div className="field">
+          <label className="label">Course</label>
+          <input
+            value={courseName}
+            disabled
+            className="input rounded-none bg-white/[0.05] text-white/72"
+          />
+        </div>
 
-        <textarea
-          name="message"
-          value={form.message}
-          onChange={handleChange}
-          rows={5}
-          placeholder="Tell us what you want to learn"
-          className="w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
-        />
+        <div className="field">
+          <label className="label">Message</label>
+          <textarea
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+            rows={5}
+            placeholder="Tell us what you want to learn"
+            className="textarea rounded-none"
+          />
+        </div>
 
         <button className="w-full bg-[var(--brand)] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[var(--brand-hover)]">
           {isSubmitting ? "Submitting..." : "Submit Enquiry"}
         </button>
 
         {submitMessage ? (
-          <p className="text-sm text-emerald-400">{submitMessage}</p>
+          <p className="rounded-[16px] border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
+            {submitMessage}
+          </p>
         ) : null}
 
         {submitError ? (
-          <p className="text-sm text-red-400">{submitError}</p>
+          <p className="rounded-[16px] border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+            {submitError}
+          </p>
         ) : null}
       </form>
     </aside>

@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function CourseHero({ course }: any) {
+type LegacyCourseHeroData = {
+  title: string;
+  shortDescription: string;
+  image: string;
+};
+
+export default function CourseHero({ course }: { course: LegacyCourseHeroData }) {
   return (
     <section className="border-b border-orange-500/20 bg-black">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
