@@ -203,13 +203,13 @@ export default function CourseDetailPage({ data }: Props) {
 
             <div className="rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-6 shadow-[0_25px_70px_rgba(0,0,0,0.35)]">
               <div className="rounded-[28px] border border-white/10 bg-[var(--surface-2)]/88 p-6 text-center backdrop-blur">
-                <div className="mx-auto flex h-[88px] w-[88px] items-center justify-center rounded-full border border-[var(--brand)]/20 bg-white px-4 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.28)]">
+                <div className="mx-auto flex h-[104px] w-[104px] items-center justify-center rounded-full border border-[var(--brand)]/20 bg-zinc-200 px-3 py-3 shadow-[0_14px_35px_rgba(0,0,0,0.28)]">
                   <Image
                     src="/logo.png"
                     alt="RexGalaxy Academy"
-                    width={168}
-                    height={56}
-                    className="h-14 w-auto object-contain"
+                    width={192}
+                    height={72}
+                    className="h-16 w-auto object-contain"
                     priority
                   />
                 </div>
