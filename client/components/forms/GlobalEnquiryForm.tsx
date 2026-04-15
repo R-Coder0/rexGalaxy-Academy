@@ -99,6 +99,23 @@ export default function GlobalEnquiryForm({
     [courseOptions]
   );
 
+  const resolvedCourseOptions = useMemo(() => {
+    const normalizedOptions = (Array.isArray(courseOptions) ? courseOptions : [])
+      .map((course) => course.trim())
+      .filter(Boolean);
+
+    const selectedCourse = initialCourse.trim();
+    const hasSelectedCourse = normalizedOptions.some(
+      (course) => course.toLowerCase() === selectedCourse.toLowerCase()
+    );
+
+    if (selectedCourse && !hasSelectedCourse) {
+      return [selectedCourse, ...normalizedOptions];
+    }
+
+    return normalizedOptions;
+  }, [courseOptions, initialCourse]);
+
   const validate = () => {
     const nextErrors: FormErrors = {};
 
@@ -322,8 +339,8 @@ export default function GlobalEnquiryForm({
                       className="h-12 w-full appearance-none rounded-xl border border-white/10 bg-white/5 pl-12 pr-12 text-white outline-none transition focus:border-[var(--brand)] focus:bg-white/[0.07]"
                     >
                       <option value="">Select course</option>
-                      {hasCourseOptions &&
-                        courseOptions.map((course) => (
+                      {(hasCourseOptions || resolvedCourseOptions.length > 0) &&
+                        resolvedCourseOptions.map((course) => (
                           <option key={course} value={course}>
                             {course}
                           </option>
