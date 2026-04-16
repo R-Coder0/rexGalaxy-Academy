@@ -85,7 +85,6 @@ const RegistrationSchema = new mongoose.Schema<IRegistration>(
 );
 
 RegistrationSchema.index({ createdAt: -1 });
-RegistrationSchema.index({ registrationCode: 1 }, { unique: true });
 RegistrationSchema.index({ email: 1 });
 RegistrationSchema.index({ phone: 1 });
 RegistrationSchema.index({ course: 1 });

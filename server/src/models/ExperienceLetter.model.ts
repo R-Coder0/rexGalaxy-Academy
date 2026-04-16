@@ -132,7 +132,6 @@ const ExperienceLetterSchema = new mongoose.Schema<IExperienceLetter>(
   { timestamps: true }
 );
 
-ExperienceLetterSchema.index({ regNo: 1 }, { unique: true });
 ExperienceLetterSchema.index({ createdAt: -1 });
 ExperienceLetterSchema.index({ candidateName: 1 });
 ExperienceLetterSchema.index({ position: 1 });

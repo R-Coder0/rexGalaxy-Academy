@@ -127,7 +127,6 @@ const OfferLetterSchema = new mongoose.Schema<IOfferLetter>(
   { timestamps: true }
 );
 
-OfferLetterSchema.index({ regNo: 1 }, { unique: true });
 OfferLetterSchema.index({ createdAt: -1 });
 OfferLetterSchema.index({ candidateName: 1 });
 OfferLetterSchema.index({ position: 1 });

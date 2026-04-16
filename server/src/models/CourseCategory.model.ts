@@ -51,7 +51,6 @@ const CourseCategorySchema = new mongoose.Schema<ICourseCategory>(
 );
 
 CourseCategorySchema.index({ title: 1 });
-CourseCategorySchema.index({ slug: 1 }, { unique: true });
 CourseCategorySchema.index({ isActive: 1, order: 1 });
 
 export const CourseCategory = mongoose.model<ICourseCategory>(
