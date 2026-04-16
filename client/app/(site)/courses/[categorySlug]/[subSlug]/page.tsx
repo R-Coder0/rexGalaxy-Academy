@@ -1,14 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from "next/navigation";
 import CourseDetailPage from "@/components/course-detail/CourseDetailPage";
 import { resolveCoursePageByCategoryAndSubcategory } from "@/lib/course-detail";
 
 export default async function CourseSubcategoryPage({
   params,
-}: any) {
+}: {
+  params: Promise<{ categorySlug: string; subSlug: string }>;
+}) {
+  const { categorySlug, subSlug } = await params;
   const data = await resolveCoursePageByCategoryAndSubcategory(
-    params.categorySlug,
-    params.subSlug
+    categorySlug,
+    subSlug
   );
 
   if (!data) return notFound();

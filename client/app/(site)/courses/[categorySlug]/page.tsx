@@ -5,9 +5,10 @@ import { resolveCoursePageBySlug } from "@/lib/course-detail";
 export default async function CourseCategoryPage({
   params,
 }: {
-  params: { categorySlug: string };
+  params: Promise<{ categorySlug: string }>;
 }) {
-  const data = await resolveCoursePageBySlug(params.categorySlug);
+  const { categorySlug } = await params;
+  const data = await resolveCoursePageBySlug(categorySlug);
 
   if (!data) return notFound();
 
