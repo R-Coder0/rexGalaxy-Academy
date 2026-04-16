@@ -1,25 +1,29 @@
 import React from 'react';
 import { Phone, Mail, MessageCircle } from 'lucide-react';
+import {
+  SITE_EMAIL_LINK,
+  SITE_PHONE_LINK,
+  SITE_WHATSAPP_LINK,
+} from "@/lib/site-contact";
 
 const ContactSidebar: React.FC = () => {
   const contactLinks = [
     {
       name: 'WhatsApp',
       icon: <MessageCircle className="h-6 w-6 text-white" />,
-      // Replace with your WhatsApp link (wa.me/number)
-      href: 'https://wa.me/1234567890', 
+      href: SITE_WHATSAPP_LINK,
       color: 'bg-green-500 hover:bg-green-600',
     },
     {
       name: 'Email',
       icon: <Mail className="h-6 w-6 text-white" />,
-      href: 'mailto:hello@example.com',
+      href: SITE_EMAIL_LINK,
       color: 'bg-blue-500 hover:bg-blue-600',
     },
     {
       name: 'Call',
       icon: <Phone className="h-6 w-6 text-white" />,
-      href: 'tel:+1234567890',
+      href: SITE_PHONE_LINK,
       color: 'bg-indigo-600 hover:bg-indigo-700',
     },
   ];

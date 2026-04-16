@@ -2,36 +2,45 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import {
+  SITE_ADDRESS,
+  SITE_EMAIL,
+  SITE_EMAIL_LINK,
+  SITE_HOURS,
+  SITE_LOCATION_NAME,
+  SITE_PHONE_DISPLAY,
+  SITE_PHONE_LINK,
+  SITE_WHATSAPP_LINK,
+} from "@/lib/site-contact";
 
 const contactCards = [
   {
     title: "Call Us",
-    value: "074112 11148",
+    value: SITE_PHONE_DISPLAY,
     desc: "Speak with our counsellor for course guidance.",
     actionText: "Call Now",
-    href: "tel:+917411211148",
+    href: SITE_PHONE_LINK,
   },
   {
     title: "Email",
-    value: "rexgalaxytechnology@gmail.com",
+    value: SITE_EMAIL,
     desc: "Send your query and we’ll reply ASAP.",
     actionText: "Send Email",
-    href: "mailto:rexgalaxytechnology@gmail.com",
+    href: SITE_EMAIL_LINK,
   },
   {
     title: "WhatsApp",
-    value: "074112 11148",
+    value: SITE_PHONE_DISPLAY,
     desc: "Quick reply for fees, batches, and demo class.",
     actionText: "Chat Now",
-    href: "https://wa.me/917411211148",
+    href: SITE_WHATSAPP_LINK,
   },
 ];
 
 const branches = [
   {
-    city: "Noida",
-    address:
-      "Sector-based training center with labs, counsellors, and classroom batches.",
+    city: SITE_LOCATION_NAME,
+    address: SITE_ADDRESS,
     timing: "Mon–Sat: 9:00 AM – 7:00 PM",
   },
   {
@@ -68,7 +77,7 @@ const faqs = [
   },
   {
     q: "Do you offer online + offline both?",
-    a: "Yes. You can choose mode depending on your location and schedule.",
+    a: "Yes. Our Noida office supports both classroom guidance and online learning assistance.",
   },
 ];
 
@@ -103,6 +112,19 @@ const initialFormState: FormState = {
   message: "",
   course: "",
 };
+
+const primaryBranch = branches[0]
+  ? {
+      ...branches[0],
+      city: SITE_LOCATION_NAME,
+      address: SITE_ADDRESS,
+      timing: SITE_HOURS,
+    }
+  : {
+      city: SITE_LOCATION_NAME,
+      address: SITE_ADDRESS,
+      timing: SITE_HOURS,
+    };
 
 export default function ContactUsPage() {
   const [form, setForm] = useState<FormState>(initialFormState);
@@ -250,7 +272,7 @@ export default function ContactUsPage() {
               </Link>
 
               <a
-                href="https://wa.me/917411211148"
+                href={SITE_WHATSAPP_LINK}
                 className="rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold text-black shadow-lg shadow-orange-500/15 transition hover:opacity-90"
               >
                 WhatsApp Now
@@ -329,7 +351,7 @@ export default function ContactUsPage() {
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="074112 11148"
+                    placeholder={SITE_PHONE_DISPLAY}
                     className="mt-2 w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none placeholder:text-white/30 focus:border-orange-500/50"
                   />
                   {fieldErrors.phone ? (
@@ -348,7 +370,7 @@ export default function ContactUsPage() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="rexgalaxytechnology@gmail.com"
+                    placeholder={SITE_EMAIL}
                     className="mt-2 w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none placeholder:text-white/30 focus:border-orange-500/50"
                   />
                   {fieldErrors.email ? (
@@ -423,7 +445,7 @@ export default function ContactUsPage() {
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-sm font-semibold text-white">
-                  Find Us on <span className="text-orange-500">Google Maps</span>
+                  Find Our <span className="text-orange-500">Office on Google Maps</span>
                 </p>
                 <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs text-orange-400">
                   Location
@@ -451,14 +473,14 @@ export default function ContactUsPage() {
 
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
             <h2 className="text-xl font-bold">
-              Visit Our <span className="text-orange-500">Centers</span>
+              Visit Our <span className="text-orange-500">Office</span>
             </h2>
             <p className="mt-2 text-sm text-white/60">
-              Pick your nearest branch or enroll online.
+              Connect with our single office for counselling, batches, and admissions.
             </p>
 
             <div className="mt-6 space-y-4">
-              {branches.map((b) => (
+              {[primaryBranch].map((b) => (
                 <div
                   key={b.city}
                   className="rounded-2xl border border-white/10 bg-black/30 p-5"
@@ -540,13 +562,13 @@ export default function ContactUsPage() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="tel:+917411211148"
+                href={SITE_PHONE_LINK}
                 className="rounded-xl bg-orange-500 px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-orange-500/15 transition hover:opacity-90"
               >
                 Call Now
               </a>
               <a
-                href="https://wa.me/917411211148"
+                href={SITE_WHATSAPP_LINK}
                 className="rounded-xl border border-orange-500/40 bg-transparent px-6 py-3 text-sm font-semibold text-orange-400 transition hover:bg-orange-500/10"
               >
                 WhatsApp

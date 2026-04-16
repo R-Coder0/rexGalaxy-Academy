@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
+import { SITE_LOCATION_NAME } from "@/lib/site-contact";
 
 const BottomStickyForm: React.FC = () => {
   const API_BASE_URL =
@@ -169,10 +170,8 @@ const BottomStickyForm: React.FC = () => {
             onChange={handleChange}
             className="w-full md:flex-1 bg-white text-sm px-3 py-2 outline-none border border-white/70 focus:border-yellow-400 text-gray-700"
           >
-            <option value="">Select a Branch</option>
-            <option value="noida">Noida</option>
-            <option value="gurgaon">Gurgaon</option>
-            <option value="delhi">Delhi</option>
+            <option value="">Select Location</option>
+            <option value={SITE_LOCATION_NAME}>{SITE_LOCATION_NAME}</option>
           </select>
 
           {/* Submit button */}

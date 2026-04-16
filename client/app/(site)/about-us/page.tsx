@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  SITE_ADDRESS,
+  SITE_LOCATION_NAME,
+} from "@/lib/site-contact";
 
 const stats = [
   { label: "Years of Excellence", value: "20+" },
@@ -67,12 +71,7 @@ const team = [
   },
 ];
 
-const branches = [
-  { city: "Noida", address: "Sector-based training center with labs + counselling support." },
-  { city: "Delhi", address: "Classroom batches + doubt sessions and interview workshops." },
-  { city: "Gurgaon", address: "Job-ready programs with projects and placement support." },
-  { city: "Online", address: "Live instructor-led sessions with recordings and doubt clearing." },
-];
+const branches = [{ city: SITE_LOCATION_NAME, address: SITE_ADDRESS }];
 
 const faqs = [
   {
@@ -126,13 +125,13 @@ export default function AboutUsPage() {
                 Explore Courses
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="rounded-xl border border-orange-500/40 bg-transparent px-5 py-3 text-sm font-semibold text-orange-400 transition hover:bg-orange-500/10"
               >
                 Talk to Counsellor
               </Link>
               <Link
-                href="/download-brochure"
+                href="/courses"
                 className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white/80 transition hover:bg-white/10"
               >
                 Download Brochure
@@ -327,12 +326,12 @@ export default function AboutUsPage() {
               Our <span className="text-orange-500">Branches</span>
             </h2>
             <p className="mt-2 text-sm text-white/60">
-              Find a center near you or learn online from anywhere.
+              Visit our office for counselling, guidance, and admissions support.
             </p>
           </div>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className="w-fit rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold text-black transition hover:opacity-90"
           >
             Get Call Back
@@ -355,7 +354,7 @@ export default function AboutUsPage() {
               <div className="mt-4 h-[1px] w-full bg-white/10" />
               <div className="mt-4 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="text-sm font-semibold text-orange-400 hover:text-orange-300"
                 >
                   Contact →
@@ -423,7 +422,7 @@ export default function AboutUsPage() {
                 Explore Courses
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="rounded-xl border border-orange-500/40 bg-transparent px-6 py-3 text-sm font-semibold text-orange-400 transition hover:bg-orange-500/10"
               >
                 Book Free Counselling
@@ -433,7 +432,7 @@ export default function AboutUsPage() {
         </div>
 
         <p className="mt-6 text-center text-xs text-white/40">
-          © {new Date().getFullYear()} Your Institute Name. All rights reserved.
+          © {new Date().getFullYear()} Rex Galaxy Academy. All rights reserved.
         </p>
       </section>
     </main>
