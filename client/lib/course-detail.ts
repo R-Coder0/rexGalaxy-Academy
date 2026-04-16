@@ -87,7 +87,7 @@ async function safeJson<T>(response: Response): Promise<T | null> {
   }
 }
 
-async function getCourseMenu() {
+export async function getCourseMenu() {
   const response = await fetch(`${API_BASE}/course-menu/menu`, {
     cache: "no-store",
   });
