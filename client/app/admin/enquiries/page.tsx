@@ -29,6 +29,9 @@ type Enquiry = {
   _id: string;
   fullName: string;
   company?: string;
+  course?: string;
+  source?: string;
+  branch?: string;
   phone: string;
   email?: string;
   message: string;
@@ -133,7 +136,7 @@ export default function AdminEnquiriesPage() {
     const toMs = hasTo ? endOfDayISO(toDate) : null;
     return items.filter((e) => {
       if (query) {
-        const hay = `${e.fullName} ${e.company || ""} ${e.phone} ${e.email || ""} ${e.message}`.toLowerCase();
+        const hay = `${e.fullName} ${e.company || ""} ${e.course || ""} ${e.branch || ""} ${e.source || ""} ${e.phone} ${e.email || ""} ${e.message}`.toLowerCase();
         if (!hay.includes(query)) return false;
       }
       if (hasFrom || hasTo) {
@@ -149,13 +152,17 @@ export default function AdminEnquiriesPage() {
     if (!filtered.length) { alert("No enquiries found for the selected filter."); return; }
     const rows = filtered.map((e, idx) => ({
       SNo: idx + 1, Date: formatDate(e.createdAt), FullName: e.fullName,
-      Company: e.company || "", Phone: e.phone, Email: e.email || "",
+      Course: e.course || "",
+      Company: e.company || "",
+      Branch: e.branch || "",
+      Source: e.source || "",
+      Phone: e.phone, Email: e.email || "",
       Message: e.message, HasAttachment: e.attachment ? "Yes" : "No",
       AttachmentName: e.attachment?.originalName || "",
       AttachmentUrl: e.attachment ? getFileUrl(API, e.attachment.path) : "",
     }));
     const ws = XLSX.utils.json_to_sheet(rows);
-    ws["!cols"] = [{ wch: 6 }, { wch: 22 }, { wch: 18 }, { wch: 18 }, { wch: 16 }, { wch: 24 }, { wch: 60 }, { wch: 14 }, { wch: 28 }, { wch: 40 }];
+    ws["!cols"] = [{ wch: 6 }, { wch: 22 }, { wch: 20 }, { wch: 24 }, { wch: 18 }, { wch: 22 }, { wch: 16 }, { wch: 24 }, { wch: 60 }, { wch: 14 }, { wch: 28 }, { wch: 40 }];
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Enquiries");
     XLSX.writeFile(wb, `enquiries_${fromDate || "all"}_to_${toDate || "all"}.xlsx`);
@@ -210,7 +217,7 @@ export default function AdminEnquiriesPage() {
           <Search className="h-4 w-4 shrink-0" style={{ color: "var(--text-dim)" }} />
           <input
             value={q} onChange={(e) => setQ(e.target.value)}
-            placeholder="Search by name, company, phone, email or message..."
+            placeholder="Search by name, course, source, phone, email or message..."
             className="w-full bg-transparent text-sm outline-none"
             style={{ color: "var(--text)" }}
           />
@@ -319,6 +326,21 @@ export default function AdminEnquiriesPage() {
                           {e.company}
                         </span>
                       )}
+                      {e.course && (
+                        <span className="badge badge-brand text-xs">
+                          Course: {e.course}
+                        </span>
+                      )}
+                      {e.branch && (
+                        <span className="badge text-xs">
+                          Branch: {e.branch}
+                        </span>
+                      )}
+                      {e.source && (
+                        <span className="badge text-xs">
+                          Source: {e.source}
+                        </span>
+                      )}
                       {e.attachment && (
                         <span className="badge badge-brand text-xs">
                           <Paperclip className="h-3 w-3" />
@@ -410,7 +432,10 @@ export default function AdminEnquiriesPage() {
                 {[
                   { label: "Phone", value: selected.phone },
                   { label: "Email", value: selected.email || "—" },
+                  { label: "Course", value: selected.course || "—" },
                   { label: "Company", value: selected.company || "—" },
+                  { label: "Branch", value: selected.branch || "—" },
+                  { label: "Source", value: selected.source || "—" },
                 ].map(({ label, value }) => (
                   <div key={label} className="rounded-xl p-4" style={surface3}>
                     <p className="text-[11px] font-semibold uppercase" style={{ letterSpacing: "0.18em", color: "var(--text-dim)" }}>

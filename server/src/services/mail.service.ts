@@ -34,6 +34,9 @@ export function getTransport() {
 export async function sendEnquiryMail(params: {
   fullName: string;
   company?: string;
+  course?: string;
+  source?: string;
+  branch?: string;
   phone: string;
   email?: string;
   message: string;
@@ -46,58 +49,83 @@ export async function sendEnquiryMail(params: {
   const to = process.env.ENQUIRY_ADMIN_EMAIL;
   if (!to) throw new Error("ENQUIRY_ADMIN_EMAIL missing in env.");
 
-  const fromName = process.env.MAIL_FROM_NAME || "NESF Website";
+  const fromName = process.env.MAIL_FROM_NAME || "RexGalaxy Academy";
   const fromEmail = process.env.MAIL_FROM_EMAIL || process.env.SMTP_USER!;
   const from = `${fromName} <${fromEmail}>`;
 
   const safeName = escapeHtml(params.fullName);
   const safeCompany = params.company ? escapeHtml(params.company) : "";
+  const safeCourse = params.course ? escapeHtml(params.course) : "";
+  const safeSource = params.source ? escapeHtml(params.source) : "";
+  const safeBranch = params.branch ? escapeHtml(params.branch) : "";
   const safePhone = escapeHtml(params.phone);
   const safeEmail = params.email ? escapeHtml(params.email) : "";
   const safeMessage = escapeHtml(params.message).replace(/\n/g, "<br/>");
 
-  const subject = `New Enquiry — ${params.fullName}${params.company ? ` (${params.company})` : ""}`;
+  const subjectTag = params.course || params.company || params.source;
+  const subject = `New Enquiry - ${params.fullName}${subjectTag ? ` (${subjectTag})` : ""}`;
+
+  const rows = [
+    {
+      label: "Name",
+      valueHtml: `<span style="font-weight:600;">${safeName}</span>`,
+    },
+    params.company
+      ? {
+          label: "Company",
+          valueHtml: safeCompany,
+        }
+      : null,
+    params.course
+      ? {
+          label: "Course",
+          valueHtml: safeCourse,
+        }
+      : null,
+    params.branch
+      ? {
+          label: "Branch",
+          valueHtml: safeBranch,
+        }
+      : null,
+    {
+      label: "Phone",
+      valueHtml: safePhone,
+    },
+    params.email
+      ? {
+          label: "Email",
+          valueHtml: `<a href="mailto:${safeEmail}" style="color:#0b5fff;text-decoration:none;">${safeEmail}</a>`,
+        }
+      : null,
+    params.source
+      ? {
+          label: "Source",
+          valueHtml: safeSource,
+        }
+      : null,
+  ].filter(Boolean) as Array<{ label: string; valueHtml: string }>;
+
+  const detailsTable = rows
+    .map(
+      (row, index) => `<tr>
+        <td style="padding:10px 0;${index < rows.length - 1 ? "border-bottom:1px solid #eef0f2;" : ""}width:140px;color:#667085;font-size:13px;">${row.label}</td>
+        <td style="padding:10px 0;${index < rows.length - 1 ? "border-bottom:1px solid #eef0f2;" : ""}color:#101828;font-size:14px;">${row.valueHtml}</td>
+      </tr>`
+    )
+    .join("");
 
   const html = `
   <div style="background:#f4f6f8;padding:24px;font-family:Arial,Helvetica,sans-serif;">
     <div style="max-width:640px;margin:0 auto;background:#ffffff;border:1px solid #e6e8eb;border-radius:12px;overflow:hidden;">
-      
       <div style="padding:18px 20px;background:#0b5fff;color:#ffffff;">
         <div style="font-size:18px;font-weight:700;line-height:1.2;">New Website Enquiry</div>
-        <div style="font-size:12px;opacity:0.9;margin-top:4px;">NESF Contact Form</div>
+        <div style="font-size:12px;opacity:0.9;margin-top:4px;">RexGalaxy Academy</div>
       </div>
 
       <div style="padding:20px;">
         <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;">
-          <tr>
-            <td style="padding:10px 0;border-bottom:1px solid #eef0f2;width:140px;color:#667085;font-size:13px;">Name</td>
-            <td style="padding:10px 0;border-bottom:1px solid #eef0f2;color:#101828;font-size:14px;font-weight:600;">${safeName}</td>
-          </tr>
-
-          ${
-            params.company
-              ? `<tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #eef0f2;width:140px;color:#667085;font-size:13px;">Company</td>
-                  <td style="padding:10px 0;border-bottom:1px solid #eef0f2;color:#101828;font-size:14px;">${safeCompany}</td>
-                </tr>`
-              : ""
-          }
-
-          <tr>
-            <td style="padding:10px 0;border-bottom:1px solid #eef0f2;width:140px;color:#667085;font-size:13px;">Phone</td>
-            <td style="padding:10px 0;border-bottom:1px solid #eef0f2;color:#101828;font-size:14px;">${safePhone}</td>
-          </tr>
-
-          ${
-            params.email
-              ? `<tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #eef0f2;width:140px;color:#667085;font-size:13px;">Email</td>
-                  <td style="padding:10px 0;border-bottom:1px solid #eef0f2;color:#101828;font-size:14px;">
-                    <a href="mailto:${safeEmail}" style="color:#0b5fff;text-decoration:none;">${safeEmail}</a>
-                  </td>
-                </tr>`
-              : ""
-          }
+          ${detailsTable}
         </table>
 
         <div style="margin-top:16px;">
@@ -108,7 +136,7 @@ export async function sendEnquiryMail(params: {
         </div>
 
         <div style="margin-top:18px;padding-top:14px;border-top:1px solid #eef0f2;color:#98a2b3;font-size:12px;">
-          Sent from NESF website enquiry form.
+          Sent from RexGalaxy Academy website enquiry form.
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
+import { submitEnquiry } from "@/lib/enquiry";
 import { SITE_LOCATION_NAME } from "@/lib/site-contact";
 
 const BottomStickyForm: React.FC = () => {
@@ -60,38 +61,16 @@ const BottomStickyForm: React.FC = () => {
       setIsSubmitting(true);
       setSubmitError("");
       setSuccessMessage("");
-
-      const payload = new FormData();
-      payload.append("fullName", formData.fullName.trim());
-      payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
-      payload.append(
-        "company",
-        formData.course.trim() || "Bottom Sticky Form"
-      );
-      payload.append(
-        "message",
-        [
-          "Enquiry received from fixed bottom form.",
-          formData.course.trim() ? `Interested Course: ${formData.course.trim()}` : "",
-          formData.branch.trim() ? `Preferred Branch: ${formData.branch.trim()}` : "",
-        ]
-          .filter(Boolean)
-          .join("\n\n")
-      );
-
-      const response = await fetch(`${API_BASE_URL}/enquiry`, {
-        method: "POST",
-        body: payload,
+      await submitEnquiry({
+        apiBaseUrl: API_BASE_URL,
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        course: formData.course,
+        branch: formData.branch,
+        source: "bottom-sticky-form",
+        message: "Enquiry received from fixed bottom form.",
       });
-
-      const result = await response.json();
-
-      if (!response.ok || !result?.success) {
-        throw new Error(
-          result?.message || "Failed to submit enquiry. Please try again."
-        );
-      }
 
       setSuccessMessage("Enquiry submitted successfully.");
       setFormData({
@@ -130,7 +109,7 @@ const BottomStickyForm: React.FC = () => {
             onChange={handleChange}
             type="text"
             placeholder="Full Name"
-            className="w-full md:flex-1 bg-white text-sm px-3 py-2 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-500"
+            className="w-full md:flex-1 bg-white px-3 py-2 text-sm text-gray-900 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-500"
           />
 
           {/* Email */}
@@ -140,7 +119,7 @@ const BottomStickyForm: React.FC = () => {
             onChange={handleChange}
             type="email"
             placeholder="Email Address"
-            className="w-full md:flex-1 bg-white text-sm px-3 py-2 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-500"
+            className="w-full md:flex-1 bg-white px-3 py-2 text-sm text-gray-900 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-500"
           />
 
           {/* Phone */}
@@ -150,7 +129,7 @@ const BottomStickyForm: React.FC = () => {
             onChange={handleChange}
             type="tel"
             placeholder="Phone Number"
-            className="w-full md:flex-1 bg-white text-sm px-3 py-2 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-500"
+            className="w-full md:flex-1 bg-white px-3 py-2 text-sm text-gray-900 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-500"
           />
 
           {/* Course */}
@@ -160,7 +139,7 @@ const BottomStickyForm: React.FC = () => {
             onChange={handleChange}
             type="text"
             placeholder="Python Full Stack Developer Course"
-            className="w-full md:flex-1 bg-[#e2ebf7] text-sm px-3 py-2 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-600"
+            className="w-full md:flex-1 bg-[#e2ebf7] px-3 py-2 text-sm text-gray-900 outline-none border border-white/70 focus:border-yellow-400 placeholder:text-gray-600"
           />
 
           {/* Branch (select example) */}
@@ -168,7 +147,7 @@ const BottomStickyForm: React.FC = () => {
             name="branch"
             value={formData.branch}
             onChange={handleChange}
-            className="w-full md:flex-1 bg-white text-sm px-3 py-2 outline-none border border-white/70 focus:border-yellow-400 text-gray-700"
+            className="w-full md:flex-1 bg-white px-3 py-2 text-sm text-gray-900 outline-none border border-white/70 focus:border-yellow-400"
           >
             <option value="">Select Location</option>
             <option value={SITE_LOCATION_NAME}>{SITE_LOCATION_NAME}</option>

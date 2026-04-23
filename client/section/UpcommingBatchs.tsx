@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import GlobalEnquiryForm from "@/components/forms/GlobalEnquiryForm";
 import { CalendarDays, PhoneCall, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
 type Batch = {
@@ -51,6 +52,7 @@ export default function UpcomingBatches() {
   }, []);
 
   const [index, setIndex] = useState(0);
+  const [selectedBatch, setSelectedBatch] = useState<Batch | null>(null);
 
   // ✅ maxIndex now consistent for all screens
   const maxIndex = useMemo(() => {
@@ -69,6 +71,8 @@ export default function UpcomingBatches() {
   const goTo = (i: number) => setIndex(clamp(i, 0, maxIndex));
   const next = () => setIndex((cur) => clamp(cur + 1, 0, maxIndex));
   const prev = () => setIndex((cur) => clamp(cur - 1, 0, maxIndex));
+  const handleOpenEnquiry = (batch: Batch) => setSelectedBatch(batch);
+  const handleCloseEnquiry = () => setSelectedBatch(null);
 
   // autoplay
   const [paused, setPaused] = useState(false);
@@ -233,11 +237,12 @@ export default function UpcomingBatches() {
 
                     <div className="px-5 pb-6 pt-5">
                       <button
+                        type="button"
                         className="w-full inline-flex items-center justify-center gap-2 rounded-xl
                                    bg-[var(--brand)] hover:bg-[var(--brand-hover)]
                                    text-black font-semibold py-3 transition
                                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                        onClick={() => alert(`Callback requested for ${batch.title}`)}
+                        onClick={() => handleOpenEnquiry(batch)}
                       >
                         <PhoneCall className="h-4.5 w-4.5" />
                         Request a Call Back
@@ -269,6 +274,21 @@ export default function UpcomingBatches() {
           <div className="mt-2 text-center text-xs text-white/35 lg:hidden">Swipe to explore →</div>
         </div>
       </div>
+      {selectedBatch ? (
+        <GlobalEnquiryForm
+          isOpen
+          onClose={handleCloseEnquiry}
+          title="Request a Call Back"
+          subtitle={`Share your details for the upcoming ${selectedBatch.title} batch and our team will call you shortly.`}
+          submitLabel="Request Callback"
+          source={`upcoming-batch-${selectedBatch.title
+            .toLowerCase()
+            .replace(/\s+/g, "-")}`}
+          initialCourse={selectedBatch.title}
+          courseOptions={batches.map((batch) => batch.title)}
+          onSuccess={() => setSelectedBatch(null)}
+        />
+      ) : null}
     </section>
   );
 }

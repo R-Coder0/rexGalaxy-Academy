@@ -15,6 +15,9 @@ const AttachmentSchema = new mongoose_1.default.Schema({
 const EnquirySchema = new mongoose_1.default.Schema({
     fullName: { type: String, required: true, trim: true, minlength: 2, maxlength: 80 },
     company: { type: String, trim: true, maxlength: 120 },
+    course: { type: String, trim: true, maxlength: 160 },
+    source: { type: String, trim: true, maxlength: 160 },
+    branch: { type: String, trim: true, maxlength: 120 },
     phone: { type: String, required: true, trim: true, minlength: 7, maxlength: 25 },
     email: { type: String, trim: true, lowercase: true, maxlength: 120 },
     message: { type: String, required: true, trim: true, minlength: 1, maxlength: 3000 },
@@ -23,4 +26,6 @@ const EnquirySchema = new mongoose_1.default.Schema({
 EnquirySchema.index({ createdAt: -1 });
 EnquirySchema.index({ phone: 1 });
 EnquirySchema.index({ email: 1 });
+EnquirySchema.index({ course: 1 });
+EnquirySchema.index({ source: 1 });
 exports.Enquiry = mongoose_1.default.model("Enquiry", EnquirySchema);

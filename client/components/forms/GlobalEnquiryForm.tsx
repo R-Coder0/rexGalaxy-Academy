@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { submitEnquiry } from "@/lib/enquiry";
 import {
   Mail,
   Phone,
@@ -186,30 +187,15 @@ export default function GlobalEnquiryForm({
 
     try {
       setIsSubmitting(true);
-      const formPayload = new FormData();
-      formPayload.append("fullName", form.fullName.trim());
-      formPayload.append("phone", form.phone.trim());
-      formPayload.append("email", form.email.trim());
-      formPayload.append("company", form.course.trim() || source.trim());
-      formPayload.append(
-        "message",
-        `${form.message.trim()}${
-          form.course ? `\n\nInterested Course: ${form.course.trim()}` : ""
-        }`
-      );
-
-      const response = await fetch(`${API_BASE_URL}/enquiry`, {
-        method: "POST",
-        body: formPayload,
+      await submitEnquiry({
+        apiBaseUrl: API_BASE_URL,
+        fullName: form.fullName,
+        phone: form.phone,
+        email: form.email,
+        course: form.course,
+        source,
+        message: form.message,
       });
-
-      const result = await response.json();
-
-      if (!response.ok || !result?.success) {
-        throw new Error(
-          result?.message || "Failed to submit enquiry. Please try again."
-        );
-      }
 
       setIsSuccess(true);
       setForm(getInitialForm(initialCourse));

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitEnquiry } from "@/lib/enquiry";
 
 type CourseEnquiryFormProps = {
   courseName: string;
@@ -72,28 +73,17 @@ export default function CourseEnquiryForm({
 
     try {
       setIsSubmitting(true);
-
-      const payload = new FormData();
-      payload.append("fullName", form.fullName.trim());
-      payload.append("phone", form.phone.trim());
-      payload.append("email", form.email.trim());
-      payload.append("company", courseName);
-      payload.append(
-        "message",
-        `${form.message.trim()}\n\nInterested Course: ${courseName}`
-      );
-
-      const response = await fetch(`${API_BASE_URL}/enquiry`, {
-        method: "POST",
-        body: payload,
+      await submitEnquiry({
+        apiBaseUrl: API_BASE_URL,
+        fullName: form.fullName,
+        phone: form.phone,
+        email: form.email,
+        course: courseName,
+        source: `course-detail-sidebar-${courseName
+          .toLowerCase()
+          .replace(/\s+/g, "-")}`,
+        message: form.message,
       });
-
-      const result = await response.json().catch(() => null);
-      if (!response.ok || !result?.success) {
-        throw new Error(
-          result?.message || "Failed to submit enquiry. Please try again."
-        );
-      }
 
       setSubmitMessage("Enquiry submitted successfully.");
       setForm(initialState);

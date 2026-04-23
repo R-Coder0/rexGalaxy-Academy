@@ -7,6 +7,9 @@ export const createEnquiry = async (req: Request, res: Response) => {
   try {
     const fullName = String(req.body.fullName || "").trim();
     const company = String(req.body.company || "").trim();
+    const course = String(req.body.course || "").trim();
+    const source = String(req.body.source || "").trim();
+    const branch = String(req.body.branch || "").trim();
     const phone = String(req.body.phone || "").trim();
     const email = String(req.body.email || "").toLowerCase().trim();
     const message = String(req.body.message || "").trim();
@@ -33,6 +36,9 @@ export const createEnquiry = async (req: Request, res: Response) => {
     const enquiry = await Enquiry.create({
       fullName,
       company: company || undefined,
+      course: course || undefined,
+      source: source || undefined,
+      branch: branch || undefined,
       phone,
       email: email || undefined,
       message,
@@ -51,6 +57,9 @@ export const createEnquiry = async (req: Request, res: Response) => {
     sendEnquiryMail({
       fullName,
       company: company || undefined,
+      course: course || undefined,
+      source: source || undefined,
+      branch: branch || undefined,
       phone,
       email: email || undefined,
       message,
