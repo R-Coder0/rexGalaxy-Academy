@@ -36,7 +36,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "10193",
     img: "/icons/powerbi.png",
-    brochure: "/brochures/power-bi.pdf",
+    brochure: "/brochures/POWER BI.pdf",
   },
   {
     title: "ADVANCE DIGITAL MARKETING",
@@ -44,7 +44,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "9629",
     img: "/icons/dm.svg",
-    brochure: "/brochures/advance-digital-marketing.pdf",
+    brochure: "/brochures/ADVANCE DIGITAL MARKETING.pdf",
   },
   {
     title: "BUSINESS ANALYST",
@@ -52,7 +52,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "8761",
     img: "/icons/ba.svg",
-    brochure: "/brochures/business-analyst.pdf",
+    brochure: "/brochures/Business analysts.pdf",
   },
   {
     title: "AWS TRAINING",
@@ -60,7 +60,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "9354",
     img: "/tech/AWS.svg",
-    brochure: "/brochures/aws-training.pdf",
+    brochure: "/brochures/AWS TRAINING.pdf",
   },
   {
     title: "AUTOCAD",
@@ -68,7 +68,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "4981",
     img: "/icons/autocad.png",
-    brochure: "/brochures/autocad.pdf",
+    brochure: "/brochures/AUTOCAD.pdf",
   },
   {
     title: "CYBER SECURITY",
@@ -76,7 +76,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "8427",
     img: "/icons/cs.svg",
-    brochure: "/brochures/cyber-security.pdf",
+    brochure: "/brochures/CYBER SECURITY.pdf",
   },
   {
     title: "JAVA",
@@ -84,7 +84,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "9138",
     img: "/tech/Java.svg",
-    brochure: "/brochures/java.pdf",
+    brochure: "/brochures/JAVA.pdf",
   },
   {
     title: "PL SQL",
@@ -92,7 +92,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "6572",
     img: "/tech/plsql.svg",
-    brochure: "/brochures/pl-sql.pdf",
+    brochure: "/brochures/PL SQL.pdf",
   },
   {
     title: "PYTHON",
@@ -100,7 +100,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "11892",
     img: "/tech/Python.svg",
-    brochure: "/brochures/python.pdf",
+    brochure: "/brochures/PYTHON.pdf",
   },
   {
     title: "PYTHON DATA ANALYST",
@@ -108,7 +108,7 @@ const courses: Course[] = [
     eligibility: "Any Graduate",
     reviews: "10344",
     img: "/icons/da.png",
-    brochure: "/brochures/python-data-analyst.pdf",
+    brochure: "/brochures/Python Data Analyst.pdf",
   },
 ];
 
