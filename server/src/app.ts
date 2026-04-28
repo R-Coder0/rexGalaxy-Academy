@@ -15,7 +15,11 @@ dotenv.config();
 export function createApp() {
   const app = express();
 
-  app.use(helmet());
+  app.use(
+    helmet({
+      crossOriginResourcePolicy: { policy: "cross-origin" },
+    })
+  );
   app.use(compression());
   app.use(morgan("dev"));
   app.use(cookieParser());

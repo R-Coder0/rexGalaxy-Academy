@@ -82,12 +82,15 @@ function normalizeModules(value) {
         if (!title || !content)
             return null;
         return {
-            moduleNumber: 0,
             title,
             content,
         };
     })
-        .filter((module) => module !== null);
+        .filter((module) => module !== null)
+        .map((module, index) => ({
+        moduleNumber: index + 1,
+        ...module,
+    }));
 }
 async function validateCategoryLinks(categoryId, subcategoryId) {
     if (!mongoose_1.default.Types.ObjectId.isValid(categoryId)) {
@@ -121,6 +124,12 @@ function detailPopulateQuery() {
         },
     ];
 }
+function getUploadedFile(req, fieldName) {
+    const files = req.files;
+    if (!files || Array.isArray(files))
+        return undefined;
+    return files[fieldName]?.[0];
+}
 const createCourseDetail = async (req, res) => {
     try {
         const title = String(req.body.title || "").trim();
@@ -132,6 +141,7 @@ const createCourseDetail = async (req, res) => {
         const canonicalUrl = String(req.body.canonicalUrl || "").trim();
         const categoryId = String(req.body.categoryId || "").trim();
         const subcategoryId = String(req.body.subcategoryId || "").trim();
+        const featureImageUrl = String(req.body.featureImageUrl || "").trim();
         const brochureUrl = String(req.body.brochureUrl || "").trim();
         const duration = String(req.body.duration || "").trim();
         const aboutCourse = normalizeAboutCourse(parsePossiblyJson(req.body.aboutCourse));
@@ -143,7 +153,8 @@ const createCourseDetail = async (req, res) => {
             : String(req.body.isActive || "").trim() === "false"
                 ? false
                 : true;
-        const brochureFile = req.file;
+        const featureImageFile = getUploadedFile(req, "featureImage");
+        const brochureFile = getUploadedFile(req, "brochure");
         if (!title || !description || !duration) {
             return res.status(400).json({
                 success: false,
@@ -183,6 +194,9 @@ const createCourseDetail = async (req, res) => {
             canonicalUrl: canonicalUrl || undefined,
             categoryId,
             subcategoryId: subcategoryId || null,
+            featureImageUrl: featureImageFile
+                ? toPublicUrl(featureImageFile.path)
+                : featureImageUrl || undefined,
             brochureUrl: brochureFile
                 ? toPublicUrl(brochureFile.path)
                 : brochureUrl || undefined,
@@ -255,7 +269,7 @@ const publicListCourseDetails = async (req, res) => {
             filter.subcategoryId = subcategoryId;
         }
         const items = await CourseDetail_model_1.CourseDetail.find(filter)
-            .select("title slug description metaTitle metaDescription metaKeywords canonicalUrl categoryId subcategoryId brochureUrl duration updatedAt")
+            .select("title slug description metaTitle metaDescription metaKeywords canonicalUrl categoryId subcategoryId featureImageUrl brochureUrl duration updatedAt")
             .populate(detailPopulateQuery())
             .sort({ updatedAt: -1, createdAt: -1 });
         return res.json({
@@ -330,6 +344,9 @@ const updateCourseDetail = async (req, res) => {
         const canonicalUrl = req.body.canonicalUrl !== undefined
             ? String(req.body.canonicalUrl || "").trim()
             : undefined;
+        const featureImageUrl = req.body.featureImageUrl !== undefined
+            ? String(req.body.featureImageUrl || "").trim()
+            : undefined;
         const brochureUrl = req.body.brochureUrl !== undefined
             ? String(req.body.brochureUrl || "").trim()
             : undefined;
@@ -350,7 +367,8 @@ const updateCourseDetail = async (req, res) => {
             : req.body.isActive !== undefined
                 ? String(req.body.isActive || "").trim() !== "false"
                 : undefined;
-        const brochureFile = req.file;
+        const featureImageFile = getUploadedFile(req, "featureImage");
+        const brochureFile = getUploadedFile(req, "brochure");
         const finalCategoryId = categoryId || String(current.categoryId);
         const finalSubcategoryId = subcategoryId !== undefined ? subcategoryId : String(current.subcategoryId || "");
         const relationError = await validateCategoryLinks(finalCategoryId, finalSubcategoryId || null);
@@ -392,6 +410,9 @@ const updateCourseDetail = async (req, res) => {
         }
         if (canonicalUrl !== undefined)
             updateData.canonicalUrl = canonicalUrl || undefined;
+        if (featureImageUrl !== undefined) {
+            updateData.featureImageUrl = featureImageUrl || undefined;
+        }
         if (brochureUrl !== undefined)
             updateData.brochureUrl = brochureUrl || undefined;
         if (conclusionTitle !== undefined) {
@@ -442,6 +463,9 @@ const updateCourseDetail = async (req, res) => {
                 });
             }
             updateData.slug = nextSlug;
+        }
+        if (featureImageFile) {
+            updateData.featureImageUrl = toPublicUrl(featureImageFile.path);
         }
         if (brochureFile) {
             updateData.brochureUrl = toPublicUrl(brochureFile.path);

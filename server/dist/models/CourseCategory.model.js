@@ -41,6 +41,5 @@ const CourseCategorySchema = new mongoose_1.default.Schema({
     },
 }, { timestamps: true });
 CourseCategorySchema.index({ title: 1 });
-CourseCategorySchema.index({ slug: 1 }, { unique: true });
 CourseCategorySchema.index({ isActive: 1, order: 1 });
 exports.CourseCategory = mongoose_1.default.model("CourseCategory", CourseCategorySchema);

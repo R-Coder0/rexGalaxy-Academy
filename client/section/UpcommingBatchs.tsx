@@ -140,13 +140,13 @@ export default function UpcomingBatches() {
             </p>
           </div>
 
-          <button
+          {/* <button
             className="rounded-xl border border-white/12 bg-white/5 hover:bg-white/10 px-5 py-3 text-sm font-semibold text-white/85 transition
                        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             onClick={() => alert("Open all batches")}
           >
             View All Batches
-          </button>
+          </button> */}
         </div>
       </div>
 

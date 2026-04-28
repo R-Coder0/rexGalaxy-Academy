@@ -1,9 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { ArrowRight } from "lucide-react";
-import React from "react";
+import { useState } from "react";
+import GlobalEnquiryForm from "@/components/forms/GlobalEnquiryForm";
 
 export default function ToolsOrbit() {
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+
   const tools = [
     "/icons/icon1.svg",
     "/icons/icon2.svg",
@@ -17,8 +20,9 @@ export default function ToolsOrbit() {
   ];
 
   return (
-    <section className="bg-neutral-950 py-24 px-6 overflow-hidden border-t border-orange-500/10">
-      <div className="max-w-[1500px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-64">
+    <>
+      <section className="bg-neutral-950 py-24 px-6 overflow-hidden border-t border-orange-500/10">
+        <div className="max-w-[1500px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-64">
         {/* LEFT — Animated Orbit */}
         <div className="relative w-[300px] h-[300px] lg:w-[440px] lg:h-[440px] flex justify-center items-center">
           {/* OUTER RING */}
@@ -49,9 +53,22 @@ export default function ToolsOrbit() {
         {/* RIGHT — Content */}
         <div className="flex-1 text-center lg:text-left space-y-6 max-w-xl">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-50 leading-tight">
-            Master In-Demand Tools <br /> and Technologies
+            Build Career-Ready Skills in <br /> Data Science and AI
           </h2>
 
+          <p className="text-orange-100/80 text-base leading-relaxed">
+            At <span className="text-orange-400 font-semibold">RexGalaxy Academy</span>, our Data
+            Science and AI training helps learners understand real data, build intelligent solutions,
+            and work confidently with modern analytics, machine learning, and generative AI workflows.
+          </p>
+
+          <p className="text-orange-100/70 text-sm leading-relaxed">
+            Learn Python, data analysis, visualization, machine learning fundamentals, model thinking,
+            and AI-powered automation through practical projects designed for job-ready portfolios and
+            interview confidence.
+          </p>
+
+          {/*
           <p className="text-orange-100/80 text-base leading-relaxed">
             At <span className="text-orange-400 font-semibold">RexGalaxy Academy</span>, we bridge the gap
             between beginner curiosity and expert capability. Whether you’re diving into web development,
@@ -64,19 +81,40 @@ export default function ToolsOrbit() {
             ecosystem ensures you gain not only technical knowledge but also the practical insights that
             make you job-ready and future-proof in the fast-moving tech landscape.
           </p>
+          */}
 
-  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] hover:bg-[var(--brand-hover)] text-black font-semibold py-3.5 px-7 transition">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <button
+              type="button"
+              onClick={() => setIsApplyOpen(true)}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] hover:bg-[var(--brand-hover)] text-black font-semibold py-3.5 px-7 transition"
+            >
               Apply Now
               <ArrowRight className="h-5 w-5" />
             </button>
 
+            {/*
             <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-white font-semibold py-3.5 px-7 transition">
               View Curriculum
             </button>
+            */}
           </div>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {isApplyOpen ? (
+        <GlobalEnquiryForm
+          isOpen={isApplyOpen}
+          onClose={() => setIsApplyOpen(false)}
+          title="Apply for Data Science and AI"
+          subtitle="Share your details and our team will guide you through the right Data Science and AI learning path."
+          submitLabel="Apply Now"
+          source="tools-orbit-data-science-ai"
+          initialCourse="Data Science and AI"
+          onSuccess={() => setIsApplyOpen(false)}
+        />
+      ) : null}
+    </>
   );
 }

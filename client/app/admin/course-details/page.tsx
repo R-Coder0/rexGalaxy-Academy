@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import type {
@@ -60,6 +61,7 @@ type CourseDetailForm = {
   canonicalUrl: string;
   categoryId: string;
   subcategoryId: string;
+  featureImageUrl: string;
   brochureUrl: string;
   duration: string;
   conclusionTitle: string;
@@ -69,7 +71,7 @@ type CourseDetailForm = {
   modules: ContentBlock[];
 };
 
-type BrochureState = {
+type UploadState = {
   file: File | null;
   existingUrl: string;
 };
@@ -83,6 +85,7 @@ type CourseDetailItem = {
   metaDescription?: string;
   metaKeywords?: string[];
   canonicalUrl?: string;
+  featureImageUrl?: string;
   brochureUrl?: string;
   duration: string;
   conclusionTitle?: string;
@@ -139,6 +142,7 @@ const initialForm: CourseDetailForm = {
   canonicalUrl: "",
   categoryId: "",
   subcategoryId: "",
+  featureImageUrl: "",
   brochureUrl: "",
   duration: "",
   conclusionTitle: "",
@@ -172,6 +176,7 @@ function toFormState(item: CourseDetailItem): CourseDetailForm {
     canonicalUrl: item.canonicalUrl || "",
     categoryId: item.categoryId?._id || "",
     subcategoryId: item.subcategoryId?._id || "",
+    featureImageUrl: item.featureImageUrl || "",
     brochureUrl: item.brochureUrl || "",
     duration: item.duration || "",
     conclusionTitle: item.conclusionTitle || "",
@@ -222,7 +227,11 @@ export default function AdminCourseDetailsPage() {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [q, setQ] = useState("");
-  const [brochure, setBrochure] = useState<BrochureState>({
+  const [featureImage, setFeatureImage] = useState<UploadState>({
+    file: null,
+    existingUrl: "",
+  });
+  const [brochure, setBrochure] = useState<UploadState>({
     file: null,
     existingUrl: "",
   });
@@ -318,6 +327,7 @@ export default function AdminCourseDetailsPage() {
     setForm(initialForm);
     setErrors({});
     setEditingId(null);
+    setFeatureImage({ file: null, existingUrl: "" });
     setBrochure({ file: null, existingUrl: "" });
   };
 
@@ -355,6 +365,7 @@ export default function AdminCourseDetailsPage() {
     payload.append("canonicalUrl", form.canonicalUrl.trim());
     payload.append("categoryId", form.categoryId);
     payload.append("subcategoryId", form.subcategoryId);
+    payload.append("featureImageUrl", featureImage.existingUrl || "");
     payload.append("brochureUrl", brochure.existingUrl || "");
     payload.append("duration", form.duration.trim());
     payload.append("conclusionTitle", form.conclusionTitle.trim());
@@ -383,6 +394,10 @@ export default function AdminCourseDetailsPage() {
           }))
       )
     );
+
+    if (featureImage.file) {
+      payload.append("featureImage", featureImage.file);
+    }
 
     if (brochure.file) {
       payload.append("brochure", brochure.file);
@@ -475,6 +490,7 @@ export default function AdminCourseDetailsPage() {
   const startEdit = (item: CourseDetailItem) => {
     setEditingId(item._id);
     setForm(toFormState(item));
+    setFeatureImage({ file: null, existingUrl: item.featureImageUrl || "" });
     setBrochure({ file: null, existingUrl: item.brochureUrl || "" });
     setErrors({});
     setMessage(null);
@@ -511,6 +527,14 @@ export default function AdminCourseDetailsPage() {
   const handleBrochureChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setBrochure((prev) => ({
+      ...prev,
+      file,
+    }));
+  };
+
+  const handleFeatureImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFeatureImage((prev) => ({
       ...prev,
       file,
     }));
@@ -690,7 +714,7 @@ export default function AdminCourseDetailsPage() {
               />
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 lg:grid-cols-3">
               <Field
                 label="Canonical URL"
                 name="canonicalUrl"
@@ -698,6 +722,42 @@ export default function AdminCourseDetailsPage() {
                 onChange={handleFieldChange}
                 placeholder="https://example.com/courses/slug"
               />
+              <div>
+                <label
+                  className="mb-2 block text-[11px] font-semibold uppercase"
+                  style={{ letterSpacing: "0.18em", color: "var(--text-dim)" }}
+                >
+                  Feature Image
+                </label>
+                <div className="rounded-xl px-4 py-3" style={fieldSurface}>
+                  <input
+                    type="file"
+                    accept=".png,.jpg,.jpeg,.webp,.avif"
+                    onChange={handleFeatureImageChange}
+                    className="w-full text-sm"
+                    style={{ color: "var(--text)" }}
+                  />
+                  {featureImage.file ? (
+                    <p className="mt-2 text-xs" style={{ color: "var(--brand)" }}>
+                      Selected: {featureImage.file.name}
+                    </p>
+                  ) : featureImage.existingUrl ? (
+                    <a
+                      href={`${API_ORIGIN}${featureImage.existingUrl}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-block text-xs underline"
+                      style={{ color: "var(--brand)" }}
+                    >
+                      View current image
+                    </a>
+                  ) : (
+                    <p className="mt-2 text-xs" style={{ color: "var(--text-dim)" }}>
+                      Used on public course cards.
+                    </p>
+                  )}
+                </div>
+              </div>
               <div>
                 <label
                   className="mb-2 block text-[11px] font-semibold uppercase"
@@ -932,7 +992,22 @@ export default function AdminCourseDetailsPage() {
                     }}
                   >
                     <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                      <div className="min-w-0">
+                      <div className="h-20 w-28 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-black/20">
+                        {item.featureImageUrl ? (
+                          <img
+                            src={`${API_ORIGIN}${item.featureImageUrl}`}
+                            alt={item.title}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center px-3 text-center text-[11px] text-white/35">
+                            No image
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-3">
                           <h3 className="text-base font-bold" style={{ color: "var(--text)" }}>
                             {item.title}

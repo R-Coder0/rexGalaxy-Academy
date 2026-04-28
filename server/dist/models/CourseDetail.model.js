@@ -91,6 +91,11 @@ const CourseDetailSchema = new mongoose_1.default.Schema({
         ref: "CourseSubcategory",
         default: null,
     },
+    featureImageUrl: {
+        type: String,
+        trim: true,
+        maxlength: 400,
+    },
     brochureUrl: {
         type: String,
         trim: true,
@@ -140,7 +145,6 @@ CourseDetailSchema.pre("validate", function autoNumberModules() {
         }));
     }
 });
-CourseDetailSchema.index({ slug: 1 }, { unique: true });
 CourseDetailSchema.index({ categoryId: 1, isActive: 1 });
 CourseDetailSchema.index({ subcategoryId: 1, isActive: 1 });
 CourseDetailSchema.index({ title: 1 });

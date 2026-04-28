@@ -1,18 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
 
-type LegacyCourseDescriptionData = {
-  title: string;
-  fullDescription: string;
-  objectives: string[];
-};
-
-export default function CourseDescription({
-  course,
-}: {
-  course: LegacyCourseDescriptionData;
-}) {
+export default function CourseDescription({ course }: any) {
   const [expanded, setExpanded] = useState(false);
 
   const descriptionToShow = expanded

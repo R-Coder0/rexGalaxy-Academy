@@ -37,6 +37,7 @@ export type CourseDetailRecord = {
   metaDescription?: string;
   metaKeywords?: string[];
   canonicalUrl?: string;
+  featureImageUrl?: string;
   brochureUrl?: string;
   duration: string;
   aboutCourse?: CourseDetailBlock[];
@@ -123,7 +124,8 @@ async function getCourseDetailBySlug(slug: string) {
 }
 
 async function getCourseDetailsByQuery(query: string) {
-  const response = await fetch(`${API_BASE}/course-details?${query}`, {
+  const url = query ? `${API_BASE}/course-details?${query}` : `${API_BASE}/course-details`;
+  const response = await fetch(url, {
     cache: "no-store",
   });
   const result = await safeJson<{ success?: boolean; data?: CourseDetailRecord[] }>(
@@ -135,6 +137,10 @@ async function getCourseDetailsByQuery(query: string) {
   }
 
   return result.data;
+}
+
+export async function getAllCourseDetails() {
+  return getCourseDetailsByQuery("");
 }
 
 function mapRelations(

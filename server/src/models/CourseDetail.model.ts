@@ -22,6 +22,7 @@ export interface ICourseDetail extends mongoose.Document {
   canonicalUrl?: string;
   categoryId: mongoose.Types.ObjectId;
   subcategoryId?: mongoose.Types.ObjectId | null;
+  featureImageUrl?: string;
   brochureUrl?: string;
   duration: string;
   aboutCourse: RichContentBlock[];
@@ -127,6 +128,11 @@ const CourseDetailSchema = new mongoose.Schema<ICourseDetail>(
       type: mongoose.Schema.Types.ObjectId,
       ref: "CourseSubcategory",
       default: null,
+    },
+    featureImageUrl: {
+      type: String,
+      trim: true,
+      maxlength: 400,
     },
     brochureUrl: {
       type: String,

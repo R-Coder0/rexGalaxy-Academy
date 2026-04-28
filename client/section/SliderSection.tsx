@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import {
   ArrowRight,
   Sparkles,
@@ -9,6 +10,7 @@ import {
   Zap,
   PlayCircle,
 } from "lucide-react";
+import GlobalEnquiryForm from "@/components/forms/GlobalEnquiryForm";
 
 type Stat = { number: number; label: string };
 
@@ -41,12 +43,13 @@ export default function HeroSection({
     { number: 5000, label: "Certified Graduates" },
   ],
   primaryText = "Join RexGalaxy Academy",
-  onPrimary = () => alert("Join Now"),
+  onPrimary,
   secondaryText = "Browse Courses",
   onSecondary,
 }: HeroProps) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [started, setStarted] = useState(false);
+  const [isJoinOpen, setIsJoinOpen] = useState(false);
   const [counters, setCounters] = useState<number[]>(() => stats.map(() => 0));
   const targets = useMemo(() => stats.map((s) => s.number), [stats]);
 
@@ -82,7 +85,8 @@ export default function HeroSection({
   }, [started, targets]);
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden bg-[var(--bg)]">
+    <>
+      <section ref={sectionRef} className="relative w-full overflow-hidden bg-[var(--bg)]">
       {/* Background */}
       <div
         className="absolute inset-0 opacity-30"
@@ -140,20 +144,30 @@ export default function HeroSection({
             {/* Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <button
-                onClick={onPrimary}
+                onClick={onPrimary || (() => setIsJoinOpen(true))}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-7 py-4 font-semibold text-black hover:bg-[var(--brand-hover)] transition"
               >
                 {primaryText}
                 <ArrowRight className="h-5 w-5" />
               </button>
 
-              <button
-                onClick={onSecondary}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-semibold text-white hover:bg-white/10 transition"
-              >
-                <PlayCircle className="h-5 w-5 text-[var(--ai-cyan)]" />
-                {secondaryText}
-              </button>
+              {onSecondary ? (
+                <button
+                  onClick={onSecondary}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-semibold text-white hover:bg-white/10 transition"
+                >
+                  <PlayCircle className="h-5 w-5 text-[var(--ai-cyan)]" />
+                  {secondaryText}
+                </button>
+              ) : (
+                <Link
+                  href="/courses"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-semibold text-white hover:bg-white/10 transition"
+                >
+                  <PlayCircle className="h-5 w-5 text-[var(--ai-cyan)]" />
+                  {secondaryText}
+                </Link>
+              )}
             </div>
           </div>
 
@@ -175,6 +189,19 @@ export default function HeroSection({
 
         </div>
       </div>
-    </section>
+      </section>
+
+      {isJoinOpen ? (
+        <GlobalEnquiryForm
+          isOpen={isJoinOpen}
+          onClose={() => setIsJoinOpen(false)}
+          title="Join RexGalaxy Academy"
+          subtitle="Fill your details and our team will help you choose the right course."
+          submitLabel="Join Now"
+          source="hero-join"
+          onSuccess={() => setIsJoinOpen(false)}
+        />
+      ) : null}
+    </>
   );
 }

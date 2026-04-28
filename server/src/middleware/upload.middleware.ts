@@ -28,9 +28,10 @@ const fileFilter: multer.Options["fileFilter"] = (_req, file, cb) => {
     "image/png",
     "image/jpeg",
     "image/webp",
+    "image/avif",
   ];
   if (allowed.includes(file.mimetype)) return cb(null, true);
-  cb(new Error("Invalid file type. Allowed: PDF/DOC/DOCX/XLS/XLSX/PNG/JPG/WEBP"));
+  cb(new Error("Invalid file type. Allowed: PDF/DOC/DOCX/XLS/XLSX/PNG/JPG/WEBP/AVIF"));
 };
 
 export const upload = multer({

@@ -93,7 +93,6 @@ function normalizeModules(value: unknown) {
       if (!title || !content) return null;
 
       return {
-        moduleNumber: 0,
         title,
         content,
       };
@@ -101,9 +100,13 @@ function normalizeModules(value: unknown) {
     .filter(
       (
         module
-      ): module is { moduleNumber: number; title: string; content: string } =>
+      ): module is { title: string; content: string } =>
         module !== null
-    );
+    )
+    .map((module, index) => ({
+      moduleNumber: index + 1,
+      ...module,
+    }));
 }
 
 async function validateCategoryLinks(
@@ -146,6 +149,14 @@ function detailPopulateQuery() {
   ];
 }
 
+function getUploadedFile(req: Request, fieldName: string) {
+  const files = req.files;
+
+  if (!files || Array.isArray(files)) return undefined;
+
+  return files[fieldName]?.[0];
+}
+
 export const createCourseDetail = async (req: Request, res: Response) => {
   try {
     const title = String(req.body.title || "").trim();
@@ -157,6 +168,7 @@ export const createCourseDetail = async (req: Request, res: Response) => {
     const canonicalUrl = String(req.body.canonicalUrl || "").trim();
     const categoryId = String(req.body.categoryId || "").trim();
     const subcategoryId = String(req.body.subcategoryId || "").trim();
+    const featureImageUrl = String(req.body.featureImageUrl || "").trim();
     const brochureUrl = String(req.body.brochureUrl || "").trim();
     const duration = String(req.body.duration || "").trim();
     const aboutCourse = normalizeAboutCourse(parsePossiblyJson(req.body.aboutCourse));
@@ -169,7 +181,8 @@ export const createCourseDetail = async (req: Request, res: Response) => {
         : String(req.body.isActive || "").trim() === "false"
           ? false
           : true;
-    const brochureFile = req.file;
+    const featureImageFile = getUploadedFile(req, "featureImage");
+    const brochureFile = getUploadedFile(req, "brochure");
 
     if (!title || !description || !duration) {
       return res.status(400).json({
@@ -218,6 +231,9 @@ export const createCourseDetail = async (req: Request, res: Response) => {
       canonicalUrl: canonicalUrl || undefined,
       categoryId,
       subcategoryId: subcategoryId || null,
+      featureImageUrl: featureImageFile
+        ? toPublicUrl(featureImageFile.path)
+        : featureImageUrl || undefined,
       brochureUrl: brochureFile
         ? toPublicUrl(brochureFile.path)
         : brochureUrl || undefined,
@@ -301,7 +317,7 @@ export const publicListCourseDetails = async (req: Request, res: Response) => {
 
     const items = await CourseDetail.find(filter)
       .select(
-        "title slug description metaTitle metaDescription metaKeywords canonicalUrl categoryId subcategoryId brochureUrl duration updatedAt"
+        "title slug description metaTitle metaDescription metaKeywords canonicalUrl categoryId subcategoryId featureImageUrl brochureUrl duration updatedAt"
       )
       .populate(detailPopulateQuery())
       .sort({ updatedAt: -1, createdAt: -1 });
@@ -390,6 +406,10 @@ export const updateCourseDetail = async (req: Request, res: Response) => {
       req.body.canonicalUrl !== undefined
         ? String(req.body.canonicalUrl || "").trim()
         : undefined;
+    const featureImageUrl =
+      req.body.featureImageUrl !== undefined
+        ? String(req.body.featureImageUrl || "").trim()
+        : undefined;
     const brochureUrl =
       req.body.brochureUrl !== undefined
         ? String(req.body.brochureUrl || "").trim()
@@ -416,7 +436,8 @@ export const updateCourseDetail = async (req: Request, res: Response) => {
         : req.body.isActive !== undefined
           ? String(req.body.isActive || "").trim() !== "false"
           : undefined;
-    const brochureFile = req.file;
+    const featureImageFile = getUploadedFile(req, "featureImage");
+    const brochureFile = getUploadedFile(req, "brochure");
 
     const finalCategoryId = categoryId || String(current.categoryId);
     const finalSubcategoryId =
@@ -467,6 +488,9 @@ export const updateCourseDetail = async (req: Request, res: Response) => {
       updateData.metaDescription = metaDescription || undefined;
     }
     if (canonicalUrl !== undefined) updateData.canonicalUrl = canonicalUrl || undefined;
+    if (featureImageUrl !== undefined) {
+      updateData.featureImageUrl = featureImageUrl || undefined;
+    }
     if (brochureUrl !== undefined) updateData.brochureUrl = brochureUrl || undefined;
     if (conclusionTitle !== undefined) {
       updateData.conclusionTitle = conclusionTitle || undefined;
@@ -523,6 +547,10 @@ export const updateCourseDetail = async (req: Request, res: Response) => {
       }
 
       updateData.slug = nextSlug;
+    }
+
+    if (featureImageFile) {
+      updateData.featureImageUrl = toPublicUrl(featureImageFile.path);
     }
 
     if (brochureFile) {
