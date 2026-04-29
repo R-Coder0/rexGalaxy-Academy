@@ -126,6 +126,12 @@ type FormErrors = Partial<
 
 const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 const API_ORIGIN = API?.replace(/\/api\/?$/, "") || "";
+const configuredMaxUploadMB = Number(process.env.NEXT_PUBLIC_MAX_UPLOAD_MB || 10);
+const MAX_UPLOAD_MB =
+  Number.isFinite(configuredMaxUploadMB) && configuredMaxUploadMB > 0
+    ? configuredMaxUploadMB
+    : 10;
+const MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024;
 
 const emptyBlock = (): ContentBlock => ({
   title: "",
@@ -211,6 +217,11 @@ function formatDate(value: string) {
   } catch {
     return value;
   }
+}
+
+function getFileSizeError(file: File | null, label: string) {
+  if (!file || file.size <= MAX_UPLOAD_BYTES) return "";
+  return `${label} must be ${MAX_UPLOAD_MB} MB or smaller.`;
 }
 
 export default function AdminCourseDetailsPage() {
@@ -349,8 +360,15 @@ export default function AdminCourseDetailsPage() {
     );
     if (!modulesValid) nextErrors.modules = "Add at least one valid module";
 
+    const fileError =
+      getFileSizeError(featureImage.file, "Feature image") ||
+      getFileSizeError(brochure.file, "Brochure");
+    if (fileError) {
+      setError(fileError);
+    }
+
     setErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
+    return Object.keys(nextErrors).length === 0 && !fileError;
   };
 
   const buildPayload = () => {
@@ -526,6 +544,18 @@ export default function AdminCourseDetailsPage() {
 
   const handleBrochureChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
+    const fileError = getFileSizeError(file, "Brochure");
+    if (fileError) {
+      e.target.value = "";
+      setError(fileError);
+      setBrochure((prev) => ({
+        ...prev,
+        file: null,
+      }));
+      return;
+    }
+
+    setError(null);
     setBrochure((prev) => ({
       ...prev,
       file,
@@ -534,6 +564,18 @@ export default function AdminCourseDetailsPage() {
 
   const handleFeatureImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
+    const fileError = getFileSizeError(file, "Feature image");
+    if (fileError) {
+      e.target.value = "";
+      setError(fileError);
+      setFeatureImage((prev) => ({
+        ...prev,
+        file: null,
+      }));
+      return;
+    }
+
+    setError(null);
     setFeatureImage((prev) => ({
       ...prev,
       file,

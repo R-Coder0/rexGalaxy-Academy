@@ -3,7 +3,9 @@ import path from "path";
 import fs from "fs";
 
 const uploadDir = process.env.UPLOAD_DIR || "uploads";
-const maxMB = Number(process.env.MAX_FILE_MB || 10);
+const configuredMaxMB = Number(process.env.MAX_FILE_MB || 10);
+const maxMB =
+  Number.isFinite(configuredMaxMB) && configuredMaxMB > 0 ? configuredMaxMB : 10;
 
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
@@ -37,5 +39,5 @@ const fileFilter: multer.Options["fileFilter"] = (_req, file, cb) => {
 export const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: maxMB * 1024 * 1024 },
+  limits: { fileSize: maxMB * 1024 * 1024, files: 2 },
 });

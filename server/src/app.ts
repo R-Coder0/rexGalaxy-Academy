@@ -14,6 +14,13 @@ dotenv.config();
 
 export function createApp() {
   const app = express();
+  const requestBodyLimit = process.env.REQUEST_BODY_LIMIT || "2mb";
+  const corsOptions: cors.CorsOptions = {
+    origin: true,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  };
 
   app.use(
     helmet({
@@ -24,15 +31,11 @@ export function createApp() {
   app.use(morgan("dev"));
   app.use(cookieParser());
 
-  app.use(
-    cors({
-      origin: true,
-      credentials: true,
-    })
-  );
+  app.use(cors(corsOptions));
+  app.options(/.*/, cors(corsOptions));
 
-  app.use(express.json({ limit: "2mb" }));
-  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json({ limit: requestBodyLimit }));
+  app.use(express.urlencoded({ extended: true, limit: requestBodyLimit }));
 
   const uploadDir = process.env.UPLOAD_DIR || "uploads";
   app.use(`/${uploadDir}`, express.static(path.resolve(uploadDir)));

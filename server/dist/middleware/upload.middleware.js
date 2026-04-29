@@ -8,7 +8,8 @@ const multer_1 = __importDefault(require("multer"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const uploadDir = process.env.UPLOAD_DIR || "uploads";
-const maxMB = Number(process.env.MAX_FILE_MB || 10);
+const configuredMaxMB = Number(process.env.MAX_FILE_MB || 10);
+const maxMB = Number.isFinite(configuredMaxMB) && configuredMaxMB > 0 ? configuredMaxMB : 10;
 if (!fs_1.default.existsSync(uploadDir))
     fs_1.default.mkdirSync(uploadDir, { recursive: true });
 const storage = multer_1.default.diskStorage({
@@ -40,5 +41,5 @@ const fileFilter = (_req, file, cb) => {
 exports.upload = (0, multer_1.default)({
     storage,
     fileFilter,
-    limits: { fileSize: maxMB * 1024 * 1024 },
+    limits: { fileSize: maxMB * 1024 * 1024, files: 2 },
 });
